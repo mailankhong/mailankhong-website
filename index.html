@@ -518,6 +518,19 @@
       0%, 100% { opacity: 1; }
       50%      { opacity: 0; }
     }
+    /* ─── MOBILE ─────────────────────────────────── */
+    @media(max-width:767px){
+      .section{padding:3.5rem 0}
+      .section-sm{padding:2.25rem 0}
+      .pbadge-bl{left:0.375rem!important;bottom:0.75rem!important}
+      .pbadge-tr{right:0.375rem!important;top:0.75rem!important}
+      .hero-section{min-height:0!important;padding:2.75rem 0 2.5rem!important}
+      .hero-grid{grid-template-columns:1fr!important;gap:2rem!important}
+      .hero-grid > *:last-child{order:-1}
+      .stat-grid{grid-template-columns:1fr 1fr!important;gap:1.25rem!important}
+      .offering-grid{grid-template-columns:1fr!important}
+      .story-grid{grid-template-columns:1fr!important}
+    }
   </style>
 </head>
 <body>
@@ -664,6 +677,112 @@
 </section>
 
 
+<!-- ══════════════════════ OFFERINGS ══════════════════════ -->
+<section id="offerings" class="section">
+  <div class="wrap">
+
+    <div class="text-center fade" style="margin-bottom:3.5rem;">
+      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">Two ways I can help</div>
+      <h2 class="h2" style="color:var(--c-charcoal);">Where do you feel the pull?</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- FOR PEOPLE -->
+      <div class="card-offering card-people fade fade-d1">
+        <div class="card-icon icon-people">🌿</div>
+        <div class="pill overline fade"
+             style="margin-bottom:1.25rem; background:rgba(212,234,164,0.38); border-color:rgba(212,234,164,0.55); color:#7A9E5A; display:inline-flex;">
+          For People
+        </div>
+        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
+          A meditation practice that<br><em>transforms daily life</em>
+        </h3>
+        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
+          Startup Founder turned Meditation Coach. Whether you seek clarity, inner peace, or a foundation for your relationships and creative work — I'll meet you exactly where you are.
+        </p>
+        <ul style="margin-bottom:2rem; list-style:none;">
+          <li class="list-item">
+            <div class="list-dot" style="background:#7A9E5A;"></div>
+            <span class="body-sm" style="color:var(--c-text);">Personal 1-on-1 coaching sessions</span>
+          </li>
+          <li class="list-item">
+            <div class="list-dot" style="background:#7A9E5A;"></div>
+            <span class="body-sm" style="color:var(--c-text);">Small cohort group programs</span>
+          </li>
+          <li class="list-item">
+            <div class="list-dot" style="background:#7A9E5A;"></div>
+            <span class="body-sm" style="color:var(--c-text);">Holistic integration into daily life</span>
+          </li>
+        </ul>
+        <a href="for-people.html" class="btn btn-outline"
+           style="border-color:rgba(122,158,90,0.38); color:#7A9E5A;">
+          Explore for People
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- FOR BRANDS -->
+      <div class="card-offering card-brands fade fade-d2">
+        <div class="card-icon icon-brands">✦</div>
+        <div class="pill overline"
+             style="margin-bottom:1.25rem; background:rgba(196,160,181,0.18); border-color:rgba(196,160,181,0.38); color:#9C7A8E; display:inline-flex;">
+          For Brands
+        </div>
+        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
+          LinkedIn Content as a<br><em>Revenue Machine</em>
+        </h3>
+        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
+          Brand &amp; Growth Strategist helping entrepreneurs build a LinkedIn presence that generates inbound leads. The framework behind <span class="hl">1M+ views in 6 months</span> — and a repeatable content engine.
+        </p>
+        <ul style="margin-bottom:2rem; list-style:none;">
+          <li class="list-item">
+            <div class="list-dot" style="background:#9C7A8E;"></div>
+            <span class="body-sm" style="color:var(--c-text);">LinkedIn content strategy &amp; positioning</span>
+          </li>
+          <li class="list-item">
+            <div class="list-dot" style="background:#9C7A8E;"></div>
+            <span class="body-sm" style="color:var(--c-text);">Personal brand architecture for founders</span>
+          </li>
+          <li class="list-item">
+            <div class="list-dot" style="background:#9C7A8E;"></div>
+            <span class="body-sm" style="color:var(--c-text);">Revenue-driven content systems</span>
+          </li>
+        </ul>
+
+        <!-- Video embed -->
+        <div style="margin-bottom:1.5rem;">
+          <div style="position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden;
+               border:1px solid rgba(196,160,181,0.25);
+               box-shadow:0 4px 18px rgba(156,122,142,0.14);">
+            <iframe src="https://www.youtube.com/embed/-uDVSkdDNvY?start=150"
+                    title="LinkedIn Content as a Revenue Machine — Mai-Lan Khong"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+          </div>
+          <p style="margin-top:0.625rem; font-size:0.75rem; color:var(--c-muted);
+                    font-family:'DM Sans',sans-serif; line-height:1.5; text-align:center;
+                    letter-spacing:0.02em;">
+            <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--c-charcoal); font-size:0.8125rem;">LinkedIn Content as a Revenue Machine</em>
+            &nbsp;·&nbsp; the framework, in her own words
+          </p>
+        </div>
+
+        <a href="for-brands.html" class="btn btn-outline"
+           style="border-color:rgba(156,122,142,0.38); color:#9C7A8E;">
+          Explore for Brands
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" style="margin:0 2.5rem;">
+
+
 <!-- ══════════════════════ ORIGIN STORY ══════════════════════ -->
 <section class="section" style="padding-bottom:2rem;">
   <div class="wrap">
@@ -791,112 +910,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ OFFERINGS ══════════════════════ -->
-<section id="offerings" class="section">
-  <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:3.5rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">Two ways I can help</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">Where do you feel the pull?</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- FOR PEOPLE -->
-      <div class="card-offering card-people fade fade-d1">
-        <div class="card-icon icon-people">🌿</div>
-        <div class="pill overline fade"
-             style="margin-bottom:1.25rem; background:rgba(212,234,164,0.38); border-color:rgba(212,234,164,0.55); color:#7A9E5A; display:inline-flex;">
-          For People
-        </div>
-        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
-          A meditation practice that<br><em>transforms daily life</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
-          Startup Founder turned Meditation Coach. Whether you seek clarity, inner peace, or a foundation for your relationships and creative work — I'll meet you exactly where you are.
-        </p>
-        <ul style="margin-bottom:2rem; list-style:none;">
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Personal 1-on-1 coaching sessions</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Small cohort group programs</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Holistic integration into daily life</span>
-          </li>
-        </ul>
-        <a href="for-people.html" class="btn btn-outline"
-           style="border-color:rgba(122,158,90,0.38); color:#7A9E5A;">
-          Explore for People
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <!-- FOR BRANDS -->
-      <div class="card-offering card-brands fade fade-d2">
-        <div class="card-icon icon-brands">✦</div>
-        <div class="pill overline"
-             style="margin-bottom:1.25rem; background:rgba(196,160,181,0.18); border-color:rgba(196,160,181,0.38); color:#9C7A8E; display:inline-flex;">
-          For Brands
-        </div>
-        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
-          LinkedIn Content as a<br><em>Revenue Machine</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
-          Brand &amp; Growth Strategist helping entrepreneurs build a LinkedIn presence that generates inbound leads. The framework behind <span class="hl">1M+ views in 6 months</span> — and a repeatable content engine.
-        </p>
-        <ul style="margin-bottom:2rem; list-style:none;">
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">LinkedIn content strategy &amp; positioning</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Personal brand architecture for founders</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Revenue-driven content systems</span>
-          </li>
-        </ul>
-
-        <!-- Video embed -->
-        <div style="margin-bottom:1.5rem;">
-          <div style="position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden;
-               border:1px solid rgba(196,160,181,0.25);
-               box-shadow:0 4px 18px rgba(156,122,142,0.14);">
-            <iframe src="https://www.youtube.com/embed/-uDVSkdDNvY?start=150"
-                    title="LinkedIn Content as a Revenue Machine — Mai-Lan Khong"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
-          </div>
-          <p style="margin-top:0.625rem; font-size:0.75rem; color:var(--c-muted);
-                    font-family:'DM Sans',sans-serif; line-height:1.5; text-align:center;
-                    letter-spacing:0.02em;">
-            <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--c-charcoal); font-size:0.8125rem;">LinkedIn Content as a Revenue Machine</em>
-            &nbsp;·&nbsp; the framework, in her own words
-          </p>
-        </div>
-
-        <a href="for-brands.html" class="btn btn-outline"
-           style="border-color:rgba(156,122,142,0.38); color:#9C7A8E;">
-          Explore for Brands
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-    </div>
   </div>
 </section>
 
