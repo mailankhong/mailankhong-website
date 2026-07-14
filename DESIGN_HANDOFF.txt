@@ -1,0 +1,244 @@
+LINKEDIN ACCELERATOR — DESIGN HANDOFF
+=====================================
+
+A one-page sales site for ColdIQ's 12-week LinkedIn Personal Brand Accelerator.
+Built to match the ColdIQ visual language (clean white, technical sans, dark CTAs, blue accent).
+
+This doc is for a designer who'll refine craft and polish. You don't need code or GitHub access. Review the live page, propose visual changes in Figma (or wherever you prefer), and hand back annotated mockups, a Loom walkthrough, or a Figma file. Implementation goes back to the developer.
+
+
+LIVE PAGE
+---------
+https://coldiq-linkedin-content-system.vercel.app
+(The old https://linkedin-accelerator-snowy.vercel.app still works and 308-forwards here.)
+
+Best viewed on desktop first. Mobile works but has not been polished.
+
+
+WHAT YOU'LL NEED FROM US (already given)
+----------------------------------------
+- The live URL (above)
+- This doc
+- The brand assets folder (contains: ColdIQ logo SVG, the playbook image, the EGC engine PNG, the system-overview GIF, 11 LinkedIn post screenshots used in the Proof section). Available in the project's brand_assets folder. Ask if you need them re-exported.
+
+What you don't need:
+- The code repo (no GitHub required)
+- Any dev environment setup
+
+
+DESIGN SYSTEM
+=============
+
+COLORS
+------
+Primary text         #0B0B0C  (near-black, also fills the primary CTA)
+Body text            #3A3A3D
+Muted text           #6A6A6E  (captions, metadata)
+Soft text            #9C9CA0  (dividers, faintest annotations)
+
+Page background      #FFFFFF
+Section tint         #F7F6F2  (warm off-white — NOT pure gray. Section breaker.)
+Card background      #FAFAF8
+Dark sections        #0B0B0C  (used in GTM section, the orbital container, final CTA)
+Default border       #E7E6E1
+
+Brand accents (used as phase colors + node colors):
+Blue                 #1F4DFF  (badges, links, Phase 1, "grade" state)
+Coral                #FF5A1F  (Phase 2, "diagnose" state, callout border)
+Mint                 #2E8A5A  (Phase 3, "re-grade" success)
+Purple               #6B4FE0  (Phase 4, "fix" state)
+Gold                 #F2C94C  (Phase 5 ABM, fifth orbital trace)
+
+
+TYPOGRAPHY
+----------
+Geist (Google Fonts) — primary sans, everything
+  Weights used: 400, 500, 600
+Geist Mono — labels, badges, stats, captions, micro-copy
+  Weights used: 400, 500
+
+No serifs. Earlier drafts used an italic serif for pull quotes; removed in the ColdIQ-only pass.
+
+Type scale (approximate):
+  Display headline   clamp(2rem, 4.6vw, 3.8rem) — hero, GTM, final CTA
+  Section H1         clamp(2rem, 4.2vw, 3.4rem)
+  Section H2         clamp(1.6rem, 3vw, 2.4rem)
+  H3                 clamp(1.15rem, 1.5vw, 1.4rem)
+  Lede               clamp(1.05rem, 1.4vw, 1.2rem)  line-height 1.6
+  Body               1rem  line-height 1.7
+  Small / caption    0.875rem
+  Mono micro         0.7rem  letter-spacing 0.12em uppercase
+
+
+SPACING
+-------
+Section padding vertical:    clamp(72px, 9vw, 128px)
+Container max-width:         1200px
+Container side padding:      28px
+Card padding:                varies — typically 24-36px
+Gap between elements:        commonly 14, 24, 32, 48, 64px
+
+Border radius scale:
+  Small      6px   (mono pills, skill chips)
+  Medium     10px  (CTAs, mode cards)
+  Large      16px  (cards, frames, callouts)
+
+
+COMPONENTS
+----------
+PILL BADGE (.badge)
+  Used as section labels. Always preceded by a 6px colored dot.
+  "● The problem" / "● The 12-week map" / "● The proof"
+
+DARK PRIMARY CTA (.btn-primary)
+  Black fill, white text, 10px radius. Small trailing arrow.
+
+OUTLINED SECONDARY CTA (.btn-secondary)
+  Transparent fill, dark border. Hover: inverts to black.
+
+MONO SKILL CHIP (.phase-skill)
+  Bordered pill with monospace text. Lowercase, dash-separated like "hook-generator", "post-grader".
+
+
+PAGE STRUCTURE — 10 SECTIONS
+============================
+
+1. HERO
+   Two-column.
+   Left: typewriter headline ("Run your LinkedIn brand on the [cycling phrase]") + lede + dual CTAs.
+   Right: ColdIQ Influencer Playbook image (16 team-member LinkedIn profiles, bottom 7% clipped via CSS to hide the credit pill).
+
+2. PROBLEM ⇒ SOLUTION
+   Two-column visual layout.
+   Left: 4 problem cells in a 2x2 grid (Ghostwriter / ChatGPT solo / In-house hire / Course or playbook). Each has a small numbered label, an x mark, a punch headline, and one supporting sentence.
+   Center: white circle with arrow icon — the "becomes" connector.
+   Right: square dark orbital diagram with "THE FIX · ONE SYSTEM" badge in the top-left.
+
+3. 12-WEEK MAP (stepper)
+   13 numbered indicators across the top (PRE / W1 / W2 / ... / W12), each color-coded by phase. Clicking a step swaps the content panel below (intentionally does NOT auto-scroll). Each panel shows a phase tag pill, a week title, skill chips, and a 30-50 word body paragraph.
+
+4. PHASE 5 GTM LOOP
+   Dark section, two-column.
+   Left: full-aspect EGC playbook PNG inside a light frame + caption "The playbook behind the stack" + a "BUILT BY AN OUTBOUND SHOP" callout block with 3 mini-stats (267+ B2B clients, $7M GTM agency, 200K+ monthly engagers).
+   Right: header + 5-node circular "compounding loop" diagram (Content published → Engagement signal → Clay enrichment + ABM → Personalized outbound → Meeting → case study) with colored arcs flowing around the ring + skill tag row underneath.
+
+5. QUALITY LOOP
+   Two-column, light section.
+   Left: 5-dimension rubric list. Each row has a colored numbered chip + dimension name + sharp diagnostic question + "/10" score marker:
+     01 Hook strength       Does the first line earn the second?
+     02 Narrative coherence Does the post arc, or does it list?
+     03 Voice fidelity      Does it sound like you, or like AI?
+     04 Value density       One real idea, or three vague gestures?
+     05 Ending discipline   Does the close earn the CTA?
+   Plus a small footnote: "Most drafts pass on the second pass. Some never make it. The ones that don't get retired, not forced through."
+   Right: 5-circle Quality Loop SVG (Draft → Grade → Diagnose → Fix → Re-grade), with a sequential ping-pulse animation (each node "pings" outward in turn, matching its color). Center: static "PASS GATE 38/50" mint pill.
+
+6. WHAT YOU LEAVE WITH (deliverables)
+   Two-column.
+   Left: 13 deliverable items in a 2-col compact grid, each with a black check icon, a bold name, and one supporting sentence. Plus a closing line: "And the ability to onboard a new team member into the system without us."
+   Right (sticky): Claude-for-content GIF in a dark frame + mono caption "Seven steps. One workflow. Every post." + a dark "After Week 12" callout: "Your folder. Your prompts. Your skills."
+
+7. TEAM + PROOF
+   Header → 4-stat strip (581 posts / +27 clients / +$151K MRR / 275K+ followers) → 11 LinkedIn post cards in a 3-column masonry grid. Soheil's portrait card spans 2 rows in the middle column. Each card: shot at top, author + role, 3-stat metric strip (Reactions / Comments / Reposts), italic outcome line.
+
+8. FAQ
+   8-item accordion. Each item: question + 2-sentence answer. Hover state on each row.
+
+9. FINAL CTA
+   Centered. "The next step" badge + a single sentence: "A 12-week program. B2B teams leave with a content engine that books their calendars. Built with you, runnable without us." + dual CTAs (Book a discovery call + Re-read the system). Subway-map echo faintly visible at the very bottom.
+
+
+INTERACTIVE ELEMENTS
+====================
+
+THE ORBITAL (Section 2 right side)
+- 6 brand-logo nodes orbit a central glowing hub (purple/blue/teal gradient)
+- Auto-rotates continuously, slow
+- Click any node: orbit centers on it, opens a detail card showing the tool's role, system weight bar, and "connected layers"
+- Related nodes glow when one is active
+- Click center / outside: resets
+
+THE STEPPER (Section 3)
+- 13 step indicators with colored separators
+- Separator color turns black as previous steps "complete"
+- Clicking a step changes the content panel below — does NOT auto-scroll
+- Keyboard navigable: arrow keys, Home, End, Enter
+
+TYPEWRITER (Hero)
+- Cycles through 4 phrases inside the H1
+- Blue blinking cursor as the underscore character
+
+GTM LOOP ANIMATION (Section 4)
+- 5 colored arcs (blue, coral, mint, purple, gold) chase each other around the loop ring with staggered delays
+- Continuous flow — metaphor of perpetual cycle
+- Center "compounding loop" label has a soft outward glow pulse
+
+QUALITY LOOP ANIMATION (Section 5)
+- Sequential ping-pulse — each of the 5 nodes "pings" outward in turn (Draft → Grade → Diagnose → Fix → Re-grade)
+- Distinct from GTM (discrete stages vs. continuous flow)
+- PASS GATE 38/50 pill gently pulses
+
+SCROLL REVEALS
+- Sections fade + slight translate up as they enter viewport
+- 700ms ease curve
+
+
+POLISH OPPORTUNITIES
+====================
+These are rough edges that could use a designer's eye:
+
+1. HERO PLAYBOOK IMAGE
+   The source image (16-profile influencer board) has a "Michel Lieben | coldiq.com" credit pill at the bottom. Currently hidden via a CSS clip-path + a slight image scale-up. Crude hack. A clean re-export of the playbook without the credit pill would be cleaner.
+
+2. EGC PLAYBOOK PNG ASPECT RATIO
+   It's 9:16 portrait. Inside the GTM section's left column, it dominates vertically and tends to push the left column taller than the right. A landscape-oriented version would balance better.
+
+3. ORBITAL HUB GRADIENT
+   The center hub uses a purple/blue/teal gradient — pulled from the original orbital component. Looks slightly toy-like compared to the rest of the page's restraint. Could be reworked to match ColdIQ's palette (solid coral with subtle inner glow, or a different gradient stop).
+
+4. QUALITY LOOP SVG SIZING
+   On wide viewports the circle fits but the surrounding card has noticeable empty space at the very top and bottom. Could either grow the SVG more or reduce card padding.
+
+5. PROOF CARD SCREENSHOTS
+   The 11 LinkedIn post screenshots have different native resolutions (some wide, one portrait). Currently CSS-scaled to trim thin black borders. Some screenshots show LinkedIn UI chrome (sidebar, etc.) that could be cropped tighter for visual consistency. Worth a designer pass — maybe even re-shooting each post in a consistent crop.
+
+6. GTM LOOP NODES
+   Each node has a colored top-border + a colored step number. The card itself stays white. A designer might want to introduce subtle colored backgrounds or icon glyphs per node for more visual differentiation at a glance.
+
+7. MOBILE LAYOUT
+   All sections collapse to single-column at 840-900px breakpoints. The orbital becomes harder to interact with on touch. Worth a designer pass for tap targets, font sizes, and the side-by-side problem→orbital layout on phones (currently arrow rotates 90° to point down — works but could be more elegant).
+
+8. TYPOGRAPHY RHYTHM
+   Section h2 sizes vary intentionally (display class on hero/CTA, h1 on most sections, h2 on subheads). A designer might want to tighten this scale to feel more disciplined.
+
+
+VOICE RULES (for any copy revision)
+====================================
+These rules exist because the page went through a heavy editorial pass. Worth holding to if any copy gets reworked:
+
+- Em-dashes: 0 in user-facing copy (was 14+ in early drafts). Don't add them back without reason.
+- "Not X. Not Y." parallel structure: only ONE instance on the page allowed (currently in Section 2 / Problem). Don't add another.
+- No rhetorical reveals ("You are not X anymore. You are Y.")
+- No chained rhetorical poetry ("X creates Y. Y feeds Z. Z does W.")
+- Lede under 30 words per section. Body paragraphs under 50 words.
+- Proof stats stated ONCE on the page (275K followers, 24 voices, $151K MRR all live in Section 7 only).
+- "Claude" not "Claude Code" in voice copy. Exception: real LinkedIn post titles in the proof grid that literally contain "Claude Code" — those are factual and stay.
+
+
+SEO + ACCESSIBILITY NOTES
+=========================
+- Single H1 (hero only). Rest are H2/H3.
+- Page title: "LinkedIn Personal Brand Accelerator · ColdIQ · AI content system for B2B founders"
+- FAQ has JSON-LD structured data for Google rich results.
+- Color contrast is WCAG AA on all text. Worth a designer pass on the muted gray text on light backgrounds to confirm — especially the .small captions.
+
+
+OPEN QUESTIONS
+==============
+- Is the orbital hub's purple/blue/teal gradient too generic-AI? Should it switch to ColdIQ's palette (coral, deep blue, off-black)?
+- Should the EGC playbook PNG get a landscape rework to balance GTM column heights cleanly?
+- The Quality Loop sequential ping-pulse vs. GTM continuous arc-flow — does the contrast read clearly, or do both diagrams feel "the same kind of animation" to a fresh viewer?
+- Should the post-card metrics strip be more visually expressive (icons next to numbers, color-coded by metric type)?
+- The hero playbook image: clean re-export from source, or keep the CSS clip hack?
+
+Drop comments inline on the live page (any review tool: Figma, Penpot, Loom walkthrough, or just annotations on this doc) — your preferred workflow.

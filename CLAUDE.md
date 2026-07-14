@@ -31,9 +31,9 @@
 - Mobile-first responsive
 
 ## Brand Assets
-- Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
-- If assets exist there, use them. Do not use placeholders where real assets are available.
-- If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
+- For Frontal brand work, the single source of truth is the private repo `Frontal-so/frontal-brand-kit` (SSH `git@github.com:Frontal-so/frontal-brand-kit.git`). PULL THE LATEST before designing, then use its exact logos, colors, and fonts.
+- The local `brand_assets/` folder is a STALE copy of the old Frontal brand. Do not use it for Frontal work; the repo supersedes it.
+- Do not use placeholders where real assets exist, and do not invent brand colors.
 
 ## Anti-Generic Guardrails
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.

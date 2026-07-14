@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "echo 'Static site - bundle already in dist-orbital/, no build needed.'",
+  "installCommand": "echo 'No install needed for static deployment.'",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/linkedin-accelerator", "destination": "/", "permanent": true },
+    { "source": "/linkedin-accelerator.html", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/dist-orbital/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/brand_assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}

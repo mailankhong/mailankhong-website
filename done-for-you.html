@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Done-For-You LinkedIn Content for Founders | LinkedIn Growth Engine by Frontal</title>
+<meta name="description" content="Done-for-you LinkedIn for B2B founders: 16 posts a month in your voice, daily engagement, and audience growth, run for you. Talk to Mai-Lan with Frontal." />
+<meta name="keywords" content="done-for-you LinkedIn, LinkedIn content for founders, LinkedIn ghostwriting, B2B LinkedIn marketing, LinkedIn growth, LinkedIn management" />
+<link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
+  <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/css/glass-tokens.css" />
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<link rel="stylesheet" href="assets/css/site.css" />
+<style>
+  /* ===== DFY hero: full-bleed floating post wall (big cards, blurred/faded left) ===== */
+  .hero-dfy{ position:relative; overflow:hidden; min-height:600px; display:flex; flex-direction:column; justify-content:center; padding:56px 0; }
+  .hero-dfy .wrap{ position:relative; z-index:2; }
+  .hero-dfy .hero-left{ max-width:540px; }
+  .hero-visual{ position:absolute; top:0; right:0; bottom:0; width:60%; z-index:0;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 40%);
+            mask-image:linear-gradient(90deg, transparent 0%, #000 40%); }
+  .hero-visual::after{ content:""; position:absolute; inset:0; z-index:3; pointer-events:none;
+    -webkit-backdrop-filter:blur(7px); backdrop-filter:blur(7px);
+    -webkit-mask-image:linear-gradient(90deg, #000 10%, transparent 48%);
+            mask-image:linear-gradient(90deg, #000 10%, transparent 48%); }
+  .post-wall{ position:absolute; inset:0; overflow:hidden;
+    -webkit-mask-image:linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image:linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent); }
+  .post-wall-inner{ display:grid; grid-template-columns:1fr 1fr; gap:16px; height:100%; padding-left:7%; }
+  .pw-col{ display:flex; flex-direction:column; gap:16px; will-change:transform; }
+  .pw-col.up{ animation:pwScroll 55s linear infinite; }
+  .pw-col.down{ animation:pwScroll 55s linear infinite reverse; }
+  @keyframes pwScroll{ from{transform:translateY(0)} to{transform:translateY(-50%)} }
+  .pw-card{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.12); box-shadow:0 16px 40px rgba(90,72,120,0.13); }
+  .pw-card img{ width:100%; display:block; }
+
+  /* ===== content-engine orbital (borrowed from the DWY page) ===== */
+  .orbital{ position:relative; width:100%; max-width:480px; aspect-ratio:1; margin:30px auto 6px; }
+  .orb-orbit{ position:absolute; inset:10%; border:1px dashed rgba(255,255,255,0.08); border-radius:50%; }
+  .orb-orbit.two{ inset:27%; }
+  .orb-core{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3; width:122px; height:122px; border-radius:50%; cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; text-align:center;
+    background:radial-gradient(circle, rgba(199,224,112,0.18), rgba(255,255,255,0.03) 72%);
+    border:1px solid rgba(150,180,80,0.30); box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 0 42px rgba(199,224,112,0.18); }
+  .orb-core::before{ content:""; position:absolute; inset:-12px; border-radius:50%; z-index:-1;
+    background:radial-gradient(circle, rgba(199,224,112,0.40), transparent 66%); filter:blur(9px); animation:pulse 3.6s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:.9;transform:scale(1.12)} }
+  .orb-core .oc-l{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:1.2px; text-transform:uppercase; color:#FFB089; }
+  .orb-core .oc-t{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:15px; color:var(--cream); letter-spacing:-0.01em; line-height:1.02; }
+  .orb-spin{ position:absolute; inset:0; animation:orbspin 60s linear infinite; }
+  @keyframes orbspin{ to{ transform:rotate(360deg) } }
+  .orb-node{ position:absolute; width:0; height:0; }
+  .on-card{ display:flex; align-items:center; gap:10px; width:154px; margin-left:-77px; margin-top:-25px; padding:10px 13px; border-radius:12px; cursor:pointer;
+    background:rgba(19,19,25,0.92); border:1px solid rgba(255,255,255,0.12); box-shadow:0 10px 26px rgba(90,72,120,0.12);
+    animation:orbspin 60s linear infinite reverse; transition:border-color .2s var(--ease), box-shadow .2s var(--ease); }
+  .on-dot{ width:9px; height:9px; border-radius:50%; flex:none; background:var(--nc); box-shadow:0 0 10px var(--nc); }
+  .on-name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:13px; color:var(--cream); line-height:1.05; }
+  .on-role{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.4px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  .orbital.paused .orb-spin, .orbital.paused .on-card{ animation-play-state:paused; }
+  .on-card.active{ border-color:var(--nc); box-shadow:0 0 0 1px var(--nc), 0 12px 30px rgba(90,72,120,0.13), 0 0 26px -4px var(--nc); }
+  .orb-hint{ text-align:center; font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:#9A9184; margin-top:10px; }
+  .orb-detail{ max-width:560px; margin:14px auto 0; padding:18px 20px; }
+  .od-head{ display:flex; align-items:center; gap:11px; margin-bottom:9px; }
+  .od-dot{ width:10px; height:10px; border-radius:50%; flex:none; background:var(--nc,#6E56CF); box-shadow:0 0 11px var(--nc,#6E56CF); }
+  .od-name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:15px; color:var(--cream); }
+  .od-role{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:2px; }
+  .od-content{ font-size:14px; line-height:1.56; color:#6E675C; }
+
+  /* ===== onboarding stepper (from the DWY page) ===== */
+  .stepper-nav{ display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 18px; }
+  .step-pill{ display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; background:none; border:none; padding:0; flex:1 1 auto; min-width:72px; transition:transform .2s var(--ease); }
+  .step-pill:hover{ transform:translateY(-2px); }
+  .step-pill .dot{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'DM Sans',monospace; font-size:10px; font-weight:600; color:#FBFAF6; background:var(--c,#A6A6AE); transition:box-shadow .25s var(--ease), transform .2s var(--ease); }
+  .step-pill .wk{ font-family:'DM Sans',monospace; font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; }
+  .step-pill.active .dot{ box-shadow:0 0 0 4px rgba(255,255,255,0.06), 0 0 18px var(--c); transform:scale(1.09); }
+  .step-pill.active .wk{ color:var(--cream); }
+  .step-pill:focus-visible{ outline:2px solid #6E56CF; outline-offset:3px; border-radius:8px; }
+  .stepper-panel{ padding:28px 30px; min-height:158px; }
+  .sp-top{ display:flex; align-items:center; gap:12px; margin-bottom:13px; flex-wrap:wrap; }
+  .sp-week{ font-family:'DM Sans',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--grey); }
+  .sp-phase{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; padding:4px 10px; border-radius:6px; color:#FBFAF6; font-weight:600; }
+  .stepper-panel h3{ font-size:21px; letter-spacing:-0.02em; margin-bottom:11px; color:var(--cream); }
+  .stepper-panel .sp-body{ font-size:15px; line-height:1.6; color:#6E675C; max-width:72ch; }
+
+  /* ===== four-pillars map (toward LinkedIn growth) ===== */
+  .pillars-map{ margin-top:30px; }
+  .pm-roof{ display:flex; align-items:center; justify-content:center; gap:13px; margin:0 auto; padding:16px 28px; max-width:390px; border-radius:14px; position:relative; z-index:2;
+    background:linear-gradient(165deg, rgba(199,224,112,0.17), rgba(199,224,112,0.04)); border:1px solid rgba(150,180,80,0.32);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 14px 40px rgba(0,0,0,0.4), 0 0 36px rgba(199,224,112,0.12); }
+  .pm-roof .ph-linkedin-logo{ font-size:28px; color:#6E56CF; }
+  .pm-roof .pm-t{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:19px; color:#2A2723; letter-spacing:-0.01em; }
+  .pm-roof .pm-up{ font-size:22px; color:var(--emerald); animation:pmUp 2.4s ease-in-out infinite; }
+  @keyframes pmUp{ 0%,100%{ transform:translateY(0); opacity:.8 } 50%{ transform:translateY(-4px); opacity:1 } }
+  .pm-tree{ position:relative; height:50px; }
+  .pm-trunk{ position:absolute; left:50%; top:0; width:2px; height:22px; transform:translateX(-50%); background:linear-gradient(180deg, rgba(199,224,112,.75), rgba(150,180,80,.4)); }
+  .pm-bus{ position:absolute; left:12%; right:12%; top:21px; height:2px; background:linear-gradient(90deg, transparent, rgba(150,180,80,.45) 14%, rgba(150,180,80,.45) 86%, transparent); }
+  .pm-branches{ position:absolute; left:0; right:0; top:21px; bottom:0; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .pm-bcell{ position:relative; }
+  .pm-branch{ position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%); background:rgba(255,255,255,0.12); }
+  .pm-flow{ position:absolute; left:50%; top:0; width:8px; height:8px; border-radius:50%; transform:translate(-50%,0); background:#FFD9C4;
+    box-shadow:0 0 14px 3px rgba(199,224,112,0.9), 0 0 5px 1px rgba(255,255,255,0.95);
+    opacity:0; animation:pmFlow 2.2s cubic-bezier(.42,0,.5,1) infinite; animation-delay:var(--dl,0s); }
+  @keyframes pmFlow{ 0%{ transform:translate(-50%,0); opacity:0 } 14%{ opacity:1 } 82%{ transform:translate(-50%,27px); opacity:1 } 100%{ transform:translate(-50%,29px); opacity:0 } }
+  @media (prefers-reduced-motion:reduce){ .pm-flow{ display:none; } }
+  .pm-cols{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .pm-col{ position:relative; padding:22px 20px 24px; border-radius:14px; min-height:188px;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);
+    opacity:0; transform:translateY(26px); display:flex; flex-direction:column; }
+  .pillars-map.in .pm-col{ opacity:1; transform:none; transition:opacity .6s var(--ease), transform .65s var(--ease-out-expo); transition-delay:calc(var(--d)*0.12s + .12s); }
+  .pm-col::before{ display:none; }
+  .pm-col .pm-n{ width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+    font-family:'DM Sans',monospace; font-size:12px; font-weight:600; color:#6E56CF; background:rgba(199,224,112,0.10); border:1px solid rgba(150,180,80,0.30); }
+  .pm-col h3{ font-size:15px; margin-bottom:8px; color:var(--cream); line-height:1.2; }
+  .pm-col p{ font-size:12.5px; line-height:1.5; color:#9A9184; }
+
+  /* ===== follower-growth data-viz ===== */
+  .growth-viz{ margin-top:14px; padding:22px 24px; }
+  .gv-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px; flex-wrap:wrap; }
+  .gv-title{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
+  .gv-badge{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:16px; color:#6E56CF; }
+  .gv-chart{ width:100%; height:130px; display:block; }
+  .gv-line{ fill:none; stroke:var(--orange); stroke-width:2.5; stroke-linecap:round; stroke-dasharray:820; stroke-dashoffset:820; }
+  .growth-viz.in .gv-line{ animation:gvDraw 1.7s var(--ease-out-expo) forwards .2s; }
+  @keyframes gvDraw{ to{ stroke-dashoffset:0 } }
+  .gv-end{ opacity:0; }
+  .growth-viz.in .gv-end{ animation:gvDot .4s ease forwards 1.6s; }
+  @keyframes gvDot{ to{ opacity:1 } }
+  .gv-x{ display:flex; justify-content:space-between; font-family:'DM Sans',monospace; font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:6px; }
+  .gv-foot{ font-size:13px; color:#6E675C; margin-top:14px; line-height:1.5; }
+  .gv-foot b{ color:var(--cream); }
+  @media (max-width:720px){ .pm-cols{ grid-template-columns:1fr 1fr; } }
+  @media (prefers-reduced-motion:reduce){ .pm-up{ animation:none !important; } .gv-line{ stroke-dashoffset:0 !important; } .gv-end{ opacity:1 !important; } .pillars-map.in .pm-col{ transition:none; } }
+
+  @media (max-width:920px){
+    .hero-dfy{ min-height:0; padding:36px 0 0; }
+    .hero-visual{ position:relative; width:100%; height:340px; margin-top:26px; -webkit-mask-image:none; mask-image:none; }
+    .hero-visual::after{ display:none; }
+  }
+  @media (max-width:720px){
+    .orbital{ aspect-ratio:auto; max-width:none; margin:18px 0 0; }
+    .orb-spin{ position:static; animation:none; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .orb-orbit{ display:none; }
+    .orb-core{ position:static; transform:none; width:auto; height:auto; flex-direction:row; gap:11px; border-radius:12px; padding:14px 16px; grid-column:1 / -1; justify-content:center; }
+    .orb-core::before{ display:none; }
+    .orb-node{ position:static; width:auto; height:auto; }
+    .on-card{ position:static; width:auto; margin:0; animation:none !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ .pw-col,.orb-spin,.on-card{ animation:none !important; } .orb-core::before{ animation:none !important; } }
+</style>
+</head>
+<body class="frontal-dark">
+
+<div class="bg" aria-hidden="true">
+  <div class="mesh"></div><div class="grid"></div><div class="spot"></div><div class="grain"></div><div class="vig"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
+    <nav class="nav-links">
+      <a href="#why">Why a system</a>
+      <a href="#parts">The four parts</a>
+      <a href="#included">What's included</a>
+      <a href="#fit">Best fit</a>
+      <a href="#faq">FAQ</a>
+      <a href="about-me.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="hero hero-dfy">
+  <div class="wrap">
+    <div class="hero-left">
+      <span class="eyebrow reveal">Done-for-you LinkedIn content</span>
+      <h1 class="reveal">The LinkedIn Growth <span class="orange">Engine</span></h1>
+      <p class="lead reveal">We run your LinkedIn end to end: posts in your voice, daily engagement, and audience growth, under your name. You get the reach and the inbound. We do the work.</p>
+      <div class="hero-actions reveal">
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+        <a href="#why" class="btn btn-ghost">See how it works</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="post-wall">
+      <div class="post-wall-inner">
+        <div class="pw-col up">
+          <div class="pw-card"><img src="assets/proof/post-alex.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-luca.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-dujam.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-ivan.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-mailan.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-alex.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-luca.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-dujam.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-ivan.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-mailan.png" alt=""></div>
+        </div>
+        <div class="pw-col down">
+          <div class="pw-card"><img src="assets/proof/post-soheil.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-shubham.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-kenny.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-mailan.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-alex.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-soheil.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-shubham.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-kenny.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-mailan.png" alt=""></div>
+          <div class="pw-card"><img src="assets/proof/post-alex.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" style="border-top:none;padding:4px 0 2px">
+  <div class="wrap">
+    <div class="stat-cards">
+      <div class="card stat reveal"><div class="big">16 posts a month</div><div class="sub">In your voice, fully designed</div></div>
+      <div class="card stat reveal"><div class="big">Daily engagement</div><div class="sub">Comments and replies on every post</div></div>
+      <div class="card stat reveal"><div class="big">Audience growth</div><div class="sub">The right buyers, added weekly</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 WHY A SYSTEM ===== -->
+<section id="why" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Why it works</span>
+        <h2 class="reveal">Most agencies sell posts.<br>Growth takes four parts.</h2></div>
+      <div class="sec-num reveal">01 / Why a system</div>
+    </div>
+    <p class="lead reveal">Posting is the easy part. Reach, audience, and pipeline come from four parts run together every week, each feeding the next.</p>
+
+    <div id="parts" class="pillars-map reveal">
+      <div class="pm-roof"><i class="ph ph-linkedin-logo"></i><span class="pm-t">LinkedIn growth</span><i class="ph ph-trend-up pm-up"></i></div>
+      <div class="pm-tree" aria-hidden="true">
+        <span class="pm-trunk"></span>
+        <span class="pm-bus"></span>
+        <div class="pm-branches">
+          <div class="pm-bcell"><span class="pm-branch"></span><span class="pm-flow" style="--dl:0s"></span></div>
+          <div class="pm-bcell"><span class="pm-branch"></span><span class="pm-flow" style="--dl:.38s"></span></div>
+          <div class="pm-bcell"><span class="pm-branch"></span><span class="pm-flow" style="--dl:.76s"></span></div>
+          <div class="pm-bcell"><span class="pm-branch"></span><span class="pm-flow" style="--dl:1.14s"></span></div>
+        </div>
+      </div>
+      <div class="pm-cols">
+        <div class="pm-col" style="--d:0"><div class="pm-n">01</div><h3>Content &amp; Authority</h3><p>Positioning, your ideal customer, your real voice, and 16 designed posts a month.</p></div>
+        <div class="pm-col" style="--d:1"><div class="pm-n">02</div><h3>Engagement &amp; Commenting</h3><p>A specialist engages in your voice on every post, in the first hour that decides reach.</p></div>
+        <div class="pm-col" style="--d:2"><div class="pm-n">03</div><h3>Audience Growth</h3><p>We grow your network on autopilot with people who already care about your space.</p></div>
+        <div class="pm-col" style="--d:3"><div class="pm-n">04</div><h3>The Performance Lab</h3><p>Every month we read the numbers and adjust: what earned reach, the right followers, what to do next.</p></div>
+      </div>
+    </div>
+
+    <div class="honest reveal">
+      <h3>Why this beats a ghostwriter or a content mill</h3>
+      <p>AI made average content free. What you cannot buy cheaply is content that helps you stand out, and a team running LinkedIn growth as one system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 THE GROWTH PARTS ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div></div>
+      <div class="sec-num reveal">02 / The growth parts</div>
+    </div>
+
+    <!-- Content deep dive (Part 01) -->
+    <div class="deep">
+      <span class="eyebrow reveal">Part 01 · Content &amp; Authority</span>
+      <h2 class="reveal">The content is the hard part.<br>So we engineered it.</h2>
+      <p class="lead reveal">Average is free now. Standing out is not. Every post runs through the same engine that shipped 581 posts across 24 experts: research, your voice, and a quality bar, before it goes out.</p>
+      <div class="orbital reveal" id="orbital">
+        <div class="orb-orbit"></div><div class="orb-orbit two"></div>
+        <div class="orb-core" id="orbCore"><span class="oc-l">The engine</span><span class="oc-t">One<br>system</span></div>
+        <div class="orb-spin">
+          <div class="orb-node" style="top:6%;left:50%" data-name="Voice" data-role="Voice profile" data-content="A voice profile built from how you actually talk, captured in conversation, not a form. People recognize the posts as you, not AI."><div class="on-card" style="--nc:#6E56CF"><span class="on-dot"></span><div><div class="on-name">Voice</div><div class="on-role">Voice profile</div></div></div></div>
+          <div class="orb-node" style="top:29%;left:88%" data-name="Research" data-role="Signal layer" data-content="Six research workers scan your market every week: what is performing, the pain your buyers post about, the frameworks worth adapting. You never start from a blank page."><div class="on-card" style="--nc:#4AB6D6"><span class="on-dot"></span><div><div class="on-name">Research</div><div class="on-role">Signal layer</div></div></div></div>
+          <div class="orb-node" style="top:71%;left:88%" data-name="Hooks" data-role="Hook engine" data-content="A hook engine drafts and ranks dozens of openers per idea, trained on what stops the scroll. Every post opens strong, not like the rest of the feed."><div class="on-card" style="--nc:#E6A24E"><span class="on-dot"></span><div><div class="on-name">Hooks</div><div class="on-role">Hook engine</div></div></div></div>
+          <div class="orb-node" style="top:94%;left:50%" data-name="Draft" data-role="Copy" data-content="Full drafts in your documented voice, structured to land: a clear arc, real specifics, and a close that earns the next step."><div class="on-card" style="--nc:#8E8EE6"><span class="on-dot"></span><div><div class="on-name">Draft</div><div class="on-role">Copy</div></div></div></div>
+          <div class="orb-node" style="top:71%;left:12%" data-name="Design" data-role="Visual" data-content="Every post is built to be seen: designed graphics and carousels that earn the scroll-stop, not stock templates."><div class="on-card" style="--nc:#BC7AD6"><span class="on-dot"></span><div><div class="on-name">Design</div><div class="on-role">Visual</div></div></div></div>
+          <div class="orb-node" style="top:29%;left:12%" data-name="Grade" data-role="Quality bar" data-content="Every draft is scored against a real quality bar before it ships. Weak posts get fixed or killed. Nothing average goes out under your name."><div class="on-card" style="--nc:#3FC878"><span class="on-dot"></span><div><div class="on-name">Grade</div><div class="on-role">Quality bar</div></div></div></div>
+        </div>
+      </div>
+      <p class="orb-hint reveal" id="orbHint">Tap any layer to see how it works.</p>
+      <div class="card orb-detail reveal" id="orbDetail" hidden>
+        <div class="od-head"><span class="od-dot"></span><div><div class="od-name"></div><div class="od-role"></div></div></div>
+        <p class="od-content"></p>
+      </div>
+    </div>
+
+    <!-- Engagement deep dive -->
+    <div class="deep">
+      <span class="eyebrow reveal">Part 02 · Engagement &amp; Commenting</span>
+      <h2 class="reveal">A specialist works every post, in your voice.</h2>
+      <ul class="feat-list reveal">
+        <li><span class="sq"></span><p><strong>The first hour, covered.</strong> Your specialist warms the feed 30 minutes before each post, then answers comments as they land. Fast early engagement is what gets the post shown to more people.</p></li>
+        <li><span class="sq"></span><p><strong>Seen between posts.</strong> A weekly comment routine in your voice, across your buyers and peers. You stay visible on the days you do not post.</p></li>
+        <li><span class="sq"></span><p><strong>Trained on you.</strong> Calibrated on your past posts and tone. Clear limits: no politics, nothing sensitive without your sign-off.</p></li>
+        <li><span class="sq"></span><p><strong>Safe and steady.</strong> Credentials in an encrypted vault, access matched to you, every action human-paced.</p></li>
+      </ul>
+      <div class="card timeline reveal">
+        <div class="tl-label">How a single post gets worked</div>
+        <div class="tl-track">
+          <div class="tl-step"><div class="tl-dot"></div><div class="t">T minus 30</div><div class="d">Specialist warms the feed, engaging your target profiles.</div></div>
+          <div class="tl-step live"><div class="tl-dot"></div><div class="t">Post goes live</div><div class="d">Early speed tells the algorithm to keep showing it.</div></div>
+          <div class="tl-step"><div class="tl-dot"></div><div class="t">T plus 30</div><div class="d">Comments answered in your voice, as they land.</div></div>
+          <div class="tl-step"><div class="tl-dot"></div><div class="t">Rest of day</div><div class="d">Replies continue, results logged for the Performance Lab.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audience deep dive -->
+    <div class="deep">
+      <span class="eyebrow reveal">Part 03 · Audience Growth</span>
+      <h2 class="reveal">Your audience grows on autopilot.</h2>
+      <div class="two-col reveal">
+        <div class="card"><h3>We find the right people</h3><p>We map your market: the people your buyers follow, your peers, your competitors, and the keywords that matter. When someone engages there, they care about your space.</p></div>
+        <div class="card"><h3>We connect with them for you</h3><p>We send connection requests, human-paced and capped. No pitches, no spam. Just the right people joining your audience every week.</p></div>
+      </div>
+      <div class="card growth-viz reveal">
+        <div class="gv-head"><span class="gv-title">Targeted followers · one account under 10K</span><span class="gv-badge">+3,142 in 4 months</span></div>
+        <svg class="gv-chart" viewBox="0 0 600 130" preserveAspectRatio="none">
+          <defs><linearGradient id="gvGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(199,224,112,0.32)"/><stop offset="1" stop-color="rgba(199,224,112,0)"/></linearGradient></defs>
+          <path class="gv-area" d="M12,110 C 140,106 175,90 300,74 C 425,58 470,30 588,15 L588,130 L12,130 Z" fill="url(#gvGrad)"/>
+          <path class="gv-line" d="M12,110 C 140,106 175,90 300,74 C 425,58 470,30 588,15"/>
+          <circle class="gv-end" cx="588" cy="15" r="5.5" fill="#6E56CF"/>
+        </svg>
+        <div class="gv-x"><span>Month 1</span><span>2</span><span>3</span><span>4</span></div>
+        <div class="gv-foot">Roughly doubled, at a <b>72% request-accept rate</b>. Every new follower is someone who already cares about their space, not a vanity number.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 INCLUDED ===== -->
+<section id="included" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">One package, everything included</span>
+        <h2 class="reveal">Everything in the LinkedIn Growth Engine.</h2></div>
+      <div class="sec-num reveal">03 / What's included</div>
+    </div>
+    <div class="includes-grid">
+      <div class="card includes reveal">
+        <div class="tag">The package</div>
+        <h3>Run for you, end to end</h3>
+        <ul class="inc-list">
+          <li><span class="dot"></span>Positioning, your ideal customer, and a voice built from your own words</li>
+          <li><span class="dot"></span>16 posts a month, design included</li>
+          <li><span class="dot"></span>A dedicated engagement specialist, in your voice</li>
+          <li><span class="dot"></span>Coverage before and after every post</li>
+          <li><span class="dot"></span>A weekly comment routine across your market</li>
+          <li><span class="dot"></span>Audience growth, built and run for you</li>
+          <li><span class="dot"></span>A monthly report with a clear next step</li>
+          <li><span class="dot"></span>Direct strategy calls with your content lead</li>
+        </ul>
+      </div>
+      <div class="card ask reveal">
+        <div class="tag">What we ask of you</div>
+        <div class="ask-item">
+          <h3>30 minutes a week, early on</h3>
+          <p>A short weekly call while we learn your voice and strategy, less over time.</p>
+        </div>
+        <div class="ask-item">
+          <h3>About 2 hours a month</h3>
+          <p>Quick review of posts and design, on your schedule. The more you feed it, the more it sounds like you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEST FIT ===== -->
+<section id="fit" class="sec light">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Who it is for</span>
+        <h2 class="reveal">Built for founders growing an audience.</h2></div>
+    </div>
+    <p class="lead reveal">This grows your reach and your audience. Pipeline follows. It fits best for second-time and exited founders who have built before and are building again.</p>
+    <div class="fit-grid">
+      <div class="card fit yes reveal">
+        <div class="fh"><i class="ph-fill ph-check-circle"></i><span>This is for you if</span></div>
+        <ul>
+          <li><i class="ph ph-check"></i>You are a founder or operator, building again.</li>
+          <li><i class="ph ph-check"></i>Your profile should be working for the company, and it is not.</li>
+          <li><i class="ph ph-check"></i>You will never have the hours to run it yourself.</li>
+          <li><i class="ph ph-check"></i>You are in B2B, past product-market fit, and want credibility that lasts.</li>
+          <li><i class="ph ph-check"></i>You want a team that runs the whole thing, not a freelancer sending drafts.</li>
+        </ul>
+      </div>
+      <div class="card fit no reveal">
+        <div class="fh"><i class="ph ph-x-circle"></i><span>This is not the fit if</span></div>
+        <ul>
+          <li><i class="ph ph-minus"></i>You want cheap volume and do not care how it reads.</li>
+          <li><i class="ph ph-minus"></i>You want viral spikes, not a lasting audience.</li>
+          <li><i class="ph ph-minus"></i>You will not share your point of view.</li>
+          <li><i class="ph ph-minus"></i>You want pure lead-gen, with no interest in reach.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="icp-note reveal"><b>Frontal works with B2B companies from $5M to $100M in revenue, in any industry.</b> If that is you, the fit is usually a yes.</p>
+  </div>
+</section>
+
+<!-- ===== 04 GETTING STARTED ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Onboarding</span>
+        <h2 class="reveal">Live in two weeks. Then it compounds.</h2></div>
+      <div class="sec-num reveal">04 / Getting started</div>
+    </div>
+    <div class="stepper-nav reveal" id="dfyStepperNav"></div>
+    <div class="card stepper-panel reveal" id="dfyStepperPanel"></div>
+    <div class="honest reveal" style="margin-top:18px">
+      <h3>Honest timelines</h3>
+      <p>Audience growth compounds, it does not spike. You will see momentum in the first weeks. The shift people notice takes a few months. We say so upfront.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="sec light">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+      <span class="eyebrow reveal">Questions</span>
+      <h2 class="reveal">The things founders ask first.</h2>
+    </div>
+    <div class="faq">
+      <details class="q reveal"><summary>How much of my time does this take?<i class="ph ph-plus"></i></summary><div class="a">A 30-minute call most weeks early on, plus about 2 hours a month of feedback. We bring the drafts. You bring your point of view.</div></details>
+      <details class="q reveal"><summary>Is it really my voice?<i class="ph ph-plus"></i></summary><div class="a">Yes. We build a voice system from your own posts, calls, and voice notes, and you sign off before anything goes live. The goal is content people recognize as you, not as AI.</div></details>
+      <details class="q reveal"><summary>Do I have to drop my current writer or agency?<i class="ph ph-plus"></i></summary><div class="a">No. We can run alongside what you already have, or take the whole thing. Most founders move it all to us once they see the difference in reach.</div></details>
+      <details class="q reveal"><summary>Who owns the account and the content?<i class="ph ph-plus"></i></summary><div class="a">You do, always. We work under your name, credentials stay in an encrypted vault, and everything we produce is yours to keep.</div></details>
+      <details class="q reveal"><summary>What if I am starting from near zero?<i class="ph ph-plus"></i></summary><div class="a">Common and fine. The audience engine grows the right network from day one, while the content gives them a reason to follow.</div></details>
+      <details class="q reveal"><summary>How is this different from a content mill?<i class="ph ph-plus"></i></summary><div class="a">A mill writes posts and stops. We run your content, engagement, and audience as one system, then adjust to the results.</div></details>
+      <details class="q reveal"><summary>How fast do we start seeing results?<i class="ph ph-plus"></i></summary><div class="a">You are live in about two weeks. Engagement and network growth show in the first weeks. The audience shift people notice builds over several months.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<!-- ===== MEET YOUR GUIDE ===== -->
+<section id="guide" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Meet your guide</span>
+        <h2 style="max-width:15ch;margin-top:14px">The operator behind the system.</h2>
+      </div>
+      <div class="sec-num">MEET MAI-LAN</div>
+    </div>
+    <div class="guide-grid reveal">
+      <a class="guide-shot card" href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" aria-label="Mai-Lan Khong on LinkedIn">
+        <img src="assets/proof/mailan-linkedin.png" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
+      </a>
+      <div class="guide-copy">
+        <p class="lead">Hi, I'm <strong>Mai-Lan Khong</strong>, Content Strategist at Frontal, trusted by 275+ tech companies. I help B2B founders turn LinkedIn into a channel that builds pipeline, and I grew my own account to Favikon's #2 creator worldwide.</p>
+        <p>Whether we build the engine with your team or run it for you, you are working with an operator who has done it in the open, not a template.</p>
+        <div class="guide-actions">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+          <a href="about-me.html" class="btn btn-ghost">About Mai-Lan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="sec" style="border-top:none">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 style="max-width:none">Make your profile work for you.</h2>
+      <p>Message Mai-Lan on LinkedIn. She'll confirm scope and get your first voice session on the calendar the same week.</p>
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener"" class="btn btn-solid" style="padding:14px 26px;font-size:15px">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
+        <p class="foot-tag">Done-for-you LinkedIn content for B2B founders. We grow your reach, your audience, and your inbound, under your name.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>The engine</h4>
+          <a href="#why">Why a system</a>
+          <a href="#parts">The four parts</a>
+          <a href="#included">What's included</a>
+          <a href="#fit">Best fit</a>
+        </div>
+        <div class="foot-col">
+          <h4>Frontal</h4>
+          <a href="https://frontal.so" target="_blank" rel="noopener">frontal.so</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener">Talk to Mai-Lan</a>
+          <a href="mailto:mai-lan@frontal.so">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Mai-Lan Khong · LinkedIn Growth Engine</span>
+      <span>© 2026 Mai-Lan Khong. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // orbital: click a layer to expand its detail (rotation pauses)
+  (function(){
+    const orbital=document.getElementById('orbital'); const detail=document.getElementById('orbDetail');
+    const hint=document.getElementById('orbHint'); const core=document.getElementById('orbCore');
+    if(!orbital||!detail) return;
+    let active=null;
+    function close(){ if(active){ active.querySelector('.on-card').classList.remove('active'); active=null; }
+      orbital.classList.remove('paused'); detail.hidden=true; if(hint) hint.style.display=''; }
+    function open(node){ const card=node.querySelector('.on-card');
+      if(active===node){ close(); return; }
+      if(active) active.querySelector('.on-card').classList.remove('active');
+      active=node; orbital.classList.add('paused'); card.classList.add('active');
+      detail.style.setProperty('--nc', card.style.getPropertyValue('--nc').trim());
+      detail.querySelector('.od-name').textContent=node.dataset.name;
+      detail.querySelector('.od-role').textContent=node.dataset.role;
+      detail.querySelector('.od-content').textContent=node.dataset.content;
+      detail.hidden=false; if(hint) hint.style.display='none'; }
+    document.querySelectorAll('#orbital .orb-node').forEach(node=>{ const card=node.querySelector('.on-card');
+      card.setAttribute('role','button'); card.setAttribute('tabindex','0');
+      card.addEventListener('click',()=>open(node));
+      card.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(node); } }); });
+    if(core) core.addEventListener('click',close);
+  })();
+
+  // onboarding stepper (click a step to see what happens that week)
+  (function(){
+    const steps=[
+      {short:'W1',week:'Week 1',phase:'Setup',c:'#4AB6D6',title:'Strategy, voice, and targeting',body:'Positioning, your ideal customer, and your first voice session. We also build your targeting: the people, peers, and keywords in your market.'},
+      {short:'W1-2',week:'Week 1 to 2',phase:'Calibration',c:'#8E8EE6',title:'Specialist calibration',body:'Secure access, your specialist trains on your voice, and you approve sample engagement. Nothing goes live without your sign-off.'},
+      {short:'W2',week:'Week 2',phase:'Live',c:'#6E56CF',title:'The engine turns on',body:'Posts start publishing, engagement runs behind every one, and we begin growing your audience.'},
+      {short:'M+',week:'Monthly',phase:'Compounding',c:'#3FC878',title:'The loop runs',body:'A report, a strategy call, and the next round of tests. Each month gets sharper.'}
+    ];
+    const nav=document.getElementById('dfyStepperNav'), panel=document.getElementById('dfyStepperPanel');
+    if(!nav||!panel) return;
+    function render(idx){ const s=steps[idx];
+      panel.innerHTML='<div class="sp-top"><span class="sp-week">'+s.week+'</span><span class="sp-phase" style="background:'+s.c+'">'+s.phase+'</span></div><h3>'+s.title+'</h3><p class="sp-body">'+s.body+'</p>';
+      [...nav.children].forEach((b,i)=>b.classList.toggle('active',i===idx)); }
+    steps.forEach((s,i)=>{ const b=document.createElement('button'); b.className='step-pill'; b.style.setProperty('--c',s.c);
+      b.innerHTML='<span class="dot">'+s.short+'</span><span class="wk">'+s.week+'</span>';
+      b.addEventListener('click',()=>render(i)); nav.appendChild(b); });
+    render(0);
+  })();
+
+  // reveal on scroll (transform + opacity only)
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 60) + 'ms';
+    io.observe(el);
+  });
+</script>
+<script src="assets/js/cursor-grid.js" defer></script>
+</body>
+</html>

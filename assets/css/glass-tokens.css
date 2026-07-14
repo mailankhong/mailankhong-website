@@ -1,0 +1,200 @@
+/* Mai-Lan Khong (MLK) glass tokens — DREAMY SOFT-TECH re-skin.
+   Repurposed from the Frontal glass system: same class names / structure, but
+   the palette is MLK's light pastel-mesh brand (pale-lime primary accent,
+   soft-magenta / warm-peach / lavender gradient base, deep-charcoal ink on
+   near-white paper) with frosted-glass surfaces. Body keeps class
+   "frontal-dark" (now a light theme) so no markup changes are needed.
+   Fonts: Playfair Display (display) + DM Sans (body/labels) — see fonts.css. */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+/* PDF SAFETY (kept): strip shadows in print so cards define by border. */
+@media print { *, *::before, *::after { box-shadow: none !important; } }
+
+/* ---------- MLK palette (single source) ---------- */
+:root{
+  --mlk-paper:#FBFAF6;      /* warm near-white base */
+  --mlk-paper-2:#F5F1E8;    /* soft beige, quieter surface */
+  --mlk-ink:#2A2723;        /* deep charcoal — display / headings */
+  --mlk-ink-soft:#4A443C;   /* strong body */
+  --mlk-body:#6E675C;       /* body copy */
+  --mlk-muted:#9A9184;      /* faint labels / meta */
+  --mlk-white:#FFFFFF;
+  --mlk-lime:#C7E070;       /* readable mid-lime — marks, dots, bars */
+  --mlk-lime-soft:#E6F7C2;  /* brand pale lime — fills, glows, CTA */
+  --mlk-lime-deep:#7C9430;  /* readable lime text */
+  --mlk-lav:#C9BCEC;        /* lavender surface */
+  --mlk-lav-deep:#6E56CF;   /* readable lavender — accent text / links */
+  --mlk-peach:#FBD5B4;      /* warm peach surface */
+  --mlk-peach-deep:#E89A5B; /* peach accent */
+  --mlk-mag:#F4C9E4;        /* soft magenta surface */
+  --mlk-mag-deep:#CE6BA6;   /* magenta accent */
+}
+
+/* ---------- ACTIVE THEME (class name kept as .frontal-dark) ---------- */
+.frontal-dark{
+  --bg:var(--mlk-paper);
+  --cream:var(--mlk-ink);          /* "bright" text is now charcoal */
+  --grey:var(--mlk-body);
+  --white:var(--mlk-white);
+  --orange:var(--mlk-lime);        /* solid accent mark colour (dots/bars/rules) */
+  --cyan:#5AA8C4; --violet:var(--mlk-lav-deep); --emerald:#5AAE7A;
+  --rose:#D98598; --amber:var(--mlk-peach-deep); --magenta:var(--mlk-mag-deep);
+  --panel-bg:rgba(255,255,255,0.55);
+  --panel-border:1px solid rgba(255,255,255,0.85);
+  --panel-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 10px 34px rgba(90,72,120,0.10);
+  --rule:rgba(42,39,35,0.10);
+  --accent-fill:rgba(230,247,194,0.55); --accent-border:rgba(150,180,80,0.45);
+  --text:var(--grey); --display:var(--cream);
+  background:
+    radial-gradient(46% 40% at 12% 6%, rgba(230,247,194,0.55), transparent 60%),
+    radial-gradient(40% 38% at 88% 4%, rgba(244,201,228,0.45), transparent 62%),
+    radial-gradient(48% 46% at 82% 72%, rgba(201,188,236,0.42), transparent 64%),
+    radial-gradient(42% 40% at 8% 82%, rgba(251,213,180,0.40), transparent 62%),
+    var(--bg);
+}
+
+/* light kept as the same dreamy theme (some assets reference this class) */
+.frontal-light{
+  --bg:var(--mlk-paper); --ink:var(--mlk-ink); --body:var(--mlk-body); --muted:var(--mlk-muted); --white:#FFFFFF;
+  --orange:var(--mlk-lime);
+  --cyan:#5AA8C4; --violet:var(--mlk-lav-deep); --emerald:#5AAE7A;
+  --panel-bg:rgba(255,255,255,0.55);
+  --panel-border:1px solid rgba(255,255,255,0.85);
+  --panel-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 10px 34px rgba(90,72,120,0.10);
+  --rule:rgba(42,39,35,0.10);
+  --accent-fill:rgba(230,247,194,0.55); --accent-border:rgba(150,180,80,0.45);
+  --text:var(--body); --display:var(--ink);
+  background:var(--bg);
+}
+
+/* ---------- shared idiom ---------- */
+.frontal-dark, .frontal-light{
+  color:var(--text);
+  font-family:'DM Sans',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.fr-display{ font-family:'Playfair Display',Georgia,serif;
+  font-weight:600; letter-spacing:-0.01em; line-height:1.08; color:var(--display); }
+/* techy register: labels, eyebrows, section numbers — now DM Sans, tracked caps. */
+.fr-label{ font-family:'DM Sans',ui-sans-serif,sans-serif;
+  font-size:9.5px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; }
+.fr-mono{ font-family:'DM Sans',ui-sans-serif,sans-serif; }
+.fr-glass{ background:var(--panel-bg); border:var(--panel-border);
+  border-radius:18px; box-shadow:var(--panel-shadow); backdrop-filter:blur(14px) saturate(1.2); -webkit-backdrop-filter:blur(14px) saturate(1.2); }
+.fr-callout{ background:var(--accent-fill); border:1px solid var(--accent-border); border-radius:18px; }
+
+/* ---------- the LIME GLASS accent (the dreamy focal treatment) ----------
+   Frosted translucent lime/lavender panel with a specular sheen + soft glow.
+   Reserve for ONE surface per view: the primary CTA, the payoff, the live element. */
+.frontal-dark, .frontal-light{
+  --oglass-fill: linear-gradient(165deg, rgba(230,247,194,0.75), rgba(201,188,236,0.30));
+  --oglass-border: rgba(150,180,80,0.45);
+  --oglass-sheen: linear-gradient(180deg, rgba(255,255,255,0.9), transparent 46%);
+  --oglass-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 14px 40px rgba(90,72,120,0.14), 0 0 34px rgba(199,224,112,0.30);
+  --oglass-text: var(--mlk-ink);
+}
+.fr-glass-accent{
+  position:relative; border-radius:18px;
+  background:var(--oglass-fill);
+  border:1px solid var(--oglass-border);
+  box-shadow:var(--oglass-shadow);
+  backdrop-filter:blur(20px) saturate(1.4); -webkit-backdrop-filter:blur(20px) saturate(1.4);
+  color:var(--oglass-text); overflow:hidden;
+}
+.fr-glass-accent::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:55%; pointer-events:none;
+  border-radius:18px 18px 0 0; background:var(--oglass-sheen);
+}
+/* the primary CTA: a glass-lime button */
+.fr-btn-accent{
+  display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px;
+  font-family:'DM Sans',sans-serif; font-weight:600; cursor:pointer;
+  background:var(--oglass-fill); border:1px solid var(--oglass-border);
+  color:var(--oglass-text); box-shadow:var(--oglass-shadow);
+  backdrop-filter:blur(14px) saturate(1.3); -webkit-backdrop-filter:blur(14px) saturate(1.3);
+  transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.fr-btn-accent:hover{ transform:translateY(-1px);
+  border-color:rgba(150,180,80,0.7); box-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 20px 52px rgba(90,72,120,0.18), 0 0 44px rgba(199,224,112,0.4); }
+
+/* ---------- the SOLID lime (identity / action) ---------- */
+.fr-btn-solid{
+  display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px;
+  font-family:'DM Sans',sans-serif; font-weight:600; cursor:pointer;
+  background:var(--mlk-lime-soft); color:var(--mlk-ink); border:1px solid rgba(150,180,80,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7), 0 8px 26px rgba(199,224,112,0.35);
+  transition:filter .2s ease, box-shadow .25s ease, transform .25s ease;
+}
+.fr-btn-solid:hover{ transform:translateY(-1px); filter:brightness(1.03);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.8), 0 12px 34px rgba(199,224,112,0.5); }
+.fr-chip-solid{ display:inline-flex; align-items:center; gap:6px;
+  font-family:'DM Sans',sans-serif; font-size:9.5px; letter-spacing:.6px; text-transform:uppercase;
+  background:var(--mlk-lime-soft); color:var(--mlk-ink); border-radius:6px; padding:3px 8px; font-weight:700; }
+.fr-dot-solid{ display:inline-block; width:7px; height:7px; border-radius:50%;
+  background:var(--mlk-lav-deep); box-shadow:0 0 8px rgba(110,86,207,0.5); }
+
+/* ---------- the bottom-gap cure ---------- */
+.fr-page{ min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; }
+
+/* premium easing set */
+.frontal-dark, .frontal-light{
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-out-quint:cubic-bezier(.23,1,.32,1);
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --ease-in-quad:cubic-bezier(.55,.085,.68,.53);
+}
+.frontal-dark{ --dim-text:#8C8677; }
+.frontal-light{ --orange-text:var(--mlk-lav-deep); }
+
+/* chamfered corner idiom */
+.cham{ clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px); }
+
+/* the eyebrow chip — frosted lavender pill, tracked caps */
+.fr-eyebrow{
+  display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px;
+  font-family:'DM Sans',ui-sans-serif,sans-serif; font-size:10px; font-weight:600;
+  letter-spacing:1.8px; text-transform:uppercase;
+  color:var(--mlk-lav-deep); background:rgba(201,188,236,0.28); border:1px solid rgba(110,86,207,0.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7), 0 0 20px rgba(201,188,236,0.4);
+  backdrop-filter:blur(14px) saturate(1.3); -webkit-backdrop-filter:blur(14px) saturate(1.3);
+}
+
+/* white logo tile */
+.fr-tile{ --tile-size:36px;
+  width:var(--tile-size); height:var(--tile-size); border-radius:22%;
+  background:#fff; display:flex; align-items:center; justify-content:center; flex:none;
+  box-shadow:0 3px 14px rgba(90,72,120,0.18); }
+.fr-tile img{ max-width:62%; max-height:62%; object-fit:contain; display:block; }
+
+/* ---------- DESIGNED SURFACES ---------- */
+/* line grid — soft charcoal on light */
+.fr-grid-lines{ position:absolute; inset:0; pointer-events:none; --grid-alpha:0.05; --grid-size:34px;
+  background-image:linear-gradient(rgba(42,39,35,var(--grid-alpha)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42,39,35,var(--grid-alpha)) 1px, transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  -webkit-mask-image:radial-gradient(130% 120% at 50% 46%, #000 52%, transparent 96%);
+          mask-image:radial-gradient(130% 120% at 50% 46%, #000 52%, transparent 96%); }
+.frontal-light .fr-grid-lines{
+  background-image:linear-gradient(rgba(42,39,35,var(--grid-alpha)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42,39,35,var(--grid-alpha)) 1px, transparent 1px); }
+
+.fr-grid-dots{ position:absolute; inset:0; pointer-events:none; --grid-alpha:0.06; --grid-size:27px;
+  background-image:radial-gradient(rgba(42,39,35,var(--grid-alpha)) 1px, transparent 1.4px);
+  background-size:var(--grid-size) var(--grid-size);
+  -webkit-mask-image:radial-gradient(120% 100% at 50% 40%, #000 55%, transparent 100%);
+          mask-image:radial-gradient(120% 100% at 50% 40%, #000 55%, transparent 100%); }
+
+/* film grain — kept subtle */
+.fr-grain{ position:absolute; inset:0; pointer-events:none; opacity:0.04;
+  mix-blend-mode:soft-light; background-size:200px 200px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* soft edge vignette — light */
+.fr-vignette{ position:absolute; inset:0; pointer-events:none;
+  box-shadow:inset 0 0 170px 46px rgba(255,255,255,0.5); }
+
+/* the ambient pastel mesh */
+.fr-mesh-orange{ position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(32% 95% at 84% 64%, rgba(201,188,236,0.35) 0%, transparent 62%),
+    radial-gradient(120% 80% at 50% -12%, rgba(230,247,194,0.4) 0%, transparent 56%); }

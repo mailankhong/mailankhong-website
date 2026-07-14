@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero collage · preview · Frontal DWY</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/css/glass-tokens.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  /* ===== hero (mirrors done-with-you.html) ===== */
+  .hero-grid{ display:grid; grid-template-columns:1.06fr .94fr; gap:48px; align-items:center; }
+  .hero-grid h1{ font-size:clamp(34px,4.4vw,54px); max-width:16ch; margin:18px 0 0; }
+  #hero-tw{ color:var(--violet); }
+
+  /* ===== NEW: team collage ===== */
+  .tw-collage{ position:relative; }
+  .tw-collage-badge{ position:absolute; top:-13px; left:14px; z-index:3;
+    font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:var(--mlk-ink);
+    background:linear-gradient(180deg, rgba(230,247,194,0.95), rgba(201,188,236,0.55));
+    border:1px solid rgba(150,180,80,0.45); border-radius:999px; padding:6px 13px;
+    box-shadow:0 6px 18px rgba(90,72,120,0.14); }
+
+  .tw-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:11px; }
+
+  .tw-card{ position:relative; flex:0 0 calc(25% - 9px); box-sizing:border-box;
+    display:flex; flex-direction:column; align-items:center; text-align:center; min-height:158px;
+    background:#FFFFFF; border:1px solid #E7E0D2; border-radius:15px; padding:15px 10px 14px;
+    box-shadow:0 1px 2px rgba(26,22,15,0.04), 0 7px 20px rgba(90,72,120,0.07);
+    opacity:0; transform:translateY(14px); animation:twIn .6s var(--ease-out-expo) forwards;
+    transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); }
+  .tw-card:hover{ transform:translateY(-4px);
+    box-shadow:0 2px 4px rgba(26,22,15,0.05), 0 16px 34px rgba(90,72,120,0.16);
+    border-color:rgba(150,180,80,0.55); }
+  @keyframes twIn{ to{ opacity:1; transform:none; } }
+
+  /* avatar */
+  .tw-av{ position:relative; width:62px; height:62px; }
+  .tw-av img{ width:100%; height:100%; display:block; border-radius:50%;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,0.95); }
+  .tw-av::after{ content:""; position:absolute; inset:-3px; border-radius:50%;
+    border:1.5px solid rgba(255,255,255,0.9);
+    box-shadow:inset 0 0 0 1px rgba(150,180,80,0.30), 0 5px 14px rgba(90,72,120,0.16); }
+  .tw-rank{ position:absolute; top:-3px; right:-5px; z-index:2; min-width:17px; height:17px; padding:0 4px;
+    display:flex; align-items:center; justify-content:center; border-radius:999px;
+    font-family:'DM Sans',monospace; font-size:8.5px; font-weight:700; color:var(--mlk-ink);
+    background:var(--mlk-lime); box-shadow:0 2px 6px rgba(124,148,48,0.4); border:1.5px solid #fff; }
+
+  .tw-name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:-0.01em;
+    color:var(--mlk-ink); margin-top:11px; line-height:1.18; min-height:29px;
+    display:flex; align-items:center; }
+
+  .tw-foll{ margin-top:auto; display:inline-flex; align-items:baseline; gap:4px;
+    background:rgba(230,247,194,0.55); border:1px solid rgba(150,180,80,0.38); border-radius:999px;
+    padding:4px 10px; }
+  .tw-foll b{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:-0.02em; color:var(--mlk-ink); }
+  .tw-foll span{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--mlk-lime-deep); }
+
+  @media (prefers-reduced-motion:reduce){ .tw-card{ animation:none; opacity:1; transform:none; } }
+  @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; gap:34px; }
+    .tw-card{ flex-basis:calc(20% - 9px); } }
+  @media (max-width:620px){ .tw-grid{ gap:9px; } .tw-card{ flex-basis:calc(33.333% - 6px); min-height:150px; } }
+  @media (max-width:400px){ .tw-card{ flex-basis:calc(50% - 5px); } }
+
+  /* preview chrome only (not part of the component) */
+  .pv-note{ max-width:1120px; margin:0 auto; padding:22px 28px 0; font-family:'DM Sans',monospace;
+    font-size:11px; letter-spacing:.4px; color:var(--mlk-muted); }
+  .pv-note b{ color:var(--mlk-lime-deep); }
+</style>
+</head>
+<body class="frontal-dark">
+
+<div class="bg" aria-hidden="true">
+  <div class="mesh"></div><div class="grid"></div><div class="spot"></div><div class="grain"></div><div class="vig"></div>
+</div>
+
+<div class="pv-note"><b>PREVIEW</b> — new hero collage for done-with-you.html. Not yet wired into the live page.</div>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="fr-eyebrow reveal in">12-week Done With You program · Frontal</span>
+        <h1 class="reveal in">Run your LinkedIn brand on the <span id="hero-tw">AI engine that turns posts into pipeline.</span></h1>
+        <p class="lead reveal in" style="margin-top:24px;max-width:52ch">A 12-week program for B2B teams. You leave with a content system you own, running on the same AI setup the team uses every day.</p>
+        <div class="hero-actions reveal in" style="display:flex;gap:13px;flex-wrap:wrap;margin-top:26px">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+          <a href="#" class="btn btn-ghost">See the system</a>
+        </div>
+      </div>
+
+      <div class="tw-collage reveal in">
+        <div class="tw-collage-badge">Inside the team · 275K+ followers</div>
+        <div class="tw-grid" id="twGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const TEAM = [
+    { f:'alex.png',    name:'Alex Vacca',      role:'Founder & CEO',       n:'69,055' },
+    { f:'ivan.png',    name:'Ivan Falco',      role:'#1 Ads Engineer',     n:'23,231' },
+    { f:'soheil.png',  name:'Soheil Saeidmehr',role:'Service Delivery',    n:'16,251' },
+    { f:'kenny.png',   name:'Kenny Damian',    role:'Head of GTM',         n:'13,838' },
+    { f:'mailan.png',  name:'Mai-Lan Khong',   role:'Content Strategist',  n:'12,746' },
+    { f:'filip.png',   name:'Filip Saračević', role:'LinkedIn Ads',        n:'6,466'  },
+    { f:'juan.png',    name:'Juan Araujo',     role:'Sales Ops & BD',      n:'6,292'  },
+    { f:'dujam.png',   name:'Dujam Dunato',    role:'Sales Tech',          n:'6,193'  },
+    { f:'luca.png',    name:'Luca Carrese',    role:'Partner',             n:'5,361'  },
+    { f:'niklas.png',  name:'Niklas Rabanus',  role:'Head of Sales',       n:'4,956'  },
+    { f:'shubham.png', name:'Shubham Sandilya',role:'AI-Revenue Systems',  n:'3,928'  },
+    { f:'ansh.png',    name:'Ansh Bindal',     role:'GTM · Growth',        n:'3,911'  },
+    { f:'joaquin.png', name:'Joaquin Garasino',role:'Revenue via Tech',    n:'2,812'  },
+  ];
+  const grid = document.getElementById('twGrid');
+  TEAM.forEach((p,i)=>{
+    const el = document.createElement('div');
+    el.className = 'tw-card';
+    el.style.animationDelay = (i*45)+'ms';
+    el.innerHTML = `
+      <div class="tw-av">
+        <span class="tw-rank">${i+1}</span>
+        <img src="assets/proof/team/avatars/${p.f}" alt="${p.name}" loading="lazy" />
+      </div>
+      <div class="tw-name">${p.name}</div>
+      <div class="tw-role">${p.role}</div>
+      <div class="tw-foll"><b>${p.n}</b><span>followers</span></div>`;
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>

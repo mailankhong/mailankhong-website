@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Done With You · The 12-week LinkedIn content system · Frontal</title>
+<meta name="description" content="A 12-week done-with-you program for B2B teams. Build a LinkedIn content system you own, running on the same AI setup the team uses every day." />
+<link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
+  <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/css/glass-tokens.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  /* ===== DWY page-specific ===== */
+  :root{
+    --p-set:#A6A6AE; --p1:#4AB6D6; --p2:#6E56CF; --p3:#3FC878; --p4:#8E8EE6; --p5:#E6A24E;
+  }
+
+  /* ===== ANIMATIONS (restored from the original DWY page) ===== */
+  /* GTM loop: each colored comet flows ONLY its own segment (node to node), all at once */
+  .seg{ fill:none; stroke-width:2; stroke-linecap:round; stroke-dasharray:7 257; transform-box:fill-box; transform-origin:center;
+    animation:segFlow 3s linear infinite; }
+  @keyframes segFlow{ from{stroke-dashoffset:0} to{stroke-dashoffset:-52} }
+  .seg.s1{ transform:rotate(270deg); stroke:#4AB6D6 }
+  .seg.s2{ transform:rotate(341deg); stroke:#6E56CF }
+  .seg.s3{ transform:rotate(52deg);  stroke:#3FC878 }
+  .seg.s4{ transform:rotate(128deg); stroke:#8E8EE6 }
+  .seg.s5{ transform:rotate(199deg); stroke:#E6A24E }
+  .ring-center{ animation:loopCenterPulse 4s ease-in-out infinite; border-radius:16px; }
+  @keyframes loopCenterPulse{ 0%,100%{box-shadow:0 0 0 0 rgba(199,224,112,0.18)} 50%{box-shadow:0 0 0 15px rgba(199,224,112,0)} }
+
+  /* Quality loop: sequential ping rings + node glow + pass-gate pulse */
+  .quality-vis{ text-align:center; }
+  .quality-svg{ width:100%; max-width:330px; margin:0 auto; display:block; }
+  .q-pulse-ring{ fill:none; stroke-width:2.5; transform-box:fill-box; transform-origin:center; opacity:0; animation:qPing 7s ease-out infinite; }
+  @keyframes qPing{ 0%{opacity:0;transform:scale(1)} 4%{opacity:.85;transform:scale(1)} 18%{opacity:0;transform:scale(1.55)} 100%{opacity:0;transform:scale(1.55)} }
+  .q-pulse-draft{stroke:#A6A6AE;animation-delay:0s}
+  .q-pulse-grade{stroke:#4AB6D6;animation-delay:1.4s}
+  .q-pulse-diagnose{stroke:#6E56CF;animation-delay:2.8s}
+  .q-pulse-fix{stroke:#8E8EE6;animation-delay:4.2s}
+  .q-pulse-regrade{stroke:#3FC878;animation-delay:5.6s}
+  .q-node-active{ animation:qActive 7s ease-out infinite; }
+  @keyframes qActive{ 0%,25%,100%{filter:none} 4%,14%{filter:drop-shadow(0 0 7px var(--q-color))} }
+  .q-active-draft{--q-color:#A6A6AE;animation-delay:0s}
+  .q-active-grade{--q-color:#4AB6D6;animation-delay:1.4s}
+  .q-active-diagnose{--q-color:#6E56CF;animation-delay:2.8s}
+  .q-active-fix{--q-color:#8E8EE6;animation-delay:4.2s}
+  .q-active-regrade{--q-color:#3FC878;animation-delay:5.6s}
+  .quality-pass-gate{ transform-box:fill-box; transform-origin:center; animation:qGate 7s ease-in-out infinite; }
+  @keyframes qGate{ 0%,100%{transform:scale(1);opacity:.92} 90%{transform:scale(1.06);opacity:1} }
+
+  /* Orbital stack: rotating ring of layers around a pulsing core */
+  .orbital{ position:relative; width:100%; max-width:470px; aspect-ratio:1; margin:34px auto 6px; }
+  .orb-orbit{ position:absolute; inset:10%; border:1px dashed rgba(255,255,255,0.08); border-radius:50%; }
+  .orb-orbit.two{ inset:27%; }
+  .orb-core{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3; width:120px; height:120px; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; text-align:center;
+    background:radial-gradient(circle, rgba(199,224,112,0.18), rgba(255,255,255,0.03) 72%);
+    border:1px solid rgba(150,180,80,0.30); box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 0 42px rgba(199,224,112,0.18); }
+  .orb-core::before{ content:""; position:absolute; inset:-12px; border-radius:50%; z-index:-1;
+    background:radial-gradient(circle, rgba(199,224,112,0.40), transparent 66%); filter:blur(9px); animation:pulse 3.6s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:.9;transform:scale(1.12)} }
+  .orb-core .oc-l{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:1.2px; text-transform:uppercase; color:#FFB089; }
+  .orb-core .oc-t{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:15px; color:var(--cream); letter-spacing:-0.01em; line-height:1.02; }
+  .orb-spin{ position:absolute; inset:0; animation:orbspin 60s linear infinite; }
+  @keyframes orbspin{ to{ transform:rotate(360deg) } }
+  .orb-node{ position:absolute; width:0; height:0; }
+  .on-card{ display:flex; align-items:center; gap:10px; width:150px; margin-left:-75px; margin-top:-25px; padding:10px 13px; border-radius:12px;
+    background:rgba(19,19,25,0.92); border:1px solid rgba(255,255,255,0.12); box-shadow:0 10px 26px rgba(90,72,120,0.12);
+    animation:orbspin 60s linear infinite reverse; }
+  .on-dot{ width:9px; height:9px; border-radius:50%; flex:none; background:var(--nc); box-shadow:0 0 10px var(--nc); }
+  .on-name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:13px; color:var(--cream); line-height:1.05; }
+  .on-role{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.4px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  /* click-to-expand */
+  .on-card{ cursor:pointer; transition:border-color .2s var(--ease), box-shadow .2s var(--ease); }
+  .orbital.paused .orb-spin, .orbital.paused .on-card{ animation-play-state:paused; }
+  .on-card.active{ border-color:var(--nc); box-shadow:0 0 0 1px var(--nc), 0 12px 30px rgba(90,72,120,0.13), 0 0 26px -4px var(--nc); }
+  .orb-core{ cursor:pointer; }
+  .orb-hint{ text-align:center; font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:#9A9184; margin-top:10px; }
+  .orb-detail{ max-width:560px; margin:14px auto 0; padding:18px 20px; }
+  .od-head{ display:flex; align-items:center; gap:11px; margin-bottom:9px; }
+  .od-dot{ width:10px; height:10px; border-radius:50%; flex:none; background:var(--nc,#6E56CF); box-shadow:0 0 11px var(--nc,#6E56CF); }
+  .od-name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:15px; color:var(--cream); }
+  .od-role{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:2px; }
+  .od-content{ font-size:14px; line-height:1.56; color:#6E675C; }
+
+  @media (prefers-reduced-motion:reduce){
+    .seg,.ring-center,.q-pulse-ring,.q-node-active,.quality-pass-gate,.orb-spin,.on-card{ animation:none !important; }
+    .orb-core::before{ animation:none !important; }
+  }
+  @media (max-width:720px){
+    .orbital{ aspect-ratio:auto; max-width:none; margin:18px 0 0; }
+    .orb-spin{ position:static; animation:none; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .orb-orbit{ display:none; }
+    .orb-core{ position:static; transform:none; width:auto; height:auto; flex-direction:row; gap:11px; border-radius:12px; padding:14px 16px; grid-column:1 / -1; justify-content:center; }
+    .orb-core::before{ display:none; }
+    .orb-node{ position:static; width:auto; height:auto; }
+    .on-card{ position:static; width:auto; margin:0; animation:none !important; }
+  }
+  /* scroll progress rail */
+  .phase-rail{ position:fixed; top:0; left:0; right:0; height:3px; z-index:60; background:rgba(255,255,255,0.05); }
+  .phase-rail-fill{ height:100%; width:0; background:var(--orange); box-shadow:0 0 12px rgba(199,224,112,.6); transition:width .12s linear, background .3s var(--ease); }
+
+  /* hero */
+  .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
+  .hero-grid h1{ font-size:clamp(34px,4.4vw,54px); max-width:16ch; margin:18px 0 0; }
+  #hero-tw{ color:var(--orange); }
+  .tw-cursor{ color:var(--orange); font-weight:400; }
+  .hero-playbook{ position:relative; border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,0.10);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 50px rgba(90,72,120,0.12); }
+  .hero-playbook img{ width:100%; display:block; }
+  .hero-playbook-badge{ position:absolute; top:14px; left:14px; z-index:2;
+    font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:#2A2723;
+    background:rgba(199,224,112,0.16); border:1px solid rgba(150,180,80,0.34); border-radius:999px; padding:6px 12px;
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+
+  /* problem cells */
+  .problem-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:8px; }
+  .problem-cell{ padding:22px 22px 24px; position:relative; }
+  .problem-cell .pnum{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:#9A9184; margin-bottom:14px; }
+  .problem-cell .x{ position:absolute; top:20px; right:20px; color:var(--rose); font-size:18px; font-weight:600; opacity:.85; }
+  .problem-cell h3{ font-size:16px; margin-bottom:8px; }
+  .problem-cell p{ font-size:13.5px; line-height:1.55; }
+
+  .fix-head{ display:flex; align-items:center; gap:12px; margin:34px 0 18px; }
+  .fix-head .lbl{ font-family:'DM Sans',monospace; font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:#6E56CF; }
+  .fix-head .line{ flex:1; height:1px; background:linear-gradient(90deg, rgba(199,224,112,.4), transparent); }
+  .fix-stack{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .fix-layer{ padding:20px 22px; display:flex; flex-direction:column; gap:8px; }
+  .fix-layer .role{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; color:var(--lc,#6E56CF); }
+  .fix-layer h3{ font-size:16px; }
+  .fix-layer p{ font-size:13px; line-height:1.5; }
+
+  /* 12-week stepper */
+  .stepper-nav{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 26px; }
+  .step-pill{ display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; background:none; border:none; padding:0; flex:1 1 auto; min-width:58px;
+    transition:transform .2s var(--ease); }
+  .step-pill:hover{ transform:translateY(-2px); }
+  .step-pill .dot{ width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-family:'DM Sans',monospace; font-size:9px; font-weight:600; color:#FBFAF6; background:var(--c,#A6A6AE);
+    border:2px solid transparent; transition:box-shadow .25s var(--ease), transform .2s var(--ease); }
+  .step-pill .wk{ font-family:'DM Sans',monospace; font-size:8.5px; letter-spacing:.5px; color:#9A9184; }
+  .step-pill.active .dot{ box-shadow:0 0 0 4px rgba(255,255,255,0.06), 0 0 18px var(--c); transform:scale(1.08); }
+  .step-pill.active .wk{ color:var(--cream); }
+  .step-pill:focus-visible{ outline:2px solid #6E56CF; outline-offset:3px; border-radius:8px; }
+  .stepper-panel{ padding:30px 32px; min-height:200px; }
+  .sp-top{ display:flex; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
+  .sp-week{ font-family:'DM Sans',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--grey); }
+  .sp-phase{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; text-transform:uppercase; padding:4px 10px; border-radius:6px;
+    color:#FBFAF6; font-weight:600; }
+  .stepper-panel h3{ font-size:22px; letter-spacing:-0.02em; margin-bottom:12px; }
+  .stepper-panel .sp-body{ font-size:15px; line-height:1.62; color:#6E675C; max-width:74ch; }
+  .sp-skills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .sp-skill{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:.4px; color:#6E675C;
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:5px 10px; }
+
+  /* GTM loop */
+  .gtm-split{ display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start; }
+  .gtm-image{ border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.10); background:#fff; }
+  .gtm-image img{ width:100%; display:block; }
+  .gtm-caption{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin:12px 0 20px; }
+  .gtm-callout{ padding:22px 24px; }
+  .gtm-callout .eb{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#6E56CF; }
+  .gtm-callout p{ font-size:14px; line-height:1.55; margin:10px 0 18px; color:#6E675C; }
+  .gtm-mini{ display:flex; gap:26px; flex-wrap:wrap; }
+  .gtm-mini div{ display:flex; flex-direction:column; }
+  .gtm-mini strong{ font-family:'DM Sans',sans-serif; font-size:18px; color:var(--cream); font-weight:700; }
+  .gtm-mini span{ font-family:'DM Sans',monospace; font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  .phase-marker{ display:inline-block; font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase;
+    background:var(--p5); color:#1A0E06; padding:5px 12px; border-radius:7px; font-weight:600; }
+
+  /* circular loop (GTM + quality share base) */
+  .ring{ position:relative; width:100%; max-width:440px; margin:24px auto 0; aspect-ratio:1; }
+  .ring-guide{ position:absolute; inset:0; }
+  .ring-center{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; width:150px;
+    font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
+  .ring-center strong{ display:block; font-family:'DM Sans',sans-serif; font-size:15px; letter-spacing:-0.01em; color:var(--cream); margin-top:6px; text-transform:none; }
+  .ring-node{ position:absolute; width:150px; transform:translate(-50%,-50%); text-align:center; }
+  .ring-node .rn-step{ width:30px; height:30px; border-radius:50%; margin:0 auto 8px; display:flex; align-items:center; justify-content:center;
+    font-family:'DM Sans',monospace; font-size:10px; font-weight:600; color:#FBFAF6; background:var(--nc); box-shadow:0 0 16px var(--nc); }
+  .ring-node .rn-title{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:13px; color:var(--cream); line-height:1.25; }
+  .ring-node .rn-sub{ font-size:11px; color:#9A9184; margin-top:3px; line-height:1.35; }
+
+  /* quality bar */
+  .qbar-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .qdim-list{ list-style:none; display:grid; gap:12px; }
+  .qdim{ display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:12px;
+    background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.09); }
+  .qdim .qn{ width:30px; height:30px; border-radius:8px; flex:none; display:flex; align-items:center; justify-content:center;
+    font-family:'DM Sans',monospace; font-size:11px; font-weight:600; color:#FBFAF6; background:var(--dc); }
+  .qdim .qt{ flex:1; }
+  .qdim .qt strong{ display:block; font-family:'DM Sans',sans-serif; font-weight:600; font-size:14.5px; color:var(--cream); }
+  .qdim .qt span{ font-size:12.5px; color:#9A9184; }
+  .qdim .qs{ font-family:'DM Sans',monospace; font-size:11px; color:#9A9184; }
+  .qbar-foot{ font-size:13px; color:#9A9184; margin-top:16px; line-height:1.55; }
+  .qpass{ text-align:center; }
+  .qpass-gate{ display:inline-flex; flex-direction:column; align-items:center; padding:18px 30px; border-radius:16px; margin-top:6px;
+    background:linear-gradient(165deg, rgba(63,200,120,0.16), rgba(63,200,120,0.04)); border:1px solid rgba(63,200,120,0.34); }
+  .qpass-gate .pg-l{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1.4px; text-transform:uppercase; color:#7fd9a6; }
+  .qpass-gate .pg-v{ font-family:'DM Sans',sans-serif; font-size:30px; font-weight:700; color:#bfeccf; letter-spacing:-0.02em; margin-top:4px; }
+  .qflow{ margin-top:24px; font-family:'DM Sans',monospace; font-size:10px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; line-height:1.8; }
+  .qflow b{ color:var(--emerald); font-weight:600; }
+
+  /* deliverables */
+  .deliv-split{ display:grid; grid-template-columns:1.4fr 1fr; gap:34px; align-items:start; }
+  .deliv-grid{ display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+  .deliv-item{ display:flex; gap:12px; align-items:flex-start; padding:15px 16px; border-radius:12px;
+    background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); }
+  .deliv-check{ flex:none; width:20px; height:20px; border-radius:6px; display:flex; align-items:center; justify-content:center;
+    background:rgba(199,224,112,0.12); border:1px solid rgba(150,180,80,0.34); color:var(--orange); font-size:11px; margin-top:1px; }
+  .deliv-item h4{ font-family:'DM Sans',sans-serif; font-size:13.5px; font-weight:600; color:var(--cream); margin-bottom:3px; }
+  .deliv-item p{ font-size:12px; line-height:1.45; color:#9A9184; }
+  .deliv-closer{ margin-top:16px; font-size:14px; color:#6E675C; }
+  .deliv-right .gif{ border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.10); }
+  .deliv-right .gif img{ width:100%; display:block; }
+  .deliv-right .cap{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin:12px 0 18px; }
+
+  /* proof */
+  .team-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:8px; }
+  .team-stat{ padding:24px 22px; text-align:center; }
+  .team-stat .num{ font-family:'DM Sans',sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.03em; color:#6E56CF; }
+  .team-stat .lbl{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; margin-top:8px; line-height:1.45; }
+  .proof-grid{ columns:3; column-gap:14px; margin-top:8px; }
+  .proof-card{ break-inside:avoid; margin-bottom:14px; padding:14px; }
+  .proof-shot{ border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px; }
+  .proof-shot img{ width:100%; display:block; }
+  .proof-author{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px; color:var(--cream); }
+  .proof-role{ font-size:11.5px; color:#9A9184; margin-top:2px; }
+  .proof-metrics{ display:flex; gap:16px; margin:14px 0; padding:12px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); }
+  .proof-metric{ display:flex; flex-direction:column; }
+  .proof-metric .pm-n{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:16px; color:var(--cream); }
+  .proof-metric .pm-n.accent{ color:var(--orange); }
+  .proof-metric .pm-l{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  .proof-outcome{ font-size:12.5px; line-height:1.5; color:#6E675C; }
+
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; gap:30px; }
+    .gtm-split,.qbar-grid{ grid-template-columns:1fr; gap:28px; }
+    .fix-stack{ grid-template-columns:1fr 1fr; }
+    .problem-grid{ grid-template-columns:1fr 1fr; }
+    .deliv-split{ grid-template-columns:1fr; }
+    .proof-grid{ columns:2; }
+    .team-stats{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:560px){
+    .fix-stack,.problem-grid,.deliv-grid,.proof-grid{ grid-template-columns:1fr; columns:1; }
+    .stepper-panel{ padding:24px; }
+  }
+  /* circular loop becomes a vertical list on narrow screens */
+  @media (max-width:640px){
+    .ring{ aspect-ratio:auto; max-width:none; margin-top:8px; display:flex; flex-direction:column; gap:14px; }
+    .ring-guide{ display:none; }
+    .ring-center{ position:static; transform:none; width:auto; text-align:left; order:-1;
+      padding:14px 16px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); }
+    .ring-node{ position:static; transform:none; width:auto; text-align:left; display:flex; align-items:center; gap:14px; }
+    .ring-node .rn-step{ margin:0; flex:none; }
+  }
+</style>
+</head>
+<body class="frontal-dark">
+
+<div class="phase-rail"><div class="phase-rail-fill" id="phaseFill"></div></div>
+
+<div class="bg" aria-hidden="true">
+  <div class="mesh"></div><div class="grid"></div><div class="spot"></div><div class="grain"></div><div class="vig"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
+    <nav class="nav-links">
+      <a href="#stack">The Stack</a>
+      <a href="#map">The Map</a>
+      <a href="#gtm">GTM Loop</a>
+      <a href="#proof">Proof</a>
+      <a href="#faq">FAQ</a>
+      <a href="about-me.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="fr-eyebrow reveal in">12-week Done With You program · Frontal</span>
+        <h1 class="reveal in">Run your LinkedIn brand on the <span id="hero-tw" aria-label="AI engine that turns posts into pipeline."></span></h1>
+        <p class="lead reveal in" style="margin-top:24px;max-width:52ch">A 12-week program for B2B teams. You leave with a content system you own, running on the same AI setup the team uses every day.</p>
+        <div class="hero-actions reveal in">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+          <a href="#stack" class="btn btn-ghost">See the system</a>
+        </div>
+      </div>
+      <div class="hero-playbook reveal in">
+        <div class="hero-playbook-badge">Inside the team · 275K+ followers</div>
+        <img src="assets/proof/coldiq-playbook.jpeg" alt="The team: 16 LinkedIn profiles and follower counts, all running the same content system" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE PROBLEM + THE FIX ===== -->
+<section id="stack" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">The problem</span>
+        <h2 class="reveal">Why most B2B teams end up with a LinkedIn<br>presence that doesn't sell anything.</h2></div>
+      <div class="sec-num reveal">01 / The stack</div>
+    </div>
+    <p class="lead reveal">Every option looks reasonable from the outside. From the inside, each one breaks the same way.</p>
+    <div class="problem-grid">
+      <div class="card problem-cell reveal"><div class="pnum">01 / Ghostwriter</div><span class="x">&times;</span><h3>The voice never lands.</h3><p>Six months in, you stop recognizing yourself and go silent.</p></div>
+      <div class="card problem-cell reveal"><div class="pnum">02 / ChatGPT solo</div><span class="x">&times;</span><h3>Everything sounds like everyone else.</h3><p>Same model, same prompt, same rhythm as every other founder typing into the same box.</p></div>
+      <div class="card problem-cell reveal"><div class="pnum">03 / In-house hire</div><span class="x">&times;</span><h3>Good is expensive. Cheap does not deliver.</h3><p>A hire strong enough to do this costs a full salary and still needs months to ramp. Anyone cheaper will not produce work that moves.</p></div>
+      <div class="card problem-cell reveal"><div class="pnum">04 / Course or playbook</div><span class="x">&times;</span><h3>Information without the system to apply it.</h3><p>You finish the course. You still don't ship.</p></div>
+    </div>
+
+    <div class="fix-head reveal"><span class="fr-dot-solid"></span><span class="lbl">The fix · one system</span><span class="line"></span></div>
+    <div class="orbital reveal" id="orbital">
+      <div class="orb-orbit"></div><div class="orb-orbit two"></div>
+      <div class="orb-core" id="orbCore"><span class="oc-l">The fix</span><span class="oc-t">One<br>system</span></div>
+      <div class="orb-spin">
+        <div class="orb-node" style="top:6%;left:50%" data-name="Claude" data-role="Writing layer" data-content="Drafts, hooks, voice. Every other layer is downstream of its judgment."><div class="on-card" style="--nc:#4AB6D6"><span class="on-dot"></span><div><div class="on-name">Claude</div><div class="on-role">Writing layer</div></div></div></div>
+        <div class="orb-node" style="top:29%;left:88%" data-name="Claude + Gemini" data-role="Photoreal layer" data-content="Photoreal images where a post needs realism: ads, product shots, lifestyle scenes. Claude handles infographics natively; Gemini steps in for the photoreal."><div class="on-card" style="--nc:#8E8EE6"><span class="on-dot"></span><div><div class="on-name">Claude + Gemini</div><div class="on-role">Photoreal layer</div></div></div></div>
+        <div class="orb-node" style="top:71%;left:88%" data-name="Figma" data-role="Design refinement" data-content="The polish layer for DIY, or the handoff point if you have a designer."><div class="on-card" style="--nc:#4AB6D6"><span class="on-dot"></span><div><div class="on-name">Figma</div><div class="on-role">Design refinement</div></div></div></div>
+        <div class="orb-node" style="top:94%;left:50%" data-name="Animation" data-role="Motion layer" data-content="Motion for the posts that earn the extra production cost."><div class="on-card" style="--nc:#E6A24E"><span class="on-dot"></span><div><div class="on-name">Animation</div><div class="on-role">Motion layer</div></div></div></div>
+        <div class="orb-node" style="top:71%;left:12%" data-name="Apify" data-role="Signal layer" data-content="Pulls every post engager off LinkedIn into the pipeline."><div class="on-card" style="--nc:#3FC878"><span class="on-dot"></span><div><div class="on-name">Apify</div><div class="on-role">Signal layer</div></div></div></div>
+        <div class="orb-node" style="top:29%;left:12%" data-name="Clay" data-role="Outbound layer" data-content="Enriches the signal, tiers accounts, and writes a first message that references the exact post they engaged with."><div class="on-card" style="--nc:#6E56CF"><span class="on-dot"></span><div><div class="on-name">Clay</div><div class="on-role">Outbound layer</div></div></div></div>
+      </div>
+    </div>
+    <p class="orb-hint reveal" id="orbHint">Tap any layer to see how it fits.</p>
+    <div class="card orb-detail reveal" id="orbDetail" hidden>
+      <div class="od-head"><span class="od-dot"></span><div><div class="od-name"></div><div class="od-role"></div></div></div>
+      <p class="od-content"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE 12-WEEK MAP ===== -->
+<section id="map" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">The 12-week map</span>
+        <h2 class="reveal">Twelve weeks. You see the<br>whole map on day one.</h2></div>
+      <div class="sec-num reveal">02 / The map</div>
+    </div>
+    <p class="lead reveal">You always know where you are and what is coming.</p>
+    <div class="stepper-nav reveal" id="stepperNav"></div>
+    <div class="card stepper-panel reveal" id="stepperPanel"></div>
+  </div>
+</section>
+
+<!-- ===== GTM LOOP (PHASE 5) ===== -->
+<section id="gtm" class="sec" data-phase="5">
+  <div class="wrap">
+    <div class="gtm-split">
+      <div class="reveal">
+        <div class="gtm-image"><img src="assets/proof/egc-engine.png" alt="The Employee-Generated Content engine: the full playbook diagram" /></div>
+        <p class="gtm-caption">The playbook behind the stack</p>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:22px;display:block">
+          <span class="phase-marker reveal">Phase 5 · Weeks 10 to 12</span>
+          <h2 class="reveal" style="margin-top:14px">Turn LinkedIn engagement<br>into outbound pipeline.</h2>
+        </div>
+        <p class="lead reveal" style="margin-bottom:8px">The last three weeks plug your content engine into outbound. Every engager becomes a tracked signal.</p>
+        <div class="card reveal" style="padding:18px">
+          <div class="ring">
+            <svg class="ring-guide" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.5" stroke-dasharray="1 2"/>
+              <circle class="seg s1" cx="50" cy="50" r="42"/>
+              <circle class="seg s2" cx="50" cy="50" r="42"/>
+              <circle class="seg s3" cx="50" cy="50" r="42"/>
+              <circle class="seg s4" cx="50" cy="50" r="42"/>
+              <circle class="seg s5" cx="50" cy="50" r="42"/>
+            </svg>
+            <div class="ring-center">The compounding loop<strong>Content &rarr; Revenue</strong></div>
+            <div class="ring-node" style="--nc:#4AB6D6;top:4%;left:50%"><div class="rn-step">01</div><div class="rn-title">Content published</div><div class="rn-sub">Post live, audience watching</div></div>
+            <div class="ring-node" style="--nc:#6E56CF;top:34%;left:96%"><div class="rn-step">02</div><div class="rn-title">Engagement signal</div><div class="rn-sub">Engagers, viewers, commenters</div></div>
+            <div class="ring-node" style="--nc:#3FC878;top:88%;left:80%"><div class="rn-step">03</div><div class="rn-title">Clay enrichment + ABM</div><div class="rn-sub">Firmographics, technographics, intent</div></div>
+            <div class="ring-node" style="--nc:#8E8EE6;top:88%;left:20%"><div class="rn-step">04</div><div class="rn-title">Personalized outbound</div><div class="rn-sub">LinkedIn DM, connect, email</div></div>
+            <div class="ring-node" style="--nc:#E6A24E;top:34%;left:4%"><div class="rn-step">05</div><div class="rn-title">Meeting to case study</div><div class="rn-sub">Closed deal becomes next post</div></div>
+          </div>
+        </div>
+        <div class="sp-skills reveal" style="margin-top:24px">
+          <span class="sp-skill">apify-engagement-pull</span><span class="sp-skill">clay-enrichment</span><span class="sp-skill">abm-tiering</span><span class="sp-skill">cadence-personalizer</span>
+        </div>
+        <div class="card gtm-callout reveal" style="margin-top:24px">
+          <span class="eb">Built by an outbound shop</span>
+          <p>The team runs warm outbound for SaaS as the day job. The connection between content engagement and pipeline is the part we obsess over.</p>
+          <div class="gtm-mini">
+            <div><strong>267+</strong><span>B2B clients</span></div>
+            <div><strong>$7M</strong><span>GTM agency</span></div>
+            <div><strong>200K+</strong><span>monthly engagers tracked</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUALITY BAR ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">The quality loop</span>
+        <h2 class="reveal">Every B2B post earns<br>its way to publish.</h2></div>
+      <div class="sec-num reveal">03 / Quality</div>
+    </div>
+    <p class="lead reveal">Every draft gets scored against a real quality bar. Failed posts get a diagnosis, not a delete.</p>
+    <div class="qbar-grid" style="margin-top:30px">
+      <div class="reveal">
+        <h3 class="h3" style="font-family:'DM Sans';color:var(--cream);font-size:17px;margin-bottom:16px">A 5-dimension quality bar, 38 / 50 to pass</h3>
+        <ul class="qdim-list">
+          <li class="qdim" style="--dc:#4AB6D6"><span class="qn">01</span><div class="qt"><strong>Hook strength</strong><span>Does the first line earn the second?</span></div><span class="qs">/10</span></li>
+          <li class="qdim" style="--dc:#6E56CF"><span class="qn">02</span><div class="qt"><strong>Narrative coherence</strong><span>Does the post arc, or does it list?</span></div><span class="qs">/10</span></li>
+          <li class="qdim" style="--dc:#8E8EE6"><span class="qn">03</span><div class="qt"><strong>Voice fidelity</strong><span>Does it sound like you, or like AI?</span></div><span class="qs">/10</span></li>
+          <li class="qdim" style="--dc:#3FC878"><span class="qn">04</span><div class="qt"><strong>Value density</strong><span>One real idea, or three vague gestures?</span></div><span class="qs">/10</span></li>
+          <li class="qdim" style="--dc:#E6A24E"><span class="qn">05</span><div class="qt"><strong>Ending discipline</strong><span>Does the close earn the CTA?</span></div><span class="qs">/10</span></li>
+        </ul>
+        <p class="qbar-foot">Most drafts pass on the second pass. Some never make it. The ones that don't get retired, not forced through.</p>
+      </div>
+      <div class="qpass reveal">
+        <div class="card quality-vis" style="padding:22px 22px 18px">
+          <svg class="quality-svg" viewBox="0 0 360 360">
+            <circle cx="180" cy="180" r="130" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="3 5"/>
+            <!-- 01 Draft -->
+            <g>
+              <circle class="q-pulse-ring q-pulse-draft" cx="180" cy="50" r="32"/>
+              <circle class="q-circle q-node-active q-active-draft" cx="180" cy="50" r="32" fill="#16161c" stroke="#A6A6AE" stroke-width="2"/>
+              <text x="180" y="50" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="11" font-weight="600" fill="#F3ECD9">Draft</text>
+            </g>
+            <!-- 02 Grade -->
+            <g>
+              <circle class="q-pulse-ring q-pulse-grade" cx="300" cy="138" r="32"/>
+              <circle class="q-circle q-node-active q-active-grade" cx="300" cy="138" r="32" fill="#16161c" stroke="#4AB6D6" stroke-width="2"/>
+              <text x="300" y="138" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="11" font-weight="600" fill="#4AB6D6">Grade</text>
+            </g>
+            <!-- 03 Diagnose -->
+            <g>
+              <circle class="q-pulse-ring q-pulse-diagnose" cx="254" cy="286" r="32"/>
+              <circle class="q-circle q-node-active q-active-diagnose" cx="254" cy="286" r="32" fill="#16161c" stroke="#6E56CF" stroke-width="2"/>
+              <text x="254" y="282" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="11" font-weight="600" fill="#6E56CF">Diagnose</text>
+              <text x="254" y="296" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="6.5" fill="#6E56CF" opacity="0.7" letter-spacing="0.05em">IF FAILED</text>
+            </g>
+            <!-- 04 Fix -->
+            <g>
+              <circle class="q-pulse-ring q-pulse-fix" cx="106" cy="286" r="32"/>
+              <circle class="q-circle q-node-active q-active-fix" cx="106" cy="286" r="32" fill="#16161c" stroke="#8E8EE6" stroke-width="2"/>
+              <text x="106" y="286" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="11" font-weight="600" fill="#8E8EE6">Fix</text>
+            </g>
+            <!-- 05 Re-grade -->
+            <g>
+              <circle class="q-pulse-ring q-pulse-regrade" cx="60" cy="138" r="32"/>
+              <circle class="q-circle q-node-active q-active-regrade" cx="60" cy="138" r="32" fill="#16161c" stroke="#3FC878" stroke-width="2"/>
+              <text x="60" y="138" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="10" font-weight="600" fill="#3FC878">Re-grade</text>
+            </g>
+            <!-- center pass gate -->
+            <g class="quality-pass-gate">
+              <rect x="128" y="158" width="104" height="48" rx="24" fill="rgba(63,200,120,0.16)" stroke="rgba(63,200,120,0.45)" stroke-width="1.5"/>
+              <text x="180" y="174" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="8" letter-spacing="0.06em" fill="#7fd9a6">PASS GATE</text>
+              <text x="180" y="192" text-anchor="middle" dominant-baseline="middle" font-family='DM Sans' font-size="16" font-weight="700" fill="#bfeccf">38 / 50</text>
+            </g>
+          </svg>
+          <div style="margin-top:8px;font-family:'DM Sans',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:#9A9184">Pass to publish · Fail to diagnose, fix, re-grade</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT YOU LEAVE WITH ===== -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">What you leave with</span>
+        <h2 class="reveal">The full content system,<br>yours to keep.</h2></div>
+      <div class="sec-num reveal">04 / Deliverables</div>
+    </div>
+    <p class="lead reveal">The files sit in your drive. Runnable by you, or anyone you onboard.</p>
+    <div class="deliv-split" style="margin-top:28px">
+      <div class="reveal">
+        <div class="deliv-grid">
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Voice profile</h4><p>A working document of how you actually sound, not how you think you sound.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>ICP definition</h4><p>Specific enough to write directly to one person, not "B2B founders."</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Content pillars</h4><p>Four to six themes that compound, not a calendar of one-off ideas.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Optimized LinkedIn profile</h4><p>Headline, banner, About, featured. Written to convert profile visits.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Published post log</h4><p>25 to 35 posts shipped over the 12 weeks, with the data on which ones moved.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Hook judgment</h4><p>Trained against sixty viral templates. You see a hook, you know if it will move.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Idea methodology</h4><p>Three live sources plus your own back-catalog mining. Never blank again.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Content mix discipline</h4><p>The right ratio of utility, story, opinion. Auditable each week.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Daily engagement rhythm</h4><p>One hour, five phases, four metrics. A habit you can keep.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Brand visual spec</h4><p>Colors, fonts, layout rules. One spec, runnable by DIY or pro.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Lead magnet resources</h4><p>Six formats, ready to deploy: playbook, guide, template, checklist, swipe file, blueprint.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Cross-platform repurpose</h4><p>One post becomes five formats, restructured for each platform.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>ABM + Clay integration</h4><p>Engagement signal flows into enrichment, into tiered outbound. Live by Week 12.</p></div></div>
+          <div class="deliv-item"><div class="deliv-check"><i class="ph ph-check"></i></div><div><h4>Maintenance cadence</h4><p>Weekly, monthly, quarterly. The routine that keeps it running after we are gone.</p></div></div>
+        </div>
+        <p class="deliv-closer">And the ability to onboard a new team member into the system without us.</p>
+      </div>
+      <div class="deliv-right reveal">
+        <div class="gif"><img src="assets/proof/system-overview.gif" alt="Claude for content: animated 7-step pipeline from research to publish" /></div>
+        <p class="cap">Seven steps. One workflow. Every post.</p>
+        <div class="accent-callout">
+          <span class="eb" style="font-family:'DM Sans',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:#4A443C">After Week 12</span>
+          <h3 style="margin:8px 0">Your folder. Your prompts. Your skills.</h3>
+          <p>Every artifact above sits in your drive on the last day. The pipeline runs on your inputs. Your next hire onboards into it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF ===== -->
+<section id="proof" class="sec light">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Proof from the team running the system</span>
+        <h2 class="reveal">87 days. 24 voices.<br>$151K MRR added.</h2></div>
+      <div class="sec-num reveal">05 / Proof</div>
+    </div>
+    <p class="lead reveal">Same playbook your team would inherit. Same voice profile, same hook judgment, same quality bar.</p>
+    <div class="team-stats" style="margin-top:26px">
+      <div class="card team-stat reveal"><div class="num">581</div><div class="lbl">posts shipped by the team</div></div>
+      <div class="card team-stat reveal"><div class="num">+27</div><div class="lbl">new clients from content</div></div>
+      <div class="card team-stat reveal"><div class="num">+$151K</div><div class="lbl">MRR added</div></div>
+      <div class="card team-stat reveal"><div class="num">275K+</div><div class="lbl">combined LinkedIn followers</div></div>
+    </div>
+
+    <div class="sec-head" style="margin-top:60px">
+      <div><span class="eyebrow reveal">Real posts, real engagement</span>
+        <h2 class="reveal" style="font-size:clamp(24px,3vw,34px)">A slice of what the team has shipped.</h2></div>
+    </div>
+    <p class="lead reveal" style="margin-bottom:8px">Public on LinkedIn. Real authors, real numbers.</p>
+    <div class="proof-grid reveal">
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-alex.png" alt="Alex Vacca post"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Co-Founder · $6M ARR</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,238</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">4,099</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">43</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Code for Ads." $200K/month in ad spend run from a terminal.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-kenny.png" alt="Kenny Damian post"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,266</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,139</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">61</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">37 AI Agents set up for the $6M ARR outbound agency. 6 deployed across $10M+ ARR clients.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-ivan.png" alt="Ivan Falco post"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth · $7M GTM Agency</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">469</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,785</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">6</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Biggest skills database for GTM: outbound, RevOps, ABM. Open-sourced for free.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-mailan.png" alt="Mai-Lan Khong post"></div><div class="proof-author">Mai-Lan Khong</div><div class="proof-role">Content Strategist & AI Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">281</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">1,030</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">11</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">$153,000 MRR in 87 days. 24 people posting on one system. The full content pipeline.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-soheil.png" alt="Soheil Saeidmehr post"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">2,858</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">370</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">39</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">SEG auto-detection reveal. The deliverability post that compounded into thousands of saves.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-dujam.png" alt="Dujam Dunato post"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">250</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">520</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">13</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Claude as an AI sales closer with n8n. 5 trained agents for post-call follow-up.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-luca.png" alt="Luca Carrese post"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner @ Frontal AI</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">321</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">55</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">22</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Dispatch just shipped." Run your AI agent from your phone — safely, cheaply, natively.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-shubham.png" alt="Shubham Sandilya post"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">235</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">70</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">27</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">The Modern Outbound Stack. 5 categories, one clear path from lead to close.</div></div>    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+      <span class="eyebrow reveal">FAQ</span>
+      <h2 class="reveal">Questions before the call.</h2>
+    </div>
+    <div class="faq">
+      <details class="q reveal"><summary>Do I need to be technical to run this?<i class="ph ph-plus"></i></summary><div class="a">No. The stack runs inside Claude, with skills layered on top, and the APIs, integrations, and automations are pre-built. If you can describe what you want, you can run it.</div></details>
+      <details class="q reveal"><summary>What if I already have a content writer or agency?<i class="ph ph-plus"></i></summary><div class="a">Bring them in. The program teaches the system, and the system is what your writer uses. Most agencies are downstream of judgment and voice, so once those are in place, the existing team gets sharper, not displaced.</div></details>
+      <details class="q reveal"><summary>How much time does this take per week?<i class="ph ph-plus"></i></summary><div class="a">Plan for 3 hours per week during active phases: one hour of live working session, the rest spread across writing, engagement, and reviewing outputs.</div></details>
+      <details class="q reveal"><summary>What happens after Week 12?<i class="ph ph-plus"></i></summary><div class="a">You own the system. All artifacts (voice profile, skills, brand spec, ABM integration) sit in your environment, and a quarterly check-in is available if you want one. The program is designed for you to graduate, not subscribe.</div></details>
+      <details class="q reveal"><summary>Do I need to use Claude specifically?<i class="ph ph-plus"></i></summary><div class="a">Claude does the heaviest lifting because it is the strongest model for long-form judgment right now. Most clients run the system inside Claude. Other models in the stack are swappable for equivalents.</div></details>
+      <details class="q reveal"><summary>What if my team has in-house designers?<i class="ph ph-plus"></i></summary><div class="a">Use them. Expert mode plugs Figma and your designer into the same brand spec. Most clients use both DIY and Expert depending on the post.</div></details>
+      <details class="q reveal"><summary>Is this for me if I have no LinkedIn presence today?<i class="ph ph-plus"></i></summary><div class="a">Yes. Most clients start from a quiet account, and the 12 weeks are built around going from zero rhythm to a publishing operation. Starting fresh is sometimes easier than untangling years of mixed signals.</div></details>
+      <details class="q reveal"><summary>Can we onboard more than one person from my company?<i class="ph ph-plus"></i></summary><div class="a">Yes. Companies often onboard founders and several key employees together.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<!-- ===== MEET YOUR GUIDE ===== -->
+<section id="guide" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Meet your guide</span>
+        <h2 style="max-width:15ch;margin-top:14px">The operator behind the system.</h2>
+      </div>
+      <div class="sec-num">MEET MAI-LAN</div>
+    </div>
+    <div class="guide-grid reveal">
+      <a class="guide-shot card" href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" aria-label="Mai-Lan Khong on LinkedIn">
+        <img src="assets/proof/mailan-linkedin.png" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
+      </a>
+      <div class="guide-copy">
+        <p class="lead">Hi, I'm <strong>Mai-Lan Khong</strong>, Content Strategist at Frontal, trusted by 275+ tech companies. I help B2B founders turn LinkedIn into a channel that builds pipeline, and I grew my own account to Favikon's #2 creator worldwide.</p>
+        <p>Whether we build the engine with your team or run it for you, you are working with an operator who has done it in the open, not a template.</p>
+        <div class="guide-actions">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+          <a href="about-me.html" class="btn btn-ghost">About Mai-Lan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="sec" style="border-top:none">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 style="max-width:none">Build it with us. Own it after.</h2>
+      <p>A 12-week program. B2B teams leave with a content engine that books their calendars. Built with you, runnable without us.</p>
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" style="padding:14px 26px;font-size:15px">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+    </div>
+    <p class="not-sure" style="margin-top:22px;text-align:center;font-size:13.5px;color:#9A9184">Want it run for you instead? <a href="done-for-you.html" style="color:#6E56CF;text-decoration:none">See Done For You &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
+        <p class="foot-tag">The 12-week content system. Built with your team, owned by your team.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>The system</h4>
+          <a href="#stack">The stack</a>
+          <a href="#map">The map</a>
+          <a href="#gtm">GTM loop</a>
+          <a href="#proof">Proof</a>
+        </div>
+        <div class="foot-col">
+          <h4>Frontal</h4>
+          <a href="index.html">Content engineering</a>
+          <a href="done-for-you.html">Done For You</a>
+          <a href="https://frontal.so" target="_blank" rel="noopener">frontal.so</a>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Mai-Lan Khong · LinkedIn content system</span>
+      <span>© 2026 Mai-Lan Khong. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---- typewriter ---- */
+  (function(){
+    const el = document.getElementById('hero-tw');
+    if(!el) return;
+    const words = ["AI engine that turns posts into pipeline.","stack pulling inbound off every post.","playbook successful B2B teams quietly run.","AI engine that books your calendar."];
+    const cur = document.createElement('span'); cur.className='tw-cursor'; cur.textContent='_';
+    const txt = document.createElement('span'); el.appendChild(txt); el.appendChild(cur);
+    let w=0,i=0,del=false;
+    function tick(){
+      const word=words[w];
+      txt.textContent = word.slice(0,i);
+      if(!del){ i++; if(i>word.length){ del=true; return setTimeout(tick,2200);} }
+      else { i--; if(i<0){ del=false; i=0; w=(w+1)%words.length; } }
+      setTimeout(tick, del?26:50);
+    }
+    tick();
+    setInterval(()=>{ cur.style.opacity = cur.style.opacity==='0'?'1':'0'; }, 530);
+  })();
+
+  /* ---- 12-week stepper ---- */
+  (function(){
+    const COL={Setup:'#A6A6AE','Phase 1':'#4AB6D6','Phase 2':'#6E56CF','Phase 3':'#3FC878','Phase 4':'#8E8EE6','Phase 5':'#E6A24E'};
+    const steps=[
+      {n:1,short:'PRE',week:'Pre-program',phase:'Setup',title:'Foundation delivered',body:'Voice, ICP, and pillars built and delivered before Week 1. You arrive with the foundation in hand. No intake calls spent figuring out who you are.',skills:['voice-profile','icp-doc','content-pillars']},
+      {n:2,short:'W1',week:'Week 1',phase:'Phase 1',title:'Foundation walkthrough · drafts start',body:'Live walkthrough of every foundation doc. You see how voice, ICP, and pillars run as the rails behind every post. Drafts and posts start this week. The goal is not perfection on the first shot, but building the writing muscle from day one. Quality sharpens every week from here, with feedback at every loop.',skills:['copy-developer']},
+      {n:3,short:'W2',week:'Week 2',phase:'Phase 1',title:'Hook judgment',body:'Sixty viral templates studied. Hook generator trained on your voice. You can tell at a glance which drafts will move on LinkedIn, and which will not move at all.',skills:['hook-generator']},
+      {n:4,short:'W3',week:'Week 3',phase:'Phase 1',title:'Post templates',body:'Twenty post archetypes installed. Every idea has a template waiting for it the moment you open the doc. You are shipping posts each week now.',skills:['post-templates','format-library']},
+      {n:5,short:'W4',week:'Week 4',phase:'Phase 1',title:'Quality loop live',body:'The quality bar becomes the gate. Every draft scored, with structured feedback before it ships. By now you have been shipping posts every week since Week 1. The muscle is forming.',skills:['post-grader','quality-bar']},
+      {n:6,short:'W5',week:'Week 5',phase:'Phase 2',title:'Idea pipeline',body:'Three live sources feed the idea pipeline: Reddit for pain, YouTube for frameworks, X and LinkedIn for live signal. Plus mining of any text source you already own. Never run out of ideas.',skills:['reddit-miner','youtube-extractor','x-signal']},
+      {n:7,short:'W6',week:'Week 6',phase:'Phase 2',title:'Visual production',body:'Brand spec built once. DIY mode (Claude + Gemini) and Expert mode (Figma + animation) run off the same spec. Never run out of visuals.',skills:['brand-spec','visual-generator']},
+      {n:8,short:'W7',week:'Week 7',phase:'Phase 3',title:'Daily engagement',body:'One-hour daily playbook: strategic comments, network expansion, DMs, post and monitor, metrics review. Posts alone will not grow brands. Daily habits do the rest.',skills:['daily-engagement','comment-strategist']},
+      {n:9,short:'W8',week:'Week 8',phase:'Phase 3',title:'Lead magnets',body:'Ten proven post templates plus six magnet formats: playbook, guide, template, checklist, swipe file, system blueprint. Engagement turns into a list.',skills:['lead-magnet-builder','dm-cadence']},
+      {n:10,short:'W9',week:'Week 9',phase:'Phase 4',title:'Repurpose engine (optional)',body:'Optional channel multiplier for anyone running content across LinkedIn, X, newsletter, and beyond. Top performers get repurposed into five platform-native formats. Pattern recognition runs across the full log: what is working, what to drop.',skills:['repurpose-engine','pattern-detector']},
+      {n:11,short:'W10',week:'Week 10',phase:'Phase 5',title:'ABM tiering',body:'Engagement signal flows into Clay. Accounts get tiered. Tier 1 personalized by your SDR, Tier 2 automated. The first message references the exact post they engaged with.',skills:['apify-engagement-pull','abm-tiering']},
+      {n:12,short:'W11',week:'Week 11',phase:'Phase 5',title:'Clay integration',body:'Full enrichment live: firmographic, technographic, intent. Outbound cadence triggers off post engagement, sequenced across LinkedIn DM, connection, and email.',skills:['clay-enrichment','cadence-personalizer']},
+      {n:13,short:'W12',week:'Week 12',phase:'Phase 5',title:'Graduate · own it',body:'You own the system. Voice, skills, brand spec, ABM integration. All of it sitting in your drive, runnable by you or anyone you onboard.',skills:['graduation-pack','team-onboarding-guide']}
+    ];
+    const nav=document.getElementById('stepperNav'), panel=document.getElementById('stepperPanel');
+    function render(idx){
+      const s=steps[idx], c=COL[s.phase];
+      panel.innerHTML=`<div class="sp-top"><span class="sp-week">${s.week}</span><span class="sp-phase" style="background:${c}">${s.phase}</span></div>`+
+        `<h3>${s.title}</h3><p class="sp-body">${s.body}</p>`+
+        `<div class="sp-skills">${s.skills.map(k=>`<span class="sp-skill">${k}</span>`).join('')}</div>`;
+      [...nav.children].forEach((b,i)=>b.classList.toggle('active',i===idx));
+    }
+    steps.forEach((s,i)=>{
+      const c=COL[s.phase];
+      const b=document.createElement('button'); b.className='step-pill'; b.style.setProperty('--c',c);
+      b.innerHTML=`<span class="dot">${s.short}</span><span class="wk">${s.week}</span>`;
+      b.addEventListener('click',()=>render(i));
+      nav.appendChild(b);
+    });
+    render(0);
+  })();
+
+  /* ---- phase rail (scroll progress) ---- */
+  (function(){
+    const fill=document.getElementById('phaseFill');
+    function onScroll(){
+      const h=document.documentElement.scrollHeight-window.innerHeight;
+      fill.style.width=(window.scrollY/h*100)+'%';
+    }
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+
+  /* ---- orbital: click a layer to expand its detail ---- */
+  (function(){
+    const orbital=document.getElementById('orbital');
+    const detail=document.getElementById('orbDetail');
+    const hint=document.getElementById('orbHint');
+    const core=document.getElementById('orbCore');
+    if(!orbital||!detail) return;
+    let active=null;
+    function close(){
+      if(active){ active.querySelector('.on-card').classList.remove('active'); active=null; }
+      orbital.classList.remove('paused'); detail.hidden=true; if(hint) hint.style.display='';
+    }
+    function open(node){
+      const card=node.querySelector('.on-card');
+      if(active===node){ close(); return; }
+      if(active) active.querySelector('.on-card').classList.remove('active');
+      active=node; orbital.classList.add('paused'); card.classList.add('active');
+      detail.style.setProperty('--nc', card.style.getPropertyValue('--nc').trim());
+      detail.querySelector('.od-name').textContent=node.dataset.name;
+      detail.querySelector('.od-role').textContent=node.dataset.role;
+      detail.querySelector('.od-content').textContent=node.dataset.content;
+      detail.hidden=false; if(hint) hint.style.display='none';
+    }
+    document.querySelectorAll('#orbital .orb-node').forEach(node=>{
+      const card=node.querySelector('.on-card');
+      card.setAttribute('role','button'); card.setAttribute('tabindex','0');
+      card.addEventListener('click',()=>open(node));
+      card.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(node); } });
+    });
+    if(core) core.addEventListener('click',close);
+  })();
+
+  /* ---- reveal ---- */
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*55)+'ms';io.observe(el);});
+</script>
+<script src="assets/js/cursor-grid.js" defer></script>
+</body>
+</html>

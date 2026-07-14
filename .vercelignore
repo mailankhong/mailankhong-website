@@ -1,0 +1,14 @@
+node_modules
+temporary screenshots
+.git
+.DS_Store
+serve.mjs
+screenshot.mjs
+src
+SKILL.md
+CLAUDE.md
+tsconfig*.json
+tailwind.config.ts
+postcss.config.js
+vite.config.ts
+package-lock.json

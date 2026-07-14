@@ -1,1238 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LinkedIn Content for B2B Teams: Done With You or Done For You | Frontal</title>
+<meta name="description" content="Turn your founders and team into a LinkedIn channel that builds pipeline. Build the content system with Frontal, or have us run it for you. Two paths, one engine." />
+<meta name="keywords" content="LinkedIn content, B2B content marketing, founder content, LinkedIn for B2B teams, done with you, done for you, content engineering" />
+<link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
   <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
-  <title>Mai-Lan Khong — Meditation Coach & LinkedIn Brand Strategist for Entrepreneurs</title>
-  <meta name="description" content="Meditation Coach for individuals and Brand & Growth Strategist for entrepreneurs. I help founders build a LinkedIn content engine that generates inbound leads. 1M+ views, #2 creator on LinkedIn by Favikon.">
-  <meta name="keywords" content="Mai-Lan Khong, meditation coach, LinkedIn content strategy, brand strategist for entrepreneurs, personal branding LinkedIn, LinkedIn lead generation, content strategy">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mai-Lan Khong",
-    "url": "https://mailankhong.com",
-    "jobTitle": ["Meditation Coach", "Brand & Growth Strategist"],
-    "description": "Meditation Coach for individuals and Brand & Growth Strategist for entrepreneurs. Specialises in LinkedIn content strategy and personal branding for founders.",
-    "sameAs": ["https://www.linkedin.com/in/mai-lan-khong/"]
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/css/glass-tokens.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  /* ---- content-engine hub: page-specific ---- */
+  .hero h1{ max-width:16ch; font-size:clamp(34px,4vw,52px); line-height:1.04; }
+
+  /* hero 2-col + dashboard mock */
+  .hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center; }
+  .hero-dash{ border-radius:18px; overflow:hidden; background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 26px 64px rgba(90,72,120,0.14); }
+  .hd-bar{ display:flex; align-items:center; gap:7px; padding:11px 15px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.02); }
+  .hd-dot{ width:9px; height:9px; border-radius:50%; }
+  .hd-title{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin-left:8px; }
+  .hd-live{ margin-left:auto; display:flex; align-items:center; gap:6px; font-family:'DM Sans',monospace; font-size:8px; letter-spacing:1px; text-transform:uppercase; color:#7fd9a6; }
+  .hd-body{ padding:20px; }
+  .hd-eyebrow{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#6E56CF; }
+  .hd-tiles{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 16px; }
+  .hd-tile{ padding:14px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); }
+  .hd-tile .v{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:25px; letter-spacing:-0.02em; color:var(--cream); line-height:1; }
+  .hd-tile.accent .v{ color:#6E56CF; }
+  .hd-tile .l{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:7px; }
+  .hd-chart-wrap{ padding:14px 15px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); }
+  .hd-chart-label{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-bottom:12px; }
+  .hd-chart{ display:flex; align-items:flex-end; gap:6px; height:60px; }
+  .hd-chart .bar{ flex:1; border-radius:4px 4px 0 0; background:linear-gradient(180deg, rgba(199,224,112,0.85), rgba(199,224,112,0.16));
+    animation:barWave 2.8s ease-in-out infinite; }
+  @keyframes barWave{ 0%,32%,100%{ filter:brightness(1); box-shadow:none; } 11%{ filter:brightness(1.6); box-shadow:0 0 16px rgba(199,224,112,0.75); } }
+  .hd-chart .bar:nth-child(1){ animation-delay:0s } .hd-chart .bar:nth-child(2){ animation-delay:.12s }
+  .hd-chart .bar:nth-child(3){ animation-delay:.24s } .hd-chart .bar:nth-child(4){ animation-delay:.36s }
+  .hd-chart .bar:nth-child(5){ animation-delay:.48s } .hd-chart .bar:nth-child(6){ animation-delay:.60s }
+  .hd-chart .bar:nth-child(7){ animation-delay:.72s } .hd-chart .bar:nth-child(8){ animation-delay:.84s }
+  .hd-chart .bar:nth-child(9){ animation-delay:.96s } .hd-chart .bar:nth-child(10){ animation-delay:1.08s }
+  /* count-up: numbers fade in from blur as they tick */
+  .hd-tile .v{ font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
+  .hd-tile.counted .v{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
+  @media (prefers-reduced-motion:reduce){ .hd-chart .bar{ animation:none; } .hd-tile .v{ opacity:1; filter:none; } }
+  @media (max-width:920px){ .hero-grid{ grid-template-columns:1fr; gap:34px; } .hero-right{ max-width:440px; } }
+
+  /* problem cards */
+  .prob-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+  .prob{ padding:22px 22px 24px; }
+  .prob .pi{ width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); color:#6E675C; font-size:19px; }
+  .prob h3{ font-size:16px; margin-bottom:8px; }
+  .prob p{ font-size:13.5px; line-height:1.55; }
+
+  /* problem comparison matrix */
+  .cmp{ margin-top:8px; max-width:780px; }
+  .cmp-grid{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:13px 20px; align-items:center; }
+  .cmp-h{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
+  .cmp-name{ display:flex; flex-direction:column; gap:3px; }
+  .cmp-name b{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:15px; color:var(--cream); }
+  .cmp-name span{ font-size:11.5px; color:#9A9184; }
+  .cmp-bar{ display:block; height:10px; border-radius:6px; background:rgba(255,255,255,0.06); position:relative; overflow:hidden; }
+  .cmp-bar::after{ content:""; position:absolute; left:0; top:0; bottom:0; width:0; border-radius:6px; background:var(--bc, var(--orange)); }
+  .cmp.in .cmp-bar::after{ width:var(--w); transition:width 1s var(--ease-out-expo); transition-delay:var(--dl,0s); }
+  .cmp-divider{ grid-column:1 / -1; height:1px; background:rgba(255,255,255,0.07); }
+  @media (max-width:620px){ .cmp-grid{ grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; } .cmp-name{ grid-column:1 / -1; } }
+  @media (prefers-reduced-motion:reduce){ .cmp.in .cmp-bar::after{ transition:none; } }
+
+  /* engine flow */
+  .flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin-top:26px; }
+  .flow-step{ flex:1 1 0; min-width:118px; padding:16px 16px 18px; border-radius:14px;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);
+    display:flex; flex-direction:column; gap:9px; }
+  .flow-step .fn{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; color:#9A9184; }
+  .flow-step .ft{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:13.5px; color:var(--cream); line-height:1.25; }
+  .flow-step i{ font-size:17px; color:#6E56CF; }
+  .flow-step.end{ background:linear-gradient(165deg, rgba(199,224,112,0.14), rgba(199,224,112,0.04));
+    border-color:rgba(150,180,80,0.30); box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), 0 0 30px rgba(199,224,112,0.10); }
+  .flow-step.end .ft{ color:#2A2723; }
+  .flow-step.end .fn{ color:#d9b9a6; }
+
+  /* flywheel figure (the embedded animated infographic) */
+  .flywheel-figure{ margin:30px auto 0; max-width:720px; border-radius:20px; overflow:hidden;
+    border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 56px rgba(90,72,120,0.13); }
+  .flywheel-figure img{ width:100%; display:block; }
+  .flywheel-cap{ text-align:center; margin-top:14px; font-family:'DM Sans',monospace; font-size:9.5px;
+    letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
+
+  /* WHY: GTM flywheel venn + points */
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-top:28px; }
+  .venn-figure{ margin:0; }
+  .venn-figure img{ width:100%; display:block; filter:drop-shadow(0 16px 40px rgba(90,72,120,0.12)); }
+  .why-points{ display:grid; gap:17px; align-content:center; }
+  .wp{ display:flex; gap:13px; align-items:flex-start; }
+  .wp > i{ color:#6E56CF; font-size:19px; margin-top:1px; flex:none; }
+  .wp strong{ display:block; font-family:'DM Sans',sans-serif; font-weight:600; font-size:15.5px; color:var(--cream); margin-bottom:2px; }
+  .wp span{ font-size:13.5px; color:#6E675C; line-height:1.45; }
+  .wp-note{ margin-top:4px; padding-top:17px; border-top:1px solid rgba(255,255,255,0.10); font-size:14px; line-height:1.55; color:#6E675C; }
+  .wp-note b{ color:#6E56CF; font-weight:600; }
+  /* warm-vs-cold reply-rate bars */
+  .warmbar{ margin-top:8px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.10); }
+  .wb-title{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin-bottom:13px; }
+  .wb-row{ display:flex; align-items:center; gap:12px; margin-bottom:11px; }
+  .wb-l{ font-size:12.5px; color:#6E675C; width:128px; flex:none; }
+  .wb-track{ flex:1; height:11px; border-radius:6px; background:rgba(255,255,255,0.06); overflow:hidden; }
+  .wb-fill{ display:block; height:100%; border-radius:6px; }
+  .wb-fill.cold{ background:rgba(166,166,174,0.45); }
+  .wb-fill.warm{ background:linear-gradient(90deg, rgba(199,224,112,0.55), var(--orange)); box-shadow:0 0 14px rgba(199,224,112,0.4); }
+  .wb-v{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:14px; color:var(--cream); width:34px; text-align:right; flex:none; }
+  @media (max-width:880px){ .why-grid{ grid-template-columns:1fr; gap:22px; } }
+
+  /* the two paths */
+  .path-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+  .path-card{ position:relative; padding:32px 32px 30px; border-radius:20px; display:flex; flex-direction:column;
+    background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.11);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 3px 24px rgba(90,72,120,0.10);
+    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease); }
+  .path-card:hover{ transform:translateY(-3px); border-color:rgba(255,255,255,0.20); }
+  .path-card.focal{ overflow:hidden;
+    background:linear-gradient(168deg, rgba(199,224,112,0.16), rgba(199,224,112,0.035));
+    border:1px solid rgba(150,180,80,0.32);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.20), 0 18px 54px rgba(90,72,120,0.11), 0 0 46px rgba(199,224,112,0.13); }
+  .path-card.focal::before{ content:""; position:absolute; inset:0 0 auto 0; height:46%; pointer-events:none;
+    background:linear-gradient(180deg, rgba(255,255,255,0.12), transparent 90%); }
+  .path-card.focal:hover{ transform:translateY(-3px); border-color:rgba(150,180,80,0.5);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.26), 0 22px 64px rgba(90,72,120,0.13), 0 0 58px rgba(199,224,112,0.2); }
+  .path-label{ display:flex; align-items:center; gap:9px; font-family:'DM Sans',monospace; font-size:9.5px;
+    letter-spacing:1.2px; text-transform:uppercase; color:#9A9184; margin-bottom:16px; }
+  .path-card.focal .path-label{ color:#4A443C; }
+  .path-card h3{ font-size:25px; letter-spacing:-0.02em; margin-bottom:10px; }
+  .path-card.focal h3{ color:#2A2723; }
+  .path-approach{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .pill{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase;
+    padding:5px 10px; border-radius:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#6E675C; }
+  .path-card.focal .pill{ background:rgba(255,255,255,0.10); border-color:rgba(199,224,112,0.30); color:#2A2723; }
+  .path-for{ font-size:14.5px; line-height:1.55; color:#6E675C; margin-bottom:20px; }
+  .path-card.focal .path-for{ color:#2A2723; }
+  .path-feat{ list-style:none; display:grid; gap:11px; margin-bottom:26px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.10); }
+  .path-card.focal .path-feat{ border-top-color:rgba(199,224,112,0.22); }
+  .path-feat li{ display:flex; gap:11px; align-items:flex-start; font-size:14px; line-height:1.5; color:#6E675C; }
+  .path-feat li i{ flex:none; margin-top:2px; font-size:15px; color:#6E56CF; }
+  .path-card.focal .path-feat li{ color:#2A2723; }
+  .path-card.focal .path-feat li i{ color:#FFC9AE; }
+  .path-cta{ margin-top:auto; }
+  .path-card .btn{ width:100%; justify-content:center; }
+  .not-sure{ margin-top:18px; text-align:center; font-size:14px; color:#9A9184; max-width:70ch; margin-left:auto; margin-right:auto; }
+  .not-sure b{ color:#6E675C; font-weight:600; }
+
+  /* two-paths comparison table */
+  .paths-cmp{ margin-top:18px; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.02); }
+  .pcmp-row{ display:grid; grid-template-columns:1.05fr 1fr 1fr; }
+  .pcmp-row + .pcmp-row{ border-top:1px solid rgba(255,255,255,0.07); }
+  .pcmp-row > *{ padding:15px 20px; font-size:13.5px; color:#6E675C; line-height:1.4; }
+  .pcmp-row > span:nth-child(2){ background:rgba(199,224,112,0.055); color:#4A443C; border-left:1px solid rgba(150,180,80,0.18); border-right:1px solid rgba(150,180,80,0.18); }
+  .pcmp-dim{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; align-self:center; }
+  .pcmp-head > *{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:14.5px; padding-top:17px; padding-bottom:17px; }
+  .pcmp-head .pcmp-dwy{ color:#FFD2BC; background:rgba(199,224,112,0.13) !important; }
+  .pcmp-head .pcmp-dfy{ color:var(--cream); }
+  .pcmp-head .pcmp-tag{ display:block; font-family:'DM Sans',monospace; font-weight:500; font-size:8.5px; letter-spacing:.8px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  @media (max-width:680px){ .pcmp-row > *{ padding:12px 13px; font-size:12.5px; } }
+
+  /* proof (same shape as the DWY page) */
+  .team-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .team-stat{ padding:28px 22px; text-align:center; }
+  .team-stat .num{ font-family:'DM Sans',sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.03em; color:#6E56CF; line-height:1; font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
+  .team-stat.counted .num{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
+  .team-stat .lbl{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; margin-top:11px; line-height:1.45; }
+
+  /* quality-vs-speed quadrant (the system) */
+  .quad{ max-width:600px; margin:32px auto 0; display:grid; grid-template-columns:20px 1fr; grid-template-rows:1fr auto; gap:10px 12px; }
+  .quad-y{ grid-row:1; grid-column:1; writing-mode:vertical-rl; transform:rotate(180deg); align-self:center; justify-self:center;
+    font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#9A9184; }
+  .quad-plot{ grid-row:1; grid-column:2; position:relative; aspect-ratio:1.7/1; border-left:1px solid rgba(255,255,255,0.16); border-bottom:1px solid rgba(255,255,255,0.16);
+    background-image:linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size:25% 25%; }
+  .quad-x{ grid-row:2; grid-column:2; display:flex; justify-content:space-between; font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
+  .quad-x span:nth-child(2){ color:#9A9184; }
+  .quad-pt{ position:absolute; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; gap:7px; }
+  .qp-dot{ width:11px; height:11px; border-radius:50%; background:rgba(166,166,174,0.55); border:1px solid rgba(255,255,255,0.25); }
+  .qp-l{ font-size:11.5px; color:#9A9184; white-space:nowrap; }
+  .quad-pt.engine .qp-dot{ width:17px; height:17px; background:var(--orange); border:none; animation:qPulse 2.6s ease-in-out infinite; }
+  .quad-pt.engine .qp-l{ color:var(--cream); font-weight:700; font-size:12.5px; white-space:normal; max-width:104px; text-align:center; line-height:1.2; }
+  @keyframes qPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(199,224,112,0.5), 0 0 18px rgba(199,224,112,0.6); } 50%{ box-shadow:0 0 0 11px rgba(199,224,112,0), 0 0 18px rgba(199,224,112,0.6); } }
+  @media (prefers-reduced-motion:reduce){ .team-stat .num{ opacity:1; filter:none; } .quad-pt.engine .qp-dot{ animation:none; } }
+  .proof-grid{ columns:3; column-gap:14px; margin-top:8px; }
+  .proof-card{ break-inside:avoid; margin-bottom:14px; padding:14px; }
+  .proof-shot{ border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px; }
+  .proof-shot img{ width:100%; display:block; }
+  .proof-author{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px; color:var(--cream); }
+  .proof-role{ font-size:11.5px; color:#9A9184; margin-top:2px; }
+  .proof-metrics{ display:flex; gap:16px; margin:14px 0; padding:12px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); }
+  .proof-metric{ display:flex; flex-direction:column; }
+  .proof-metric .pm-n{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:16px; color:var(--cream); }
+  .proof-metric .pm-n.accent{ color:var(--orange); }
+  .proof-metric .pm-l{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
+  .proof-outcome{ font-size:12.5px; line-height:1.5; color:#6E675C; }
+
+  @media (max-width:880px){
+    .prob-grid{ grid-template-columns:1fr 1fr; }
+    .path-grid{ grid-template-columns:1fr; }
+    .flow-step{ flex:1 1 44%; }
+    .proof-grid{ columns:2; }
+    .team-stats{ grid-template-columns:1fr; }
   }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Playfair Display', 'Georgia', 'serif'],
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* ─── TOKENS ─────────────────────────────────────────── */
-    :root {
-      --c-primary:       #6F7CC2;
-      --c-primary-deep:  #5560A8;
-      --c-lime:          #D4EAA4;
-      --c-magenta:       #E8A0C4;
-      --c-peach:         #F0B094;
-      --c-lavender:      #C4AEDE;
-      --c-charcoal:      #231F20;
-      --c-beige:         #EDE0D8;
-      --c-text:          #2D2428;
-      --c-muted:         #7A6C68;
-      --c-surface:       rgba(255,255,255,0.52);
-      --c-border:        rgba(255,255,255,0.68);
-      --shadow-soft:     0 2px 4px rgba(35,31,32,0.04), 0 8px 24px rgba(35,31,32,0.06);
-      --shadow-lift:     0 6px 12px rgba(35,31,32,0.07), 0 20px 48px rgba(35,31,32,0.09);
-    }
-
-    /* ─── RESET ──────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      color: var(--c-text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      background: #F9F5F0;
-    }
-
-    /* ─── FIXED MESH BG ──────────────────────────────────── */
-    .mesh-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(ellipse 75% 55% at 2% 5%,  rgba(212,234,164,0.52) 0%, transparent 58%),
-        radial-gradient(ellipse 65% 50% at 98% 3%,  rgba(232,160,196,0.42) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 60% at 95% 95%, rgba(240,176,148,0.40) 0%, transparent 58%),
-        radial-gradient(ellipse 75% 65% at 5%  96%, rgba(196,174,222,0.44) 0%, transparent 58%),
-        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(111,124,194,0.06) 0%, transparent 65%),
-        linear-gradient(150deg, #FAF8F4 0%, #F5EDE6 45%, #F1EBF5 75%, #EEF0F9 100%);
-    }
-    /* Grain texture */
-    .mesh-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0.028;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 120px 120px;
-    }
-
-    /* ─── FLOATING ORBS ──────────────────────────────────── */
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      will-change: transform;
-    }
-    .orb-a {
-      width: 480px; height: 480px;
-      background: radial-gradient(circle, rgba(212,234,164,0.55), rgba(196,174,222,0.25) 65%, transparent);
-      filter: blur(72px);
-      top: -80px; left: -100px;
-      animation: floatA 22s ease-in-out infinite;
-    }
-    .orb-b {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(232,160,196,0.50), rgba(240,176,148,0.25) 65%, transparent);
-      filter: blur(64px);
-      top: -60px; right: -80px;
-      animation: floatB 26s ease-in-out infinite;
-    }
-    .orb-c {
-      width: 360px; height: 360px;
-      background: radial-gradient(circle, rgba(111,124,194,0.22), rgba(196,174,222,0.38) 65%, transparent);
-      filter: blur(60px);
-      bottom: 15%; right: 5%;
-      animation: floatC 18s ease-in-out infinite;
-    }
-    .orb-d {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(240,176,148,0.32), rgba(232,160,196,0.18) 65%, transparent);
-      filter: blur(80px);
-      bottom: -120px; left: 10%;
-      animation: floatD 30s ease-in-out infinite;
-    }
-    @keyframes floatA {
-      0%,100% { transform: translate(0,0) scale(1); }
-      35%      { transform: translate(40px,-50px) scale(1.07); }
-      70%      { transform: translate(-25px,30px) scale(0.96); }
-    }
-    @keyframes floatB {
-      0%,100% { transform: translate(0,0) scale(1); }
-      40%      { transform: translate(-45px,35px) scale(1.06); }
-      75%      { transform: translate(25px,-20px) scale(0.97); }
-    }
-    @keyframes floatC {
-      0%,100% { transform: translate(0,0) scale(1); }
-      30%      { transform: translate(30px,40px) scale(1.05); }
-      65%      { transform: translate(-35px,-25px) scale(0.98); }
-    }
-    @keyframes floatD {
-      0%,100% { transform: translate(0,0) scale(1); }
-      33%      { transform: translate(-30px,-40px) scale(1.04); }
-      67%      { transform: translate(40px,20px) scale(0.97); }
-    }
-
-    /* ─── GLASS ──────────────────────────────────────────── */
-    .glass {
-      background: var(--c-surface);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border: 1px solid var(--c-border);
-    }
-    .glass-dark {
-      background: rgba(35,31,32,0.72);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border: 1px solid rgba(255,255,255,0.10);
-    }
-
-    /* ─── TYPE ───────────────────────────────────────────── */
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', Georgia, serif;
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-    }
-    .display {
-      font-size: clamp(3.75rem, 9vw, 7.5rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.02;
-    }
-    .h2 {
-      font-size: clamp(1.875rem, 4.5vw, 3rem);
-      font-weight: 500;
-      letter-spacing: -0.025em;
-    }
-    .h3 {
-      font-size: clamp(1.375rem, 2.5vw, 1.875rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-    .overline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .body-lg  { font-size: 1.0625rem; line-height: 1.75; font-weight: 300; }
-    .body-sm  { font-size: 0.9375rem; line-height: 1.7;  font-weight: 300; }
-    .caption  { font-size: 0.8125rem; line-height: 1.6;  font-weight: 400; }
-
-    /* ─── GRADIENT TEXT ──────────────────────────────────── */
-    .g-text {
-      background: linear-gradient(130deg, #6F7CC2 0%, #C4AEDE 55%, #E8A0C4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .g-text-warm {
-      background: linear-gradient(130deg, #E8A0C4 0%, #F0B094 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .g-text-cool {
-      background: linear-gradient(130deg, #6F7CC2 0%, #C4AEDE 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ─── PILL LABEL ─────────────────────────────────────── */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      padding: 0.3125rem 0.875rem;
-      border-radius: 100px;
-      background: rgba(111,124,194,0.10);
-      border: 1px solid rgba(111,124,194,0.22);
-      color: var(--c-primary);
-    }
-
-    /* ─── DIVIDER ────────────────────────────────────────── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(111,124,194,0.18), transparent);
-      border: none;
-    }
-
-    /* ─── BUTTONS ────────────────────────────────────────── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.01em;
-      text-decoration: none; cursor: pointer;
-      border-radius: 100px; padding: 0.875rem 1.875rem;
-      border: none; position: relative; overflow: hidden;
-      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
-                  box-shadow 0.22s cubic-bezier(0.34,1.56,0.64,1),
-                  background 0.18s ease;
-    }
-    .btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 3px; }
-    .btn:active        { transform: scale(0.97) !important; }
-
-    .btn-fill {
-      background: linear-gradient(135deg, #6F7CC2 0%, #8B7ED0 100%);
-      color: #fff;
-      box-shadow: 0 4px 14px rgba(111,124,194,0.38),
-                  0 1px 3px  rgba(111,124,194,0.20),
-                  inset 0 1px 0 rgba(255,255,255,0.22);
-    }
-    .btn-fill:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 24px rgba(111,124,194,0.48),
-                  0 2px 6px  rgba(111,124,194,0.24),
-                  inset 0 1px 0 rgba(255,255,255,0.28);
-    }
-
-    .btn-glass {
-      background: rgba(255,255,255,0.52);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      color: var(--c-charcoal);
-      border: 1px solid rgba(255,255,255,0.82);
-      box-shadow: 0 2px 10px rgba(35,31,32,0.07),
-                  inset 0 1px 0 rgba(255,255,255,0.92);
-    }
-    .btn-glass:hover {
-      transform: translateY(-2px) scale(1.02);
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 6px 20px rgba(35,31,32,0.10),
-                  inset 0 1px 0 rgba(255,255,255,0.96);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--c-primary);
-      border: 1.5px solid rgba(111,124,194,0.38);
-    }
-    .btn-outline:hover {
-      transform: translateY(-1px) scale(1.02);
-      background: rgba(111,124,194,0.07);
-      border-color: rgba(111,124,194,0.65);
-    }
-
-    /* ─── NAV ────────────────────────────────────────────── */
-    #nav {
-      position: sticky; top: 0; z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,0.55);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-    }
-    .nav-link {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem; font-weight: 400;
-      color: var(--c-text);
-      text-decoration: none;
-      padding: 0.375rem 0.75rem;
-      border-radius: 8px;
-      transition: color 0.14s ease, background 0.14s ease;
-    }
-    .nav-link:hover       { color: var(--c-primary); background: rgba(111,124,194,0.07); }
-    .nav-link.active      { color: var(--c-primary); font-weight: 500; }
-    .nav-link:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
-
-    .social-btn {
-      display: flex; align-items: center; justify-content: center;
-      width: 34px; height: 34px; border-radius: 9px;
-      background: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.75);
-      color: var(--c-muted);
-      text-decoration: none;
-      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1),
-                  background 0.15s ease, color 0.15s ease;
-    }
-    .social-btn:hover  { transform: translateY(-2px) scale(1.1); background: #fff; color: var(--c-primary); }
-    .social-btn:active { transform: scale(0.95); }
-    .social-btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
-
-    /* Mobile nav */
-    #mobile-nav {
-      display: none;
-      flex-direction: column;
-      padding: 0.875rem 1.5rem 1.125rem;
-      gap: 0.125rem;
-      border-top: 1px solid rgba(255,255,255,0.45);
-    }
-    #mobile-nav.open { display: flex; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      background: transparent; border: none; cursor: pointer;
-      padding: 7px; border-radius: 8px;
-      transition: background 0.14s;
-    }
-    .hamburger:hover  { background: rgba(111,124,194,0.08); }
-    .hamburger span   { display: block; width: 21px; height: 1.5px; background: var(--c-charcoal); border-radius: 2px; }
-    @media (max-width: 767px) {
-      .hamburger  { display: flex; }
-      .nav-links  { display: none !important; }
-      .nav-social { display: none !important; }
-    }
-
-    /* ─── LAYOUT ─────────────────────────────────────────── */
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    @media (min-width: 768px) { .wrap { padding: 0 2.5rem; } }
-
-    /* ─── SECTION SPACING ────────────────────────────────── */
-    .section  { padding: 5.5rem 0; }
-    .section-sm { padding: 4rem 0; }
-
-    /* ─── OFFERING CARDS ─────────────────────────────────── */
-    .card-offering {
-      border-radius: 24px; padding: 2.5rem;
-      position: relative; overflow: hidden;
-      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-      transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
-                  box-shadow 0.28s ease;
-    }
-    .card-offering:hover { transform: translateY(-7px) scale(1.01); }
-
-    .card-people {
-      background: linear-gradient(145deg, rgba(212,234,164,0.38) 0%, rgba(196,174,222,0.22) 100%);
-      border: 1px solid rgba(212,234,164,0.55);
-      box-shadow: 0 4px 6px rgba(35,31,32,0.04), 0 12px 40px rgba(212,234,164,0.28),
-                  inset 0 1px 0 rgba(255,255,255,0.55);
-    }
-    .card-people:hover {
-      box-shadow: 0 8px 14px rgba(35,31,32,0.06), 0 24px 64px rgba(212,234,164,0.38),
-                  inset 0 1px 0 rgba(255,255,255,0.65);
-    }
-    .card-brands {
-      background: linear-gradient(145deg, rgba(232,160,196,0.32) 0%, rgba(240,176,148,0.22) 100%);
-      border: 1px solid rgba(232,160,196,0.48);
-      box-shadow: 0 4px 6px rgba(35,31,32,0.04), 0 12px 40px rgba(232,160,196,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.55);
-    }
-    .card-brands:hover {
-      box-shadow: 0 8px 14px rgba(35,31,32,0.06), 0 24px 64px rgba(232,160,196,0.32),
-                  inset 0 1px 0 rgba(255,255,255,0.65);
-    }
-
-    .card-icon {
-      width: 52px; height: 52px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.375rem; margin-bottom: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.7);
-    }
-    .icon-people { background: linear-gradient(135deg, rgba(212,234,164,0.75), rgba(196,174,222,0.55)); box-shadow: 0 2px 8px rgba(212,234,164,0.35); }
-    .icon-brands { background: linear-gradient(135deg, rgba(232,160,196,0.75), rgba(240,176,148,0.55)); box-shadow: 0 2px 8px rgba(232,160,196,0.35); }
-
-    .list-item {
-      display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.5rem 0;
-    }
-    .list-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      flex-shrink: 0; margin-top: 0.5rem; opacity: 0.75;
-    }
-
-    /* ─── STAT CARD ──────────────────────────────────────── */
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.25rem, 5vw, 3.25rem);
-      font-weight: 500; letter-spacing: -0.03em; line-height: 1;
-      background: linear-gradient(130deg, #6F7CC2, #C4AEDE);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-
-    /* ─── TESTIMONIAL ────────────────────────────────────── */
-    .card-testimonial {
-      border-radius: 20px; padding: 2rem;
-      background: rgba(255,255,255,0.50);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.72);
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
-                  box-shadow 0.28s ease;
-    }
-    .card-testimonial:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lift);
-    }
-
-    /* ─── HIGHLIGHT TEXT ─────────────────────────────────── */
-    .hl {
-      background: linear-gradient(130deg, rgba(111,124,194,0.18), rgba(196,174,222,0.18));
-      border-radius: 4px; padding: 0 4px 1px;
-      font-style: italic;
-    }
-
-    /* ─── AVATAR ─────────────────────────────────────────── */
-    .avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; font-weight: 600;
-      flex-shrink: 0;
-    }
-
-    /* ─── SCROLL FADE ────────────────────────────────────── */
-    .fade {
-      opacity: 0; transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1);
-    }
-    .fade.in { opacity: 1; transform: translateY(0); }
-    .fade-d1 { transition-delay: 0.08s; }
-    .fade-d2 { transition-delay: 0.16s; }
-    .fade-d3 { transition-delay: 0.24s; }
-    .fade-d4 { transition-delay: 0.32s; }
-
-    /* ─── SCROLL BOUNCE ──────────────────────────────────── */
-    @keyframes bounce-y {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(6px); }
-    }
-    .bounce { animation: bounce-y 2.2s ease-in-out infinite; }
-
-    /* ─── FOOTER LINKS ───────────────────────────────────── */
-    .foot-link {
-      font-size: 0.875rem; color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: color 0.14s ease;
-    }
-    .foot-link:hover       { color: rgba(255,255,255,0.95); }
-    .foot-link:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
-
-    .foot-label {
-      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.35);
-      margin-bottom: 0.875rem;
-    }
-
-    /* ─── HERO SPLIT ─────────────────────────────────── */
-    .hero-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:3.5rem; align-items:center; }
-    @media(max-width:900px) { .hero-grid { grid-template-columns:1fr; gap:2.5rem; } }
-
-    /* ─── PHOTO FRAME ────────────────────────────────── */
-    .photo-frame { position:relative; }
-    .photo-border { border-radius:28px; background:linear-gradient(145deg,var(--c-lime)0%,var(--c-lavender)50%,var(--c-magenta)100%); padding:2.5px; }
-    .photo-inner { border-radius:26px; overflow:hidden; position:relative; background:var(--c-beige); aspect-ratio:4/5; }
-    .photo-inner.landscape { aspect-ratio:4/3; }
-    .photo-inner img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
-    .photo-inner::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 55%,rgba(35,31,32,0.08)100%); pointer-events:none; }
-    .pbadge { position:absolute; background:rgba(255,255,255,0.90); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.92); border-radius:14px; padding:0.75rem 1rem; box-shadow:0 4px 20px rgba(35,31,32,0.12),0 1px 3px rgba(35,31,32,0.06); z-index:2; }
-    .pbadge-bl { bottom:1.75rem; left:-1.5rem; }
-    .pbadge-tr { top:1.25rem; right:-1.25rem; text-align:center; min-width:80px; }
-
-    /* ─── SPLIT SECTION ──────────────────────────────── */
-    .split-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-    @media(max-width:900px) { .split-grid { grid-template-columns:1fr; gap:2.5rem; } }
-
-    /* ─── PILLAR CARD ────────────────────────────────── */
-    .pillar-card { border-radius:20px; padding:2rem 2.25rem; background:rgba(255,255,255,0.44); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.68); box-shadow:var(--shadow-soft); transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.28s ease; }
-    .pillar-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lift); }
-    .num-tag { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; font-family:'Playfair Display',serif; font-size:1rem; font-weight:500; margin-bottom:1rem; border:1px solid rgba(255,255,255,0.7); }
-
-    /* ─── VIDEO PLACEHOLDER ──────────────────────────── */
-    .video-wrap { position:relative; border-radius:20px; overflow:hidden; aspect-ratio:16/9; }
-    .video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-
-    /* ─── TYPEWRITER ─────────────────────────────────── */
-    .tw-cursor {
-      font-style: normal;
-      font-weight: 300;
-      margin-left: 1px;
-      animation: tw-blink 0.65s ease-in-out infinite;
-    }
-    @keyframes tw-blink {
-      0%, 100% { opacity: 1; }
-      50%      { opacity: 0; }
-    }
-    /* ─── MOBILE ─────────────────────────────────── */
-    @media(max-width:767px){
-      .section{padding:3.5rem 0}
-      .section-sm{padding:2.25rem 0}
-      .pbadge-bl{left:0.375rem!important;bottom:0.75rem!important}
-      .pbadge-tr{right:0.375rem!important;top:0.75rem!important}
-      .hero-section{min-height:0!important;padding:2.75rem 0 2.5rem!important}
-      .hero-grid{grid-template-columns:1fr!important;gap:2rem!important}
-      .hero-grid > *:last-child{order:-1}
-      .stat-grid{grid-template-columns:1fr 1fr!important;gap:1.25rem!important}
-      .offering-grid{grid-template-columns:1fr!important}
-      .story-grid{grid-template-columns:1fr!important}
-    }
-  </style>
+  @media (max-width:560px){
+    .prob-grid{ grid-template-columns:1fr; }
+    .flow-step{ flex:1 1 100%; }
+    .proof-grid{ columns:1; }
+  }
+</style>
 </head>
-<body>
+<body class="frontal-dark">
 
-<!-- Mesh background -->
-<div class="mesh-bg" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true">
+  <div class="mesh"></div><div class="grid"></div><div class="spot"></div><div class="grain"></div><div class="vig"></div>
+</div>
 
-<!-- Floating orbs -->
-<div class="orb orb-a" aria-hidden="true"></div>
-<div class="orb orb-b" aria-hidden="true"></div>
-<div class="orb orb-c" aria-hidden="true"></div>
-<div class="orb orb-d" aria-hidden="true"></div>
-
-<!-- ══════════════════════ NAV ══════════════════════ -->
-<nav id="nav" class="glass">
-  <div class="nav-inner">
-
-    <!-- Logo -->
-    <a href="/" aria-label="Mai-Lan Khong — Home" style="flex-shrink:0; display:flex; align-items:center; gap:0.625rem; text-decoration:none;">
-      <img src="brand_assets/Mailankhong%20Logo%20(4).png"
-           alt="MLK logo" width="44" height="44"
-           style="border-radius:8px; object-fit:cover; object-position:center; width:44px; height:44px;">
-    </a>
-
-    <!-- Desktop links -->
-    <div class="nav-links flex items-center gap-1">
-      <a href="/" class="nav-link active">Home</a>
-      <a href="for-people.html" class="nav-link">For People</a>
-      <a href="for-brands.html" class="nav-link">For Brands</a>
-      <a href="about-me.html" class="nav-link">About Me</a>
-      <a href="https://mailankhong.substack.com" target="_blank" rel="noopener" class="nav-link">Blog&nbsp;↗</a>
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
+    <nav class="nav-links">
+      <a href="#why">Why content</a>
+      <a href="#engine">How it works</a>
+      <a href="#paths">The two paths</a>
+      <a href="#proof">Proof</a>
+      <a href="#faq">FAQ</a>
+      <a href="about-me.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
     </div>
+  </div>
+</header>
 
-    <!-- Right: social + CTA + burger -->
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="nav-social flex items-center gap-2">
-        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.3A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
+<!-- ===== HERO ===== -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow reveal">LinkedIn content engineering</span>
+      <h1 class="reveal">Turn LinkedIn into<br>a <span class="orange">pipeline</span> channel.</h1>
+      <p class="lead reveal">Content that warms your buyers, makes your ads convert, and makes outbound land. Built with your team, or run by ours. The same engine warmed the pipeline behind 356 meetings and $153K in new MRR.</p>
+      <div class="hero-actions reveal">
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+        <a href="#paths" class="btn btn-ghost">See the two paths</a>
       </div>
-      <a href="https://mailankhong.youcanbook.me" target="_blank" rel="noopener" class="btn btn-fill" style="padding:0.625rem 1.375rem; font-size:0.8125rem;">
-        Book a Call
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-dash">
+        <div class="hd-bar">
+          <span class="hd-dot" style="background:#FF5F57"></span><span class="hd-dot" style="background:#FEBC2E"></span><span class="hd-dot" style="background:#28C840"></span>
+          <span class="hd-title">content-engine</span>
+          <span class="hd-live"><span style="width:7px;height:7px;border-radius:50%;background:#3FC878;box-shadow:0 0 8px #3FC878"></span>Live</span>
+        </div>
+        <div class="hd-body">
+          <div class="hd-eyebrow">87 days · 24 accounts · one system</div>
+          <div class="hd-tiles">
+            <div class="hd-tile accent"><div class="v">356</div><div class="l">Meetings booked</div></div>
+            <div class="hd-tile accent"><div class="v">+$153K</div><div class="l">New MRR</div></div>
+            <div class="hd-tile"><div class="v">581</div><div class="l">Posts shipped</div></div>
+            <div class="hd-tile"><div class="v">+34K</div><div class="l">New followers</div></div>
+          </div>
+          <div class="hd-chart-wrap">
+            <div class="hd-chart-label">Meetings booked, week over week</div>
+            <div class="hd-chart">
+              <span class="bar" style="height:20%"></span><span class="bar" style="height:30%"></span>
+              <span class="bar" style="height:26%"></span><span class="bar" style="height:44%"></span>
+              <span class="bar" style="height:52%"></span><span class="bar" style="height:46%"></span>
+              <span class="bar" style="height:66%"></span><span class="bar" style="height:74%"></span>
+              <span class="bar" style="height:88%"></span><span class="bar" style="height:100%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEET YOUR GUIDE ===== -->
+<section id="guide" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Meet your guide</span>
+        <h2 style="max-width:15ch;margin-top:14px">The operator behind the system.</h2>
+      </div>
+      <div class="sec-num">MEET MAI-LAN</div>
+    </div>
+    <div class="guide-grid reveal">
+      <a class="guide-shot card" href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" aria-label="Mai-Lan Khong on LinkedIn">
+        <img src="assets/proof/mailan-linkedin.png" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
       </a>
-      <!-- Hamburger -->
-      <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu" aria-expanded="false" id="burger">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="guide-copy">
+        <p class="lead">Hi, I'm <strong>Mai-Lan Khong</strong>, Content Strategist at Frontal, trusted by 275+ tech companies. I help B2B founders turn LinkedIn into a channel that builds pipeline, and I grew my own account to Favikon's #2 creator worldwide.</p>
+        <p>Whether we build the engine with your team or run it for you, you are working with an operator who has done it in the open, not a template.</p>
+        <div class="guide-actions">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+          <a href="about-me.html" class="btn btn-ghost">About Mai-Lan</a>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Mobile dropdown -->
-  <div id="mobile-nav">
-    <a href="/" class="nav-link active" style="padding:0.625rem 0.75rem;">Home</a>
-    <a href="for-people.html" class="nav-link" style="padding:0.625rem 0.75rem;">For People</a>
-    <a href="for-brands.html" class="nav-link" style="padding:0.625rem 0.75rem;">For Brands</a>
-    <a href="about-me.html" class="nav-link" style="padding:0.625rem 0.75rem;">About Me</a>
-    <a href="https://mailankhong.substack.com" target="_blank" rel="noopener" class="nav-link" style="padding:0.625rem 0.75rem;">Blog ↗</a>
-  </div>
-</nav>
-
-
-<!-- ══════════════════════ HERO ══════════════════════ -->
-<section style="min-height:calc(100vh - 70px); display:flex; align-items:center; padding:5rem 0 4rem; position:relative;">
-  <div class="wrap" style="width:100%;">
-    <div class="hero-grid">
-
-      <!-- ── Left: Text ── -->
-      <div>
-        <div class="pill overline fade fade-d1" style="margin-bottom:2rem; display:inline-flex;">
-          <span>✦</span> Meditation Coach &amp; Brand &amp; Growth Strategist
-        </div>
-        <h1 class="display fade fade-d2" style="font-size:clamp(2rem,4.5vw,3.25rem);">
-          <span style="display:block; color:var(--c-charcoal);">Mai-Lan</span>
-          <em class="g-text" style="display:block; font-style:italic;">Khong</em>
-        </h1>
-        <div class="fade fade-d3" style="max-width:580px; margin:2rem 0; line-height:1.5;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:clamp(1rem,2vw,1.125rem); color:var(--c-muted); letter-spacing:0.02em;">I help —</span>
-          <br>
-          <span id="tw-text" style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1.5rem,3.5vw,2.25rem); line-height:1.3;"></span><span class="tw-cursor" id="tw-cursor" style="font-family:'DM Sans',sans-serif; font-size:clamp(1.5rem,3.5vw,2.25rem); color:var(--c-muted);">|</span>
-        </div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.75rem;" class="fade fade-d4">
-          <a href="for-people.html" class="btn btn-glass">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            For People
-          </a>
-          <a href="https://mailankhong.youcanbook.me" target="_blank" rel="noopener" class="btn btn-fill">
-            Book a Free Clarity Call
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="for-brands.html" class="btn btn-glass">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            For Brands
-          </a>
-        </div>
-        <!-- Credentials -->
-        <div class="fade" style="margin-top:1.75rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
-          <img src="brand_assets/Meditation%20credentials.png"
-               alt="Chopra Certified Coach — Institute for Integrative Nutrition"
-               style="height:54px; width:auto; opacity:0.88; filter:drop-shadow(0 2px 4px rgba(35,31,32,0.07));">
-          <div style="font-family:'DM Sans',sans-serif; line-height:1.65;">
-            <div style="font-size:0.75rem; font-weight:500; color:var(--c-charcoal);">Chopra Certified Coach</div>
-            <div style="font-size:0.6875rem; color:var(--c-muted);">Institute for Integrative Nutrition</div>
-          </div>
-        </div>
-        <div style="margin-top:3rem;" class="fade">
-          <button onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})"
-                  style="background:none; border:none; cursor:pointer; color:var(--c-muted);
-                         display:flex; flex-direction:column; align-items:center; gap:0.375rem;
-                         font-family:'DM Sans',sans-serif; font-size:0.6875rem;
-                         letter-spacing:0.1em; text-transform:uppercase;"
-                  aria-label="Scroll down">
-            <span>scroll</span>
-            <svg class="bounce" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </button>
-        </div>
+    <div class="guide-favikon card reveal">
+      <div class="gf-shot">
+        <img src="assets/proof/favikon-mailan.jpg" alt="Favikon ranking: Mai-Lan Khong ranked #2 creator on LinkedIn worldwide" />
       </div>
-
-      <!-- ── Right: Photo ── -->
-      <div class="fade fade-d3">
-        <div class="photo-frame" style="max-width:380px; margin:0 auto;">
-          <div class="photo-border">
-            <div class="photo-inner">
-              <img src="brand_assets/homepage%20-%20mailan.png"
-                   alt="Mai-Lan Khong" loading="eager">
-            </div>
-          </div>
-          <!-- Bottom-left floating badge -->
-          <div class="pbadge pbadge-bl fade fade-d4">
-            <div class="overline" style="color:var(--c-muted); font-size:0.625rem; margin-bottom:0.25rem;">currently coaching</div>
-            <div style="font-family:'Playfair Display',serif; font-size:0.9375rem; font-weight:500; color:var(--c-charcoal);">Meditation &amp; Brands</div>
-          </div>
-          <!-- Top-right stat badge -->
-          <div class="pbadge pbadge-tr fade fade-d2">
-            <div style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:500; line-height:1;
-                        background:linear-gradient(130deg,#6F7CC2,#C4AEDE); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">1M+</div>
-            <div class="caption" style="color:var(--c-muted); font-size:0.6875rem; margin-top:0.125rem;">Views</div>
-          </div>
-        </div>
+      <div class="gf-copy">
+        <span class="eyebrow">Industry recognition</span>
+        <h3>#2 Creator on LinkedIn, worldwide</h3>
+        <p>Ranked by Favikon, the leading creator-analytics platform. Real reach, earned in public, and the same instinct I bring to every client's content.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════ OFFERINGS ══════════════════════ -->
-<section id="offerings" class="section">
+<!-- ===== WHY (revenue) ===== -->
+<section id="why" class="sec">
   <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:3.5rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">Two ways I can help</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">Where do you feel the pull?</h2>
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Why content</span>
+        <h2 class="reveal">Recognition is your cheapest pipeline.</h2></div>
+      <div class="sec-num reveal">01 / Why content</div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- FOR PEOPLE -->
-      <div class="card-offering card-people fade fade-d1">
-        <div class="card-icon icon-people">🌿</div>
-        <div class="pill overline fade"
-             style="margin-bottom:1.25rem; background:rgba(212,234,164,0.38); border-color:rgba(212,234,164,0.55); color:#7A9E5A; display:inline-flex;">
-          For People
+    <p class="lead reveal">Buyers don't reply to strangers anymore. They buy from people they recognize, and content builds that recognition: the trust layer that warms buyers so your ads convert and outbound gets a reply, not a delete.</p>
+    <div class="why-grid">
+      <figure class="venn-figure reveal">
+        <img src="assets/proof/gtm-venn.png" alt="The GTM flywheel: content, ads, and outbound aimed at the same ICP. Content builds trust at scale, ads keep you visible, outbound books the meeting." />
+      </figure>
+      <div class="why-points reveal">
+        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Builds trust at scale</strong><span>before you ever make the first ask.</span></div></div>
+        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Lowers your ad costs</strong><span>by warming the audience before it is retargeted.</span></div></div>
+        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Makes outbound land</strong><span>when the name in the inbox is one they already know.</span></div></div>
+        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Educates buyers early</strong><span>months before they are ready to buy.</span></div></div>
+        <div class="warmbar">
+          <div class="wb-title">Reply rate, cold vs warm</div>
+          <div class="wb-row"><span class="wb-l">Cold outreach</span><div class="wb-track"><span class="wb-fill cold" style="width:13%"></span></div><span class="wb-v">~2%</span></div>
+          <div class="wb-row"><span class="wb-l">When they know you</span><div class="wb-track"><span class="wb-fill warm" style="width:100%"></span></div><span class="wb-v">~15%</span></div>
         </div>
-        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
-          A meditation practice that<br><em>transforms daily life</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
-          Startup Founder turned Meditation Coach. Whether you seek clarity, inner peace, or a foundation for your relationships and creative work — I'll meet you exactly where you are.
-        </p>
-        <ul style="margin-bottom:2rem; list-style:none;">
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Personal 1-on-1 coaching sessions</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Small cohort group programs</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#7A9E5A;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Holistic integration into daily life</span>
-          </li>
+      </div>
+    </div>
+    <div class="accent-callout reveal" style="margin-top:18px">
+      <h3>Content warms the pipeline that closes.</h3>
+      <p>Across 24 experts in 87 days, content built the recognition that fed <b>356 meetings</b> and <b>$153K in new MRR</b>. Buyers saw the team, trusted them, then took the call. The same trust makes your ads convert and your outbound land.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE PROBLEM ===== -->
+<section id="problem" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">The problem</span>
+        <h2 class="reveal">Good content got expensive.</h2></div>
+      <div class="sec-num reveal">02 / The problem</div>
+    </div>
+    <p class="lead reveal">AI made average posts free, so the feed is a wall of sameness. Every shortcut to standing out trades away quality, speed, or cost.</p>
+    <div class="cmp reveal">
+      <div class="cmp-grid">
+        <div class="cmp-h"></div><div class="cmp-h">Quality</div><div class="cmp-h">Speed</div><div class="cmp-h">Cost</div>
+        <div class="cmp-name"><b>Do it yourself</b><span>The same AI as everyone</span></div>
+        <div><span class="cmp-bar" style="--w:32%;--bc:rgba(224,88,106,.78);--dl:.05s"></span></div>
+        <div><span class="cmp-bar" style="--w:30%;--bc:rgba(224,88,106,.78);--dl:.12s"></span></div>
+        <div><span class="cmp-bar" style="--w:100%;--bc:var(--orange);--dl:.19s"></span></div>
+        <div class="cmp-divider"></div>
+        <div class="cmp-name"><b>A freelancer</b><span>Average, or rare and pricey</span></div>
+        <div><span class="cmp-bar" style="--w:60%;--bc:rgba(230,162,78,.85);--dl:.1s"></span></div>
+        <div><span class="cmp-bar" style="--w:56%;--bc:rgba(230,162,78,.85);--dl:.17s"></span></div>
+        <div><span class="cmp-bar" style="--w:55%;--bc:rgba(230,162,78,.85);--dl:.24s"></span></div>
+        <div class="cmp-divider"></div>
+        <div class="cmp-name"><b>An in-house hire</b><span>A full salary, one company's view</span></div>
+        <div><span class="cmp-bar" style="--w:100%;--bc:var(--orange);--dl:.15s"></span></div>
+        <div><span class="cmp-bar" style="--w:32%;--bc:rgba(224,88,106,.78);--dl:.22s"></span></div>
+        <div><span class="cmp-bar" style="--w:26%;--bc:rgba(224,88,106,.78);--dl:.29s"></span></div>
+      </div>
+    </div>
+    <div class="callout-box reveal">
+      <h3>So we built it as a system, tuned to one job.</h3>
+      <p>A specialist's quality, a machine's speed, and the pattern data of a team across many B2B accounts. Built with your team, or run by ours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE ENGINE ===== -->
+<section id="engine" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">The system</span>
+        <h2 class="reveal">The quality of a specialist,<br>at the speed of a machine.</h2></div>
+      <div class="sec-num reveal">03 / The system</div>
+    </div>
+    <p class="lead reveal">Everyone else makes you pick one. The engine gives you both: research so you never read like the feed, your voice profile so it sounds like you, a grader so nothing weak ships.</p>
+    <div class="quad reveal">
+      <div class="quad-y">Quality</div>
+      <div class="quad-plot">
+        <div class="quad-pt" style="left:31%;top:75%"><span class="qp-dot"></span><span class="qp-l">Do it yourself</span></div>
+        <div class="quad-pt" style="left:49%;top:53%"><span class="qp-dot"></span><span class="qp-l">Freelancer</span></div>
+        <div class="quad-pt" style="left:24%;top:25%"><span class="qp-dot"></span><span class="qp-l">In-house hire</span></div>
+        <div class="quad-pt engine" style="left:72%;top:18%"><span class="qp-dot"></span><span class="qp-l">The Frontal Content Engine</span></div>
+      </div>
+      <div class="quad-x"><span>Slow</span><span>Speed</span><span>Fast</span></div>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-step"><i class="ph ph-binoculars"></i><div class="fn">Research</div><div class="ft">6 workers, every week</div></div>
+      <div class="flow-step"><i class="ph ph-magnet-straight"></i><div class="fn">Hooks</div><div class="ft">50 templates, ranked</div></div>
+      <div class="flow-step"><i class="ph ph-pen-nib"></i><div class="fn">Copy</div><div class="ft">In your voice profile</div></div>
+      <div class="flow-step"><i class="ph ph-gauge"></i><div class="fn">Grade</div><div class="ft">Scored before it ships</div></div>
+      <div class="flow-step"><i class="ph ph-chats-circle"></i><div class="fn">Publish</div><div class="ft">And engaged daily</div></div>
+      <div class="flow-step end"><i class="ph ph-trend-up"></i><div class="fn">Outcome</div><div class="ft">Meetings, not only likes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE TWO PATHS ===== -->
+<section id="paths" class="sec">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+      <span class="eyebrow reveal">The two paths</span>
+      <h2 class="reveal">Two ways to run content engineering.</h2>
+      <p class="lead reveal" style="text-align:center;margin-top:12px">Build the engine with your team. Or have us run it for you.</p>
+    </div>
+    <div class="path-grid">
+      <!-- DWY -->
+      <div class="path-card focal reveal">
+        <div class="path-label"><span class="fr-dot-solid"></span>Path 01 · Done With You</div>
+        <h3>Build the content engine.</h3>
+        <div class="path-approach"><span class="pill">We build it with you</span><span class="pill">You own it</span></div>
+        <p class="path-for">For teams that want the system in-house. We build it with you over a structured program, and your team keeps running it after we leave.</p>
+        <ul class="path-feat">
+          <li><i class="ph ph-check"></i>A structured program, your whole team trained</li>
+          <li><i class="ph ph-check"></i>Voice, ideal customer, and content pillars defined</li>
+          <li><i class="ph ph-check"></i>The full playbook: write, grade, publish, engage</li>
+          <li><i class="ph ph-check"></i>You own the engine and keep it for good</li>
         </ul>
-        <a href="for-people.html" class="btn btn-outline"
-           style="border-color:rgba(122,158,90,0.38); color:#7A9E5A;">
-          Explore for People
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="path-cta"><a href="done-with-you.html" class="btn btn-solid">Explore Done With You <i class="ph ph-arrow-right"></i></a></div>
       </div>
-
-      <!-- FOR BRANDS -->
-      <div class="card-offering card-brands fade fade-d2">
-        <div class="card-icon icon-brands">✦</div>
-        <div class="pill overline"
-             style="margin-bottom:1.25rem; background:rgba(196,160,181,0.18); border-color:rgba(196,160,181,0.38); color:#9C7A8E; display:inline-flex;">
-          For Brands
-        </div>
-        <h3 class="h3" style="color:var(--c-charcoal); margin-bottom:0.875rem;">
-          LinkedIn Content as a<br><em>Revenue Machine</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); margin-bottom:1.625rem;">
-          The <span class="hl">MINDED AI</span> method — awareness first, AI-amplified. The framework behind 1M+ views in 6 months and a content engine that sounds like you, not like everyone else using the same tools.
-        </p>
-        <ul style="margin-bottom:2rem; list-style:none;">
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Brand strategy &amp; authentic positioning</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">AI-powered content system, your voice</span>
-          </li>
-          <li class="list-item">
-            <div class="list-dot" style="background:#9C7A8E;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Inbound leads — without cold outreach</span>
-          </li>
+      <!-- DFY (focal) -->
+      <div class="path-card reveal">
+        <div class="path-label"><span class="fr-dot-solid"></span>Path 02 · Done For You</div>
+        <h3>We run it for you.</h3>
+        <div class="path-approach"><span class="pill">We run it for you</span><span class="pill">Live in two weeks</span></div>
+        <p class="path-for">For founders who want the reach without the hours. We run your content, engagement, and audience growth under your name.</p>
+        <ul class="path-feat">
+          <li><i class="ph ph-check"></i>16 posts a month, written and designed</li>
+          <li><i class="ph ph-check"></i>A dedicated engagement specialist, in your voice</li>
+          <li><i class="ph ph-check"></i>Audience growth on autopilot</li>
+          <li><i class="ph ph-check"></i>A monthly Performance Lab that keeps it improving</li>
         </ul>
-
-        <!-- Video embed -->
-        <div style="margin-bottom:1.5rem;">
-          <div style="position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden;
-               border:1px solid rgba(196,160,181,0.25);
-               box-shadow:0 4px 18px rgba(156,122,142,0.14);">
-            <iframe src="https://www.youtube.com/embed/-uDVSkdDNvY?start=150"
-                    title="LinkedIn Content as a Revenue Machine — Mai-Lan Khong"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
-          </div>
-          <p style="margin-top:0.625rem; font-size:0.75rem; color:var(--c-muted);
-                    font-family:'DM Sans',sans-serif; line-height:1.5; text-align:center;
-                    letter-spacing:0.02em;">
-            <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--c-charcoal); font-size:0.8125rem;">LinkedIn Content as a Revenue Machine</em>
-            &nbsp;·&nbsp; the framework, in her own words
-          </p>
-        </div>
-
-        <a href="for-brands.html" class="btn btn-outline"
-           style="border-color:rgba(156,122,142,0.38); color:#9C7A8E;">
-          Explore for Brands
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="path-cta"><a href="done-for-you.html" class="btn btn-ghost">Explore Done For You <i class="ph ph-arrow-right"></i></a></div>
       </div>
+    </div>
+    <div class="paths-cmp reveal">
+      <div class="pcmp-row pcmp-head">
+        <span class="pcmp-dim">Compare</span>
+        <span class="pcmp-dwy">Done With You<span class="pcmp-tag">Build it</span></span>
+        <span class="pcmp-dfy">Done For You<span class="pcmp-tag">Run it</span></span>
+      </div>
+      <div class="pcmp-row"><span class="pcmp-dim">Who runs it</span><span>Your team, with us</span><span>Frontal, under your name</span></div>
+      <div class="pcmp-row"><span class="pcmp-dim">Your time</span><span>A few hours a week</span><span>About 30 minutes a week</span></div>
+      <div class="pcmp-row"><span class="pcmp-dim">You walk away with</span><span>A content system you own</span><span>Reach, audience, and inbound</span></div>
+      <div class="pcmp-row"><span class="pcmp-dim">Best if you want</span><span>The capability in-house</span><span>It handled, fast</span></div>
+    </div>
+    <p class="not-sure reveal"><b>Not sure which fits?</b> On a call we will tell you straight which one is right.</p>
+  </div>
+</section>
 
+<!-- ===== PROOF ===== -->
+<section id="proof" class="sec light">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal">Proof</span>
+        <h2 class="reveal">356 meetings and $153K MRR from content.</h2></div>
+      <div class="sec-num reveal">04 / Proof</div>
+    </div>
+    <p class="lead reveal">Content is not an overnight channel. It is the one that compounds: it builds authority, warms the accounts you are about to reach out to, and turns attention into steady inbound.</p>
+    <div class="team-stats" style="margin-top:26px">
+      <div class="card team-stat reveal"><div class="num">356</div><div class="lbl">meetings, warmed by content</div></div>
+      <div class="card team-stat reveal"><div class="num">+27</div><div class="lbl">new clients from content</div></div>
+      <div class="card team-stat reveal"><div class="num">+$153K</div><div class="lbl">new MRR in 87 days</div></div>
+    </div>
+
+    <div class="sec-head" style="margin-top:60px">
+      <div><span class="eyebrow reveal">Real posts, real engagement</span>
+        <h2 class="reveal" style="font-size:clamp(24px,3vw,34px)">Content that earns its reach.</h2></div>
+    </div>
+    <p class="lead reveal" style="margin-bottom:8px">Public on LinkedIn. Every name and number is real.</p>
+    <div class="proof-grid reveal">
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-alex.png" alt="Alex Vacca post"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Co-Founder · $6M ARR</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,238</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">4,099</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">43</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Code for Ads." $200K/month in ad spend run from a terminal.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-kenny.png" alt="Kenny Damian post"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,266</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,139</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">61</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">37 AI Agents set up for the $6M ARR outbound agency. 6 deployed across $10M+ ARR clients.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-ivan.png" alt="Ivan Falco post"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth · $7M GTM Agency</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">469</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,785</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">6</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Biggest skills database for GTM: outbound, RevOps, ABM. Open-sourced for free.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-mailan.png" alt="Mai-Lan Khong post"></div><div class="proof-author">Mai-Lan Khong</div><div class="proof-role">Content Strategist & AI Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">281</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">1,030</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">11</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">$153,000 MRR in 87 days. 24 people posting on one system. The full content pipeline.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-soheil.png" alt="Soheil Saeidmehr post"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">2,858</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">370</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">39</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">SEG auto-detection reveal. The deliverability post that compounded into thousands of saves.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-dujam.png" alt="Dujam Dunato post"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">250</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">520</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">13</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Claude as an AI sales closer with n8n. 5 trained agents for post-call follow-up.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-luca.png" alt="Luca Carrese post"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner @ Frontal AI</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">321</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">55</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">22</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Dispatch just shipped." Run your AI agent from your phone — safely, cheaply, natively.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-shubham.png" alt="Shubham Sandilya post"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">235</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">70</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">27</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">The Modern Outbound Stack. 5 categories, one clear path from lead to close.</div></div>    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="sec light">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+      <span class="eyebrow reveal">Questions</span>
+      <h2 class="reveal">The things teams ask first.</h2>
+    </div>
+    <div class="faq">
+      <details class="q reveal"><summary>What is content engineering, exactly?<i class="ph ph-plus"></i></summary><div class="a">Treating content like a system instead of a chore. Ideas come from your real sales calls, get written in your voice, are held to a quality bar, then amplified by daily engagement and audience growth. Built with your team, or run by ours.</div></details>
+      <details class="q reveal"><summary>Which path is right for me, Done With You or Done For You?<i class="ph ph-plus"></i></summary><div class="a">If you want the capability in-house and your team will write, choose Done With You. If you want the reach without the hours, choose Done For You. On a call we will tell you straight which fits your team and your goals.</div></details>
+      <details class="q reveal"><summary>Is this only for founders, or the whole team?<i class="ph ph-plus"></i></summary><div class="a">Both. The engine works for a single founder profile or a team of voices. Many companies start with the founder and add team members once it is working.</div></details>
+      <details class="q reveal"><summary>Do you replace our writer or agency?<i class="ph ph-plus"></i></summary><div class="a">No. We can run alongside what you already have, or take the whole thing. Most teams move it all to us once they see the difference in reach.</div></details>
+      <details class="q reveal"><summary>How fast do we start seeing results?<i class="ph ph-plus"></i></summary><div class="a">Engagement and network growth show in the first weeks. The audience shift people actually notice builds over several months. We are upfront about that because we plan to still be here when it lands.</div></details>
+      <details class="q reveal"><summary>Who owns the content and the accounts?<i class="ph ph-plus"></i></summary><div class="a">You do, always. We work under your name, credentials stay in an encrypted vault, and everything we produce is yours to keep.</div></details>
     </div>
   </div>
 </section>
 
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ ORIGIN STORY ══════════════════════ -->
-<section class="section" style="padding-bottom:2rem;">
+<!-- ===== CTA ===== -->
+<section id="book" class="sec" style="border-top:none">
   <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:3.75rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">The story behind the work</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">One path.<br>
-        <em style="font-family:'Playfair Display',serif; font-style:italic;
-                   background:linear-gradient(130deg,#6F7CC2 30%,#C4A0B5);
-                   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
-          Two practices.
-        </em>
-      </h2>
-      <p class="body-sm" style="color:var(--c-muted); max-width:460px; margin:1.25rem auto 0; line-height:1.85;">
-        These two offerings aren't separate businesses. They're two chapters of the same story.
-      </p>
-    </div>
-
-    <!-- Three chapters -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <!-- Chapter 01 -->
-      <div class="fade fade-d1" style="background:rgba(255,255,255,0.52); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-           border:1px solid rgba(111,124,194,0.14); border-top:3px solid #6F7CC2; border-radius:20px;
-           padding:2.25rem 1.875rem; position:relative; overflow:hidden;">
-        <span aria-hidden="true" style="position:absolute; top:-0.75rem; right:1.25rem;
-              font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:600; line-height:1;
-              color:rgba(111,124,194,0.07); user-select:none; pointer-events:none;">01</span>
-        <div class="pill overline" style="margin-bottom:1rem; display:inline-flex;
-             background:rgba(111,124,194,0.1); border-color:rgba(111,124,194,0.22); color:#6F7CC2;">
-          Where it began
-        </div>
-        <h3 style="font-family:'Playfair Display',serif; font-size:1.3125rem; font-weight:500;
-                   color:var(--c-charcoal); margin-bottom:0.875rem; line-height:1.35;">
-          Built in the pressure<br><em>cooker of startups</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); line-height:1.85;">
-          I spent years as a startup founder — navigating high-stakes decisions, investor dynamics, and the relentless pace the industry demands. I learned firsthand what it takes to stay sharp, strategic, and human under pressure. And I learned, the hard way, that clarity isn't optional.
-        </p>
-      </div>
-
-      <!-- Chapter 02 -->
-      <div class="fade fade-d2" style="background:rgba(255,255,255,0.52); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-           border:1px solid rgba(122,158,90,0.14); border-top:3px solid #7A9E5A; border-radius:20px;
-           padding:2.25rem 1.875rem; position:relative; overflow:hidden;">
-        <span aria-hidden="true" style="position:absolute; top:-0.75rem; right:1.25rem;
-              font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:600; line-height:1;
-              color:rgba(90,122,58,0.07); user-select:none; pointer-events:none;">02</span>
-        <div class="pill overline" style="margin-bottom:1rem; display:inline-flex;
-             background:rgba(122,158,90,0.1); border-color:rgba(122,158,90,0.22); color:#7A9E5A;">
-          What it revealed
-        </div>
-        <h3 style="font-family:'Playfair Display',serif; font-size:1.3125rem; font-weight:500;
-                   color:var(--c-charcoal); margin-bottom:0.875rem; line-height:1.35;">
-          Stillness wasn't a retreat —<br><em>it was the edge</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); line-height:1.85;">
-          A decade of personal practice — trained with sages and scientists in India and the Netherlands — taught me that stillness isn't a retreat from ambition. It's the foundation that makes it last. I became a coach to bring this to my tribe: founders, builders, and anyone navigating a high-pressure life.
-        </p>
-        <!-- Credentials -->
-        <div style="margin-top:1.25rem; padding-top:1rem; border-top:1px solid rgba(122,158,90,0.15);
-             display:flex; align-items:center; gap:0.75rem;">
-          <img src="brand_assets/Meditation%20credentials.png"
-               alt="Chopra Certified Coach — Institute for Integrative Nutrition"
-               style="height:42px; width:auto; opacity:0.85; filter:drop-shadow(0 1px 3px rgba(35,31,32,0.06));">
-          <div style="font-family:'DM Sans',sans-serif; line-height:1.65;">
-            <div style="font-size:0.6875rem; font-weight:500; color:var(--c-charcoal);">Chopra Certified Coach</div>
-            <div style="font-size:0.625rem; color:var(--c-muted);">Institute for Integrative Nutrition</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Chapter 03 -->
-      <div class="fade fade-d3" style="background:rgba(255,255,255,0.52); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-           border:1px solid rgba(196,160,181,0.14); border-top:3px solid #C4A0B5; border-radius:20px;
-           padding:2.25rem 1.875rem; position:relative; overflow:hidden;">
-        <span aria-hidden="true" style="position:absolute; top:-0.75rem; right:1.25rem;
-              font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:600; line-height:1;
-              color:rgba(196,114,154,0.07); user-select:none; pointer-events:none;">03</span>
-        <div class="pill overline" style="margin-bottom:1rem; display:inline-flex;
-             background:rgba(196,160,181,0.1); border-color:rgba(196,160,181,0.22); color:#9C7A8E;">
-          What grew from it
-        </div>
-        <h3 style="font-family:'Playfair Display',serif; font-size:1.3125rem; font-weight:500;
-                   color:var(--c-charcoal); margin-bottom:0.875rem; line-height:1.35;">
-          Building in public became<br><em>a revenue framework</em>
-        </h3>
-        <p class="body-sm" style="color:var(--c-muted); line-height:1.85;">
-          I built my personal brand as a channel for my business — 1M+ views in 6 months. My entrepreneur peers started asking for the playbook. That's when I formalized <strong style="color:var(--c-charcoal); font-weight:500;">MINDED AI</strong>: a system that puts awareness and authentic voice first, then deploys AI systematically to scale what only you can say.
-        </p>
-        <!-- Favikon proof -->
-        <div style="margin-top:1.375rem; display:flex; align-items:center; gap:0.875rem;
-             padding:0.875rem 1rem; border-radius:14px;
-             background:rgba(255,255,255,0.65); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-             border:1px solid rgba(196,160,181,0.25);">
-          <img src="brand_assets/Favikon%20Mai%20Lan.jpeg"
-               alt="Favikon — #2 Worldwide LinkedIn Meditation & Hypnotherapy ranking"
-               style="width:68px; height:auto; border-radius:9px; flex-shrink:0;
-                      border:1px solid rgba(196,160,181,0.2); box-shadow:0 2px 8px rgba(35,31,32,0.10);">
-          <div>
-            <div style="font-family:'Playfair Display',serif; font-size:1.0625rem; font-weight:500;
-                        color:var(--c-charcoal); line-height:1.2;">#2 Worldwide</div>
-            <div style="font-size:0.8125rem; color:var(--c-muted); margin-top:0.2rem; line-height:1.45;">
-              Favikon · LinkedIn · Meditation &amp; Hypnotherapy
-            </div>
-            <div style="font-size:0.6875rem; color:var(--c-muted); opacity:0.75; letter-spacing:0.04em; text-transform:uppercase; margin-top:0.125rem;">
-              November 2025 · Global ranking
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Closing thread -->
-    <div class="fade" style="text-align:center; margin-top:3rem;
-         padding:2rem 1.5rem; border-top:1px solid rgba(111,124,194,0.12);">
-      <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.125rem;
-                color:var(--c-charcoal); max-width:560px; margin:0 auto; line-height:1.8;">
-        "Two practices, one philosophy — the most sustainable growth, for your business and your life, comes from building both from the inside out."
-      </p>
-      <div style="margin-top:0.875rem; font-size:0.8125rem; color:var(--c-muted);
-                  font-family:'DM Sans',sans-serif; letter-spacing:0.08em; text-transform:uppercase;">
-        — Mai-Lan
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ STATS ══════════════════════ -->
-<section class="section-sm">
-  <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:3rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">Results that speak</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">The work in numbers</h2>
-    </div>
-
-    <div class="glass" style="border-radius:24px; padding:2.5rem 2rem; position:relative; overflow:hidden;">
-      <!-- Inner glow -->
-      <div aria-hidden="true" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-           width:500px; height:220px; border-radius:50%;
-           background:radial-gradient(ellipse, rgba(111,124,194,0.07), transparent 70%);
-           pointer-events:none;"></div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 relative" style="z-index:1;">
-
-        <div style="text-align:center; padding:1.25rem;" class="fade fade-d1">
-          <div class="stat-num">1M+</div>
-          <div class="caption" style="color:var(--c-muted); margin-top:0.375rem;">Views in 6 months</div>
-        </div>
-        <div style="text-align:center; padding:1.25rem; border-left:1px solid rgba(111,124,194,0.12);" class="fade fade-d2">
-          <div class="stat-num" style="font-size:clamp(1.75rem,4vw,2.5rem);">#2</div>
-          <div class="caption" style="color:var(--c-muted); margin-top:0.375rem;">Meditation Creator on LinkedIn <span style="display:block;opacity:0.7;">by Favikon</span></div>
-        </div>
-        <div style="text-align:center; padding:1.25rem; border-left:1px solid rgba(111,124,194,0.12);" class="fade fade-d3">
-          <div class="stat-num">5×</div>
-          <div class="caption" style="color:var(--c-muted); margin-top:0.375rem;">Above platform avg. engagement</div>
-        </div>
-        <div style="text-align:center; padding:1.25rem; border-left:1px solid rgba(111,124,194,0.12);" class="fade fade-d4">
-          <div class="stat-num">55K</div>
-          <div class="caption" style="color:var(--c-muted); margin-top:0.375rem;">Views on #1 post</div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ VIDEO ══════════════════════ -->
-<section class="section-sm">
-  <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:2.5rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">In her own words</div>
-      <h2 class="h2" style="color:var(--c-charcoal); max-width:520px; margin:0 auto;">The story,<br><em style="font-family:'Playfair Display',serif; font-style:italic;">straight from me</em></h2>
-    </div>
-
-    <div class="fade" style="max-width:780px; margin:0 auto; border-radius:24px; overflow:hidden;
-         background:rgba(255,255,255,0.45); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
-         border:1px solid rgba(255,255,255,0.72);
-         box-shadow:0 8px 32px rgba(35,31,32,0.08), 0 2px 6px rgba(35,31,32,0.04);">
-      <div style="position:relative; aspect-ratio:16/9;">
-        <iframe src="https://www.youtube.com/embed/bXjPBawa1YY"
-                title="Mai-Lan Khong — Meditation Coach & Brand Strategist"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:24px;"></iframe>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
-<section class="section">
-  <div class="wrap">
-
-    <div class="text-center fade" style="margin-bottom:3.5rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem; display:inline-flex;">From the community</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">What clients share</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-
-      <!-- T1 -->
-      <div class="card-testimonial fade fade-d1">
-        <div style="margin-bottom:1rem; letter-spacing:0.06em; color:var(--c-lavender); font-size:1rem;">✦ ✦ ✦ ✦ ✦</div>
-        <blockquote class="body-sm" style="color:var(--c-text); font-style:italic; margin-bottom:1.5rem; line-height:1.8;">
-          "Her empathy and understanding of where each person is at makes every session feel tailored and genuinely transformative."
-        </blockquote>
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--c-lime),var(--c-lavender)); color:var(--c-charcoal);">BN</div>
-          <div>
-            <div class="caption" style="font-weight:500; color:var(--c-charcoal);">Boby N.</div>
-            <div class="caption" style="color:var(--c-muted);">Meditation Client</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T2 -->
-      <div class="card-testimonial fade fade-d2">
-        <div style="margin-bottom:1rem; letter-spacing:0.06em; color:var(--c-magenta); font-size:1rem;">✦ ✦ ✦ ✦ ✦</div>
-        <blockquote class="body-sm" style="color:var(--c-text); font-style:italic; margin-bottom:1.5rem; line-height:1.8;">
-          "Mai-Lan has a gift for demystifying meditation — making it accessible, practical, and deeply meaningful for modern life."
-        </blockquote>
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--c-magenta),var(--c-peach)); color:var(--c-charcoal);">ND</div>
-          <div>
-            <div class="caption" style="font-weight:500; color:var(--c-charcoal);">Na D.</div>
-            <div class="caption" style="color:var(--c-muted);">Meditation Client</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T3 -->
-      <div class="card-testimonial fade fade-d3">
-        <div style="margin-bottom:1rem; letter-spacing:0.06em; color:var(--c-primary); font-size:1rem;">✦ ✦ ✦ ✦ ✦</div>
-        <blockquote class="body-sm" style="color:var(--c-text); font-style:italic; margin-bottom:1.5rem; line-height:1.8;">
-          "An authentic teacher who walks the path she teaches. Her approach is both grounding and expansive — rare to find."
-        </blockquote>
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--c-primary),var(--c-lavender)); color:#fff;">JB</div>
-          <div>
-            <div class="caption" style="font-weight:500; color:var(--c-charcoal);">Jay B.</div>
-            <div class="caption" style="color:var(--c-muted);">Branding Client</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="cta-band reveal">
+      <h2 style="max-width:none">Make content your channel.</h2>
+      <p>Message Mai-Lan on LinkedIn. She'll walk you through both paths, tell you which one fits, and get your first session on the calendar.</p>
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" style="padding:14px 26px;font-size:15px">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
     </div>
   </div>
 </section>
 
-<hr class="divider" style="margin:0 2.5rem;">
-
-
-<!-- ══════════════════════ CTA ══════════════════════ -->
-<section id="contact" class="section">
+<!-- ===== FOOTER ===== -->
+<footer>
   <div class="wrap">
-    <div class="glass" style="border-radius:32px; padding:4.5rem 3rem; text-align:center;
-                               max-width:680px; margin:0 auto; position:relative; overflow:hidden;">
-
-      <!-- Decorative orbs inside card -->
-      <div aria-hidden="true" style="position:absolute; top:-90px; right:-90px; width:320px; height:320px;
-           background:radial-gradient(circle, rgba(232,160,196,0.28), transparent 65%);
-           border-radius:50%; pointer-events:none;"></div>
-      <div aria-hidden="true" style="position:absolute; bottom:-70px; left:-70px; width:280px; height:280px;
-           background:radial-gradient(circle, rgba(212,234,164,0.28), transparent 65%);
-           border-radius:50%; pointer-events:none;"></div>
-
-      <div style="position:relative; z-index:1;">
-        <div class="pill overline fade" style="margin-bottom:1.5rem; display:inline-flex;">Let's connect</div>
-        <h2 class="h2 fade fade-d1" style="color:var(--c-charcoal); margin-bottom:1.125rem;">
-          Ready to take the<br><em class="g-text">first step?</em>
-        </h2>
-        <p class="body-lg fade fade-d2" style="color:var(--c-muted); max-width:440px; margin:0 auto 2.5rem;">
-          Book a free 30-minute clarity call — no commitment, just a real conversation about where you are and where you want to go.
-        </p>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem;" class="fade fade-d3">
-          <a href="https://mailankhong.youcanbook.me" target="_blank" rel="noopener" class="btn btn-fill" style="padding:1rem 2rem; font-size:0.9375rem;">
-            Book a Free Clarity Call
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://insighttimer.com" target="_blank" rel="noopener" class="btn btn-glass">
-            Try a Free Practice ↗
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════ FOOTER ══════════════════════ -->
-<footer class="glass-dark" style="padding:3.5rem 0 2rem;">
-  <div class="wrap">
-
-    <div style="display:grid; grid-template-columns:1fr; gap:2.5rem; margin-bottom:2.5rem;"
-         class="md:grid-cols-4">
-
-      <!-- Brand col -->
-      <div style="grid-column:span 1;">
-        <img src="brand_assets/Mailankhong%20Logo%20(4).png"
-             alt="MLK — Mai-Lan Khong" width="52" height="52"
-             style="border-radius:10px; object-fit:cover; width:52px; height:52px; margin-bottom:1rem;">
-        <p class="caption" style="color:rgba(255,255,255,0.45); max-width:200px; line-height:1.65;">
-          Meditation Coach &amp; Brand &amp; Growth Strategist. LinkedIn Content Strategy for Entrepreneurs.
-        </p>
-        <!-- Social icons -->
-        <div style="display:flex; gap:0.5rem; margin-top:1.25rem;">
-          
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener"
-             class="social-btn" aria-label="LinkedIn"
-             style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.15); color:rgba(255,255,255,0.55);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.3A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          
-          
-        </div>
-      </div>
-
-      <!-- Nav col -->
+    <div class="foot-grid">
       <div>
-        <div class="foot-label">Navigate</div>
-        <nav style="display:flex; flex-direction:column; gap:0.5rem;">
-          <a href="/" class="foot-link">Home</a>
-          <a href="for-people.html" class="foot-link">For People</a>
-          <a href="for-brands.html" class="foot-link">For Brands</a>
-          <a href="about-me.html" class="foot-link">About Me</a>
-        </nav>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
+        <p class="foot-tag">Content engineering. We turn your team into a channel: built with you, or run for you.</p>
       </div>
-
-      <!-- Resources col -->
-      <div>
-        <div class="foot-label">Resources</div>
-        <nav style="display:flex; flex-direction:column; gap:0.5rem;">
-          <a href="https://mailankhong.substack.com" target="_blank" rel="noopener" class="foot-link">Blog ↗</a>
-          <a href="https://insighttimer.com" target="_blank" rel="noopener" class="foot-link">Free Meditation Practice ↗</a>
-        </nav>
-      </div>
-
-      <!-- CTA col -->
-      <div>
-        <div class="foot-label">Work together</div>
-        <p class="caption" style="color:rgba(255,255,255,0.45); margin-bottom:1rem; line-height:1.65;">
-          Ready to deepen your practice or grow your brand?
-        </p>
-        <a href="https://mailankhong.youcanbook.me" target="_blank" rel="noopener" class="btn btn-fill" style="padding:0.75rem 1.5rem; font-size:0.8125rem;">
-          Book a Free Call
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-    </div>
-
-    <hr style="border:none; height:1px; background:rgba(255,255,255,0.08); margin-bottom:1.5rem;">
-
-    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.75rem;">
-      <p class="caption" style="color:rgba(255,255,255,0.28);">© 2025 Mailankhong.com — All rights reserved</p>
-      <div style="display:flex; gap:1.5rem;">
-        <a href="#" class="caption foot-link" style="color:rgba(255,255,255,0.28);">Privacy Policy</a>
-        <a href="#" class="caption foot-link" style="color:rgba(255,255,255,0.28);">Terms of Use</a>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Content engineering</h4>
+          <a href="#why">Why a system</a>
+          <a href="#engine">How it works</a>
+          <a href="done-with-you.html">Done With You</a>
+          <a href="done-for-you.html">Done For You</a>
+        </div>
+        <div class="foot-col">
+          <h4>Frontal</h4>
+          <a href="https://frontal.so" target="_blank" rel="noopener">frontal.so</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener">Talk to Mai-Lan</a>
+          <a href="mailto:mai-lan@frontal.so">Contact</a>
+        </div>
       </div>
     </div>
-
+    <div class="foot-bottom">
+      <span>Mai-Lan Khong · LinkedIn content systems</span>
+      <span>© 2026 Mai-Lan Khong. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-
 <script>
-  // ── Mobile nav toggle
-  function toggleNav() {
-    const nav   = document.getElementById('mobile-nav');
-    const btn   = document.getElementById('burger');
-    const open  = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  }
-
-  // ── Scroll reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.10 });
-  document.querySelectorAll('.fade').forEach(el => io.observe(el));
-
-  // ── Typewriter
-  (function() {
-    const phrases = [
-      { text: 'entrepreneurs build a LinkedIn brand that generates inbound leads.',   color: '#C4A0B5' },
-      { text: 'people find the stillness that transforms how they work and live.',    color: '#7A9E5A' },
-      { text: 'founders turn their expertise into a revenue-generating content engine.', color: '#C4A0B5' },
-      { text: 'anyone ready to grow — from the inside out.',                          color: '#6F7CC2' },
-    ];
-    const el     = document.getElementById('tw-text');
-    const cursor = document.getElementById('tw-cursor');
-    const TYPE_SPEED   = 45;
-    const DELETE_SPEED = 22;
-    const PAUSE_AFTER  = 2400;
-    const PAUSE_BEFORE = 400;
-    let idx = 0, charIdx = 0, deleting = false;
-
-    function tick() {
-      const phrase = phrases[idx];
-      el.style.color = phrase.color;
-      cursor.style.color = phrase.color;
-
-      if (!deleting) {
-        charIdx++;
-        el.textContent = phrase.text.slice(0, charIdx);
-        if (charIdx === phrase.text.length) {
-          deleting = true;
-          setTimeout(tick, PAUSE_AFTER);
-          return;
-        }
-        setTimeout(tick, TYPE_SPEED);
-      } else {
-        charIdx--;
-        el.textContent = phrase.text.slice(0, charIdx);
-        if (charIdx === 0) {
-          deleting = false;
-          idx = (idx + 1) % phrases.length;
-          setTimeout(tick, PAUSE_BEFORE);
-          return;
-        }
-        setTimeout(tick, DELETE_SPEED);
-      }
+  // count-up: numbers tick 0 -> target, fading in from blur, staggered.
+  (function(){
+    const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function count(el, dur){
+      const m=el.textContent.match(/^([^\d]*)(\d[\d,]*)(.*)$/); if(!m) return;
+      const pre=m[1], suf=m[3], target=parseInt(m[2].replace(/,/g,''),10);
+      if(reduce){ el.textContent=pre+target.toLocaleString('en-US')+suf; return; }
+      const start=performance.now();
+      (function fr(now){ const t=Math.min(1,(now-start)/dur), e=1-Math.pow(1-t,3);
+        el.textContent=pre+Math.round(target*e).toLocaleString('en-US')+suf;
+        if(t<1) requestAnimationFrame(fr); else el.textContent=pre+target.toLocaleString('en-US')+suf;
+      })(start);
     }
-    setTimeout(tick, 800);
+    function setup(rootSel, tileSel, numSel, stagger, dur){
+      const root=document.querySelector(rootSel); if(!root) return;
+      const tiles=[...root.querySelectorAll(tileSel)];
+      const io=new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){
+        tiles.forEach((t,i)=>setTimeout(()=>{ t.classList.add('counted'); const n=t.querySelector(numSel); if(n) count(n,dur); }, reduce?0:i*stagger));
+        io.disconnect(); } });},{threshold:0.35});
+      io.observe(root);
+    }
+    setup('.hero-dash','.hd-tile','.v',300,2000);            // slower hero count-up
+    setup('#proof .team-stats','.team-stat','.num',260,1900); // same effect on the proof stats
   })();
 
-  // ── Sticky nav shadow on scroll
-  const navEl = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    navEl.style.boxShadow = window.scrollY > 20
-      ? '0 4px 24px rgba(35,31,32,0.07)'
-      : '';
-  }, { passive: true });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 60) + 'ms';
+    io.observe(el);
+  });
 </script>
-
+<script src="assets/js/cursor-grid.js" defer></script>
 </body>
 </html>
