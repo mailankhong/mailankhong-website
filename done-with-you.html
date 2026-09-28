@@ -342,7 +342,56 @@
       </div>
       <div class="tw-collage in">
         <div class="tw-collage-badge">Inside the team · 170K+ followers</div>
-        <div class="tw-grid" id="twGrid"></div>
+        <div class="tw-grid" id="twGrid">
+          <div class="tw-card" style="animation-delay:0ms">
+            <img src="assets/proof/team/cards/alex.webp" alt="Alex Vacca — LinkedIn profile, 69,055 followers" decoding="async" />
+            <div class="tw-foll"><b>69,055</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:40ms">
+            <img src="assets/proof/team/cards/ivan.webp" alt="Ivan Falco — LinkedIn profile, 23,231 followers" decoding="async" />
+            <div class="tw-foll"><b>23,231</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:80ms">
+            <img src="assets/proof/team/cards/soheil.webp" alt="Soheil Saeidmehr — LinkedIn profile, 16,251 followers" decoding="async" />
+            <div class="tw-foll"><b>16,251</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:120ms">
+            <img src="assets/proof/team/cards/kenny.webp" alt="Kenny Damian — LinkedIn profile, 13,838 followers" decoding="async" />
+            <div class="tw-foll"><b>13,838</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:160ms">
+            <img src="assets/proof/team/cards/mailan.webp" alt="Mai-Lan Khong — LinkedIn profile, 12,746 followers" decoding="async" />
+            <div class="tw-foll"><b>12,746</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:200ms">
+            <img src="assets/proof/team/cards/filip.webp" alt="Filip Saračević — LinkedIn profile, 6,466 followers" decoding="async" />
+            <div class="tw-foll"><b>6,466</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:240ms">
+            <img src="assets/proof/team/cards/juan.webp" alt="Juan Araujo — LinkedIn profile, 6,292 followers" decoding="async" />
+            <div class="tw-foll"><b>6,292</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:280ms">
+            <img src="assets/proof/team/cards/dujam.webp" alt="Dujam Dunato — LinkedIn profile, 6,193 followers" decoding="async" />
+            <div class="tw-foll"><b>6,193</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:320ms">
+            <img src="assets/proof/team/cards/luca.webp" alt="Luca Carrese — LinkedIn profile, 5,361 followers" decoding="async" />
+            <div class="tw-foll"><b>5,361</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:360ms">
+            <img src="assets/proof/team/cards/niklas.webp" alt="Niklas Rabanus — LinkedIn profile, 4,956 followers" decoding="async" />
+            <div class="tw-foll"><b>4,956</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:400ms">
+            <img src="assets/proof/team/cards/shubham.webp" alt="Shubham Sandilya — LinkedIn profile, 3,928 followers" decoding="async" />
+            <div class="tw-foll"><b>3,928</b><span>followers</span></div>
+          </div>
+          <div class="tw-card" style="animation-delay:440ms">
+            <img src="assets/proof/team/cards/ansh.webp" alt="Ansh Bindal — LinkedIn profile, 3,911 followers" decoding="async" />
+            <div class="tw-foll"><b>3,911</b><span>followers</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -689,6 +738,13 @@
     const cur = document.createElement('span'); cur.className='tw-cursor'; cur.textContent='_';
     const txt = document.createElement('span'); el.appendChild(txt); el.appendChild(cur);
     let w=0,i=0,del=false;
+    // reserve the height of the first phrase (the one on screen at load), so typing it never moves the layout
+    const h1 = el.closest('h1');
+    function reserve(){ if(!h1) return; h1.style.minHeight=''; let max=0;
+      [words[0]].forEach(p=>{ txt.textContent=p; max=Math.max(max,h1.getBoundingClientRect().height); });
+      txt.textContent=words[w].slice(0,i); h1.style.minHeight=Math.ceil(max)+'px'; }
+    reserve(); addEventListener('resize', reserve);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
     function tick(){
       const word=words[w];
       txt.textContent = word.slice(0,i);
@@ -700,33 +756,7 @@
     setInterval(()=>{ cur.style.opacity = cur.style.opacity==='0'?'1':'0'; }, 530);
   })();
 
-  /* ---- hero team collage ---- */
-  (function(){
-    const grid = document.getElementById('twGrid'); if(!grid) return;
-    const TEAM = [
-      { f:'alex.webp',    name:'Alex Vacca',      n:'69,055' },
-      { f:'ivan.webp',    name:'Ivan Falco',      n:'23,231' },
-      { f:'soheil.webp',  name:'Soheil Saeidmehr',n:'16,251' },
-      { f:'kenny.webp',   name:'Kenny Damian',    n:'13,838' },
-      { f:'mailan.webp',  name:'Mai-Lan Khong',   n:'12,746' },
-      { f:'filip.webp',   name:'Filip Saračević', n:'6,466'  },
-      { f:'juan.webp',    name:'Juan Araujo',     n:'6,292'  },
-      { f:'dujam.webp',   name:'Dujam Dunato',    n:'6,193'  },
-      { f:'luca.webp',    name:'Luca Carrese',    n:'5,361'  },
-      { f:'niklas.webp',  name:'Niklas Rabanus',  n:'4,956'  },
-      { f:'shubham.webp', name:'Shubham Sandilya',n:'3,928'  },
-      { f:'ansh.webp',    name:'Ansh Bindal',     n:'3,911'  },
-    ];
-    TEAM.forEach((p,i)=>{
-      const el = document.createElement('div');
-      el.className = 'tw-card';
-      el.style.animationDelay = (i*40)+'ms';
-      el.innerHTML = `
-        <img src="assets/proof/team/cards/${p.f}" alt="${p.name} — LinkedIn profile, ${p.n} followers" loading="lazy" />
-        <div class="tw-foll"><b>${p.n}</b><span>followers</span></div>`;
-      grid.appendChild(el);
-    });
-  })();
+  /* ---- hero team collage: cards are in the HTML (reserves their space, no layout shift) ---- */
 
   /* ---- 12-week stepper ---- */
   (function(){
