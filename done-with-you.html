@@ -26,10 +26,8 @@
 <meta name="description" content="A 12-week done-with-you program for B2B teams. Build a LinkedIn content system you own, running on the same AI setup the team uses every day." />
 <link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
   <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" />
+<link rel="preload" href="assets/fonts/playfair-display/playfair-display-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/dm-sans/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="assets/fonts/fonts.css" />
 <link rel="stylesheet" href="assets/css/glass-tokens.css" />
 <link rel="stylesheet" href="assets/css/site.css" />
@@ -131,6 +129,7 @@
   .hero-grid h1{ font-size:clamp(34px,4.4vw,54px); max-width:16ch; margin:18px 0 0; }
   #hero-tw{ color:var(--orange); }
   .tw-cursor{ color:var(--orange); font-weight:400; }
+  .tw-cursor::after{ content:'_'; }   /* drawn by CSS, so the H1's text stays the phrase alone */
 
   /* team collage — real LinkedIn headers, dashed cards, follower pills */
   .tw-collage{ position:relative; }
@@ -735,7 +734,7 @@
     const el = document.getElementById('hero-tw');
     if(!el) return;
     const words = ["AI engine that turns posts into pipeline.","stack pulling inbound off every post.","playbook successful B2B teams quietly run.","AI engine that books your calendar."];
-    const cur = document.createElement('span'); cur.className='tw-cursor'; cur.textContent='_';
+    const cur = document.createElement('span'); cur.className='tw-cursor';
     el.textContent = '';   // the full first phrase is in the HTML for readers without JavaScript
     const txt = document.createElement('span'); el.appendChild(txt); el.appendChild(cur);
     let w=0,i=words[0].length,del=false;   // start from the full first phrase, then cycle
@@ -753,7 +752,10 @@
       else { i--; if(i<0){ del=false; i=0; w=(w+1)%words.length; } }
       setTimeout(tick, del?26:50);
     }
-    tick();
+    // start on the visitor's first scroll, pointer or key: crawlers never interact, so they always read the full first phrase
+    const EV=['scroll','pointermove','pointerdown','keydown','touchstart'];
+    function start(){ EV.forEach(e=>removeEventListener(e,start)); tick(); }
+    EV.forEach(e=>addEventListener(e,start,{passive:true}));
     setInterval(()=>{ cur.style.opacity = cur.style.opacity==='0'?'1':'0'; }, 530);
   })();
 

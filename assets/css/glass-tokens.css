@@ -5,7 +5,7 @@
    near-white paper) with frosted-glass surfaces. Body keeps class
    "frontal-dark" (now a light theme) so no markup changes are needed.
    Fonts: Playfair Display (display) + DM Sans (body/labels) — see fonts.css. */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+/* The fonts are declared in assets/fonts/fonts.css (served from this site), loaded before this file. */
 
 /* PDF SAFETY (kept): strip shadows in print so cards define by border. */
 @media print { *, *::before, *::after { box-shadow: none !important; } }
