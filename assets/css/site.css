@@ -238,9 +238,9 @@
     font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#6f6c78; }
 
   /* reveal */
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease-out-expo), transform .7s var(--ease-out-expo); }
-  .reveal.in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+  .js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease-out-expo), transform .7s var(--ease-out-expo); }
+  .js .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .js .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
 
   /* responsive */
   @media (max-width:880px){

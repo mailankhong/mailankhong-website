@@ -6,20 +6,62 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/linkedin-accelerator", "destination": "/", "permanent": true },
-    { "source": "/linkedin-accelerator.html", "destination": "/", "permanent": true }
+    {
+      "source": "/linkedin-accelerator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin-accelerator.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-me/",
+      "destination": "/about-me",
+      "permanent": true
+    },
+    {
+      "source": "/done-for-you/",
+      "destination": "/done-for-you",
+      "permanent": true
+    },
+    {
+      "source": "/done-with-you/",
+      "destination": "/done-with-you",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/dist-orbital/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        }
       ]
     },
     {
       "source": "/brand_assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]

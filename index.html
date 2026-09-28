@@ -3,15 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://www.mailankhong.com/" />
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.mailankhong.com/#person",
+  "name": "Mai-Lan Khong",
+  "url": "https://www.mailankhong.com/",
+  "jobTitle": [
+    "Brand & Growth Strategist",
+    "LinkedIn Content Strategist"
+  ],
+  "description": "Startup founder turned Brand & Growth Strategist. Specialises in LinkedIn content systems for founders and B2B teams, in partnership with Frontal.",
+  "sameAs": [
+    "https://www.linkedin.com/in/mai-lan-khong/"
+  ]
+}
+</script>
 <title>LinkedIn Content for B2B Teams: Done With You or Done For You | Frontal</title>
 <meta name="description" content="Turn your founders and team into a LinkedIn channel that builds pipeline. Build the content system with Frontal, or have us run it for you. Two paths, one engine." />
 <meta name="keywords" content="LinkedIn content, B2B content marketing, founder content, LinkedIn for B2B teams, done with you, done for you, content engineering" />
 <link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
   <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" />
 <link rel="stylesheet" href="assets/fonts/fonts.css" />
 <link rel="stylesheet" href="assets/css/glass-tokens.css" />
 <link rel="stylesheet" href="assets/css/site.css" />
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
 <style>
   /* ---- content-engine hub: page-specific ---- */
   .hero h1{ max-width:16ch; font-size:clamp(34px,4vw,52px); line-height:1.04; }
@@ -43,9 +66,9 @@
   .hd-chart .bar:nth-child(7){ animation-delay:.72s } .hd-chart .bar:nth-child(8){ animation-delay:.84s }
   .hd-chart .bar:nth-child(9){ animation-delay:.96s } .hd-chart .bar:nth-child(10){ animation-delay:1.08s }
   /* count-up: numbers fade in from blur as they tick */
-  .hd-tile .v{ font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
+  .js .hd-tile .v{ font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
   .hd-tile.counted .v{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
-  @media (prefers-reduced-motion:reduce){ .hd-chart .bar{ animation:none; } .hd-tile .v{ opacity:1; filter:none; } }
+  @media (prefers-reduced-motion:reduce){ .hd-chart .bar{ animation:none; } .js .hd-tile .v{ opacity:1; filter:none; } }
   @media (max-width:920px){ .hero-grid{ grid-template-columns:1fr; gap:34px; } .hero-right{ max-width:440px; } }
 
   /* problem cards */
@@ -166,7 +189,7 @@
   /* proof (same shape as the DWY page) */
   .team-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   .team-stat{ padding:28px 22px; text-align:center; }
-  .team-stat .num{ font-family:'DM Sans',sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.03em; color:#6E56CF; line-height:1; font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
+  .js .team-stat .num{ font-family:'DM Sans',sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.03em; color:#6E56CF; line-height:1; font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
   .team-stat.counted .num{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
   .team-stat .lbl{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; margin-top:11px; line-height:1.45; }
 
@@ -184,7 +207,7 @@
   .quad-pt.engine .qp-dot{ width:17px; height:17px; background:var(--orange); border:none; animation:qPulse 2.6s ease-in-out infinite; }
   .quad-pt.engine .qp-l{ color:var(--cream); font-weight:700; font-size:12.5px; white-space:normal; max-width:104px; text-align:center; line-height:1.2; }
   @keyframes qPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(199,224,112,0.5), 0 0 18px rgba(199,224,112,0.6); } 50%{ box-shadow:0 0 0 11px rgba(199,224,112,0), 0 0 18px rgba(199,224,112,0.6); } }
-  @media (prefers-reduced-motion:reduce){ .team-stat .num{ opacity:1; filter:none; } .quad-pt.engine .qp-dot{ animation:none; } }
+  @media (prefers-reduced-motion:reduce){ .js .team-stat .num{ opacity:1; filter:none; } .quad-pt.engine .qp-dot{ animation:none; } }
   .proof-grid{ columns:3; column-gap:14px; margin-top:8px; }
   .proof-card{ break-inside:avoid; margin-bottom:14px; padding:14px; }
   .proof-shot{ border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px; }
@@ -221,14 +244,14 @@
 <!-- ===== NAV ===== -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="index.html" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
+    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
     <nav class="nav-links">
       <a href="#why">Why content</a>
       <a href="#engine">How it works</a>
       <a href="#paths">The two paths</a>
       <a href="#proof">Proof</a>
       <a href="#faq">FAQ</a>
-      <a href="about-me.html">About</a>
+      <a href="/about-me">About</a>
     </nav>
     <div class="nav-cta">
       <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
@@ -240,15 +263,15 @@
 <section id="top" class="hero">
   <div class="wrap hero-grid">
     <div class="hero-left">
-      <span class="eyebrow reveal">LinkedIn content engineering</span>
-      <h1 class="reveal">Turn LinkedIn into<br>a <span class="orange">pipeline</span> channel.</h1>
-      <p class="lead reveal">Content that warms your buyers, makes your ads convert, and makes outbound land. Built with your team, or run by ours. The same engine warmed the pipeline behind 356 meetings and $153K in new MRR.</p>
-      <div class="hero-actions reveal">
+      <span class="eyebrow">LinkedIn content engineering</span>
+      <h1 class="">Turn LinkedIn into<br>a <span class="orange">pipeline</span> channel.</h1>
+      <p class="lead">Content that warms your buyers, makes your ads convert, and makes outbound land. Built with your team, or run by ours. The same engine warmed the pipeline behind 356 meetings and $153K in new MRR.</p>
+      <div class="hero-actions">
         <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
         <a href="#paths" class="btn btn-ghost">See the two paths</a>
       </div>
     </div>
-    <div class="hero-right reveal">
+    <div class="hero-right">
       <div class="hero-dash">
         <div class="hd-bar">
           <span class="hd-dot" style="background:#FF5F57"></span><span class="hd-dot" style="background:#FEBC2E"></span><span class="hd-dot" style="background:#28C840"></span>
@@ -291,20 +314,20 @@
     </div>
     <div class="guide-grid reveal">
       <a class="guide-shot card" href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" aria-label="Mai-Lan Khong on LinkedIn">
-        <img src="assets/proof/mailan-linkedin.png" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
+        <img loading="lazy" decoding="async" src="assets/proof/mailan-linkedin.webp" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
       </a>
       <div class="guide-copy">
         <p class="lead">Hi, I'm <strong>Mai-Lan Khong</strong>, Content Strategist at Frontal, trusted by 275+ tech companies. I help B2B founders turn LinkedIn into a channel that builds pipeline, and I grew my own account to Favikon's #2 creator worldwide.</p>
         <p>Whether we build the engine with your team or run it for you, you are working with an operator who has done it in the open, not a template.</p>
         <div class="guide-actions">
           <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
-          <a href="about-me.html" class="btn btn-ghost">About Mai-Lan</a>
+          <a href="/about-me" class="btn btn-ghost">About Mai-Lan</a>
         </div>
       </div>
     </div>
     <div class="guide-favikon card reveal">
       <div class="gf-shot">
-        <img src="assets/proof/favikon-mailan.jpg" alt="Favikon ranking: Mai-Lan Khong ranked #2 creator on LinkedIn worldwide" />
+        <img loading="lazy" decoding="async" src="assets/proof/favikon-mailan.webp" alt="Favikon ranking: Mai-Lan Khong ranked #2 creator on LinkedIn worldwide" />
       </div>
       <div class="gf-copy">
         <span class="eyebrow">Industry recognition</span>
@@ -327,7 +350,7 @@
     <p class="lead reveal">Buyers don't reply to strangers anymore. They buy from people they recognize, and content builds that recognition: the trust layer that warms buyers so your ads convert and outbound gets a reply, not a delete.</p>
     <div class="why-grid">
       <figure class="venn-figure reveal">
-        <img src="assets/proof/gtm-venn.png" alt="The GTM flywheel: content, ads, and outbound aimed at the same ICP. Content builds trust at scale, ads keep you visible, outbound books the meeting." />
+        <img loading="lazy" decoding="async" src="assets/proof/gtm-venn.webp" alt="The GTM flywheel: content, ads, and outbound aimed at the same ICP. Content builds trust at scale, ads keep you visible, outbound books the meeting." />
       </figure>
       <div class="why-points reveal">
         <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Builds trust at scale</strong><span>before you ever make the first ask.</span></div></div>
@@ -434,7 +457,7 @@
           <li><i class="ph ph-check"></i>The full playbook: write, grade, publish, engage</li>
           <li><i class="ph ph-check"></i>You own the engine and keep it for good</li>
         </ul>
-        <div class="path-cta"><a href="done-with-you.html" class="btn btn-solid">Explore Done With You <i class="ph ph-arrow-right"></i></a></div>
+        <div class="path-cta"><a href="/done-with-you" class="btn btn-solid">Explore Done With You <i class="ph ph-arrow-right"></i></a></div>
       </div>
       <!-- DFY (focal) -->
       <div class="path-card reveal">
@@ -448,7 +471,7 @@
           <li><i class="ph ph-check"></i>Audience growth on autopilot</li>
           <li><i class="ph ph-check"></i>A monthly Performance Lab that keeps it improving</li>
         </ul>
-        <div class="path-cta"><a href="done-for-you.html" class="btn btn-ghost">Explore Done For You <i class="ph ph-arrow-right"></i></a></div>
+        <div class="path-cta"><a href="/done-for-you" class="btn btn-ghost">Explore Done For You <i class="ph ph-arrow-right"></i></a></div>
       </div>
     </div>
     <div class="paths-cmp reveal">
@@ -487,11 +510,11 @@
     </div>
     <p class="lead reveal" style="margin-bottom:8px">Public on LinkedIn. Every name and number is real.</p>
     <div class="proof-grid reveal">
-      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-alex.png" alt="Alex Vacca post"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Co-Founder · $6M ARR</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,238</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">4,099</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">43</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Code for Ads." $200K/month in ad spend run from a terminal.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-kenny.png" alt="Kenny Damian post"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,266</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,139</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">61</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">37 AI Agents set up for the $6M ARR outbound agency. 6 deployed across $10M+ ARR clients.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-ivan.png" alt="Ivan Falco post"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth · $7M GTM Agency</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">469</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,785</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">6</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Biggest skills database for GTM: outbound, RevOps, ABM. Open-sourced for free.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-mailan.png" alt="Mai-Lan Khong post"></div><div class="proof-author">Mai-Lan Khong</div><div class="proof-role">Content Strategist & AI Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">281</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">1,030</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">11</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">$153,000 MRR in 87 days. 24 people posting on one system. The full content pipeline.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-soheil.png" alt="Soheil Saeidmehr post"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">2,858</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">370</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">39</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">SEG auto-detection reveal. The deliverability post that compounded into thousands of saves.</div></div>      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-dujam.png" alt="Dujam Dunato post"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">250</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">520</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">13</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Claude as an AI sales closer with n8n. 5 trained agents for post-call follow-up.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-luca.png" alt="Luca Carrese post"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner @ Frontal AI</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">321</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">55</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">22</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Dispatch just shipped." Run your AI agent from your phone — safely, cheaply, natively.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img src="assets/proof/post-shubham.png" alt="Shubham Sandilya post"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">235</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">70</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">27</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">The Modern Outbound Stack. 5 categories, one clear path from lead to close.</div></div>    </div>
+      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-alex.webp" alt="Alex Vacca post"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Co-Founder · $6M ARR</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,238</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">4,099</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">43</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Code for Ads." $200K/month in ad spend run from a terminal.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-kenny.webp" alt="Kenny Damian post"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,266</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,139</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">61</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">37 AI Agents set up for the $6M ARR outbound agency. 6 deployed across $10M+ ARR clients.</div></div>      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-ivan.webp" alt="Ivan Falco post"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth · $7M GTM Agency</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">469</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,785</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">6</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Biggest skills database for GTM: outbound, RevOps, ABM. Open-sourced for free.</div></div>      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-mailan.webp" alt="Mai-Lan Khong post"></div><div class="proof-author">Mai-Lan Khong</div><div class="proof-role">Content Strategist & AI Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">281</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">1,030</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">11</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">$153,000 MRR in 87 days. 24 people posting on one system. The full content pipeline.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-soheil.webp" alt="Soheil Saeidmehr post"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">2,858</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">370</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">39</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">SEG auto-detection reveal. The deliverability post that compounded into thousands of saves.</div></div>      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-dujam.webp" alt="Dujam Dunato post"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">250</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">520</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">13</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Claude as an AI sales closer with n8n. 5 trained agents for post-call follow-up.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-luca.webp" alt="Luca Carrese post"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner @ Frontal AI</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">321</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">55</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">22</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Dispatch just shipped." Run your AI agent from your phone — safely, cheaply, natively.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img loading="lazy" decoding="async" src="assets/proof/post-shubham.webp" alt="Shubham Sandilya post"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">235</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">70</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">27</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">The Modern Outbound Stack. 5 categories, one clear path from lead to close.</div></div>    </div>
   </div>
 </section>
 
@@ -529,7 +552,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img loading="lazy" decoding="async" class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
         <p class="foot-tag">Content engineering. We turn your team into a channel: built with you, or run for you.</p>
       </div>
       <div class="foot-links">
@@ -537,8 +560,8 @@
           <h4>Content engineering</h4>
           <a href="#why">Why a system</a>
           <a href="#engine">How it works</a>
-          <a href="done-with-you.html">Done With You</a>
-          <a href="done-for-you.html">Done For You</a>
+          <a href="/done-with-you">Done With You</a>
+          <a href="/done-for-you">Done For You</a>
         </div>
         <div class="foot-col">
           <h4>Frontal</h4>
