@@ -8,25 +8,43 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.mailankhong.com/#person",
-  "name": "Mai-Lan Khong",
-  "url": "https://www.mailankhong.com/",
-  "jobTitle": [
-    "Brand & Growth Strategist",
-    "LinkedIn Content Strategist"
-  ],
-  "description": "Startup founder turned Brand & Growth Strategist. Specialises in LinkedIn content systems for founders and B2B teams, in partnership with Frontal.",
-  "sameAs": [
-    "https://www.linkedin.com/in/mai-lan-khong/"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.mailankhong.com/#website",
+      "url": "https://www.mailankhong.com/",
+      "name": "Mai-Lan Khong",
+      "publisher": { "@id": "https://www.mailankhong.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.mailankhong.com/#person",
+      "name": "Mai-Lan Khong",
+      "url": "https://www.mailankhong.com/",
+      "image": "https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp",
+      "description": "Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline.",
+      "jobTitle": ["Content engineer", "Content Lead"],
+      "worksFor": { "@type": "Organization", "name": "Frontal", "url": "https://frontal.so" },
+      "knowsAbout": ["AI content systems", "Content to drive B2B pipeline", "LinkedIn programs for teams"],
+      "homeLocation": { "@type": "Country", "name": "Spain" },
+      "sameAs": [
+        "https://www.linkedin.com/in/mai-lan-khong/",
+        "https://www.linkedin.com/company/mai-lan-khong"
+      ]
+    }
   ]
 }
 </script>
-<title>LinkedIn Content for B2B Teams: Done With You or Done For You | Frontal</title>
-<meta name="description" content="Turn your founders and team into a LinkedIn channel that builds pipeline. Build the content system with Frontal, or have us run it for you. Two paths, one engine." />
-<meta name="keywords" content="LinkedIn content, B2B content marketing, founder content, LinkedIn for B2B teams, done with you, done for you, content engineering" />
+<title>Mai-Lan Khong | AI content systems for B2B teams</title>
+<meta name="description" content="Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mailankhong.com/" />
+<meta property="og:title" content="Mai-Lan Khong | AI content systems for B2B teams" />
+<meta property="og:description" content="Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline." />
+<meta property="og:image" content="https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp" />
+<meta name="twitter:card" content="summary" />
 <link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
-  <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
 <link rel="preload" href="assets/fonts/playfair-display/playfair-display-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/dm-sans/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="assets/fonts/fonts.css" />
@@ -34,203 +52,80 @@
 <link rel="stylesheet" href="assets/css/site.css" />
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
 <style>
-  /* ---- content-engine hub: page-specific ---- */
-  .hero h1{ max-width:16ch; font-size:clamp(34px,4vw,52px); line-height:1.04; }
+  /* ---- homepage about Mai-Lan: page-specific ---- */
+  .hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; }
+  .hero h1{ font-size:clamp(46px,6.4vw,84px); line-height:1; letter-spacing:-0.02em; max-width:none; margin:14px 0 24px; }
+  .hero h1 em{ font-style:italic; color:var(--acc); }
+  .hero .lead{ max-width:34ch; font-size:clamp(18px,1.7vw,22px); color:var(--ink); margin-bottom:16px; }
+  .hero .role{ max-width:52ch; font-size:15.5px; line-height:1.65; margin-bottom:28px; }
+  .hero .role a{ color:var(--ink); text-decoration-color:rgba(110,86,207,0.45); text-underline-offset:3px; }
+  .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; }
+  .hero-photo{ position:relative; margin:0; max-width:380px; justify-self:end; width:100%; }
+  .hero-photo .frame{ border-radius:24px; overflow:hidden; padding:10px; }
+  .hero-photo img{ display:block; width:100%; height:auto; border-radius:16px; aspect-ratio:2/3; object-fit:cover; }
+  .hero-photo .place{ position:absolute; left:-18px; bottom:30px; padding:10px 14px; border-radius:12px; font-size:12px; color:var(--ink2);
+    background:rgba(255,255,255,0.86); border:1px solid var(--glass-bd); box-shadow:0 10px 30px rgba(90,72,120,0.14); }
+  .hero-photo .place b{ display:block; font-family:'Playfair Display',Georgia,serif; font-size:16px; color:var(--ink); font-weight:600; }
+  @media (max-width:880px){ .hero-grid{ grid-template-columns:1fr; gap:36px; } .hero-photo{ justify-self:start; max-width:320px; } .hero-photo .place{ left:12px; } }
 
-  /* hero 2-col + dashboard mock */
-  .hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center; }
-  .hero-dash{ border-radius:18px; overflow:hidden; background:rgba(255,255,255,0.045);
-    border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 26px 64px rgba(90,72,120,0.14); }
-  .hd-bar{ display:flex; align-items:center; gap:7px; padding:11px 15px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.02); }
-  .hd-dot{ width:9px; height:9px; border-radius:50%; }
-  .hd-title{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin-left:8px; }
-  .hd-live{ margin-left:auto; display:flex; align-items:center; gap:6px; font-family:'DM Sans',monospace; font-size:8px; letter-spacing:1px; text-transform:uppercase; color:#7fd9a6; }
-  .hd-body{ padding:20px; }
-  .hd-eyebrow{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#6E56CF; }
-  .hd-tiles{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 16px; }
-  .hd-tile{ padding:14px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); }
-  .hd-tile .v{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:25px; letter-spacing:-0.02em; color:var(--cream); line-height:1; }
-  .hd-tile.accent .v{ color:#6E56CF; }
-  .hd-tile .l{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:7px; }
-  .hd-chart-wrap{ padding:14px 15px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); }
-  .hd-chart-label{ font-family:'DM Sans',monospace; font-size:8px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-bottom:12px; }
-  .hd-chart{ display:flex; align-items:flex-end; gap:6px; height:60px; }
-  .hd-chart .bar{ flex:1; border-radius:4px 4px 0 0; background:linear-gradient(180deg, rgba(199,224,112,0.85), rgba(199,224,112,0.16));
-    animation:barWave 2.8s ease-in-out infinite; }
-  @keyframes barWave{ 0%,32%,100%{ filter:brightness(1); box-shadow:none; } 11%{ filter:brightness(1.6); box-shadow:0 0 16px rgba(199,224,112,0.75); } }
-  .hd-chart .bar:nth-child(1){ animation-delay:0s } .hd-chart .bar:nth-child(2){ animation-delay:.12s }
-  .hd-chart .bar:nth-child(3){ animation-delay:.24s } .hd-chart .bar:nth-child(4){ animation-delay:.36s }
-  .hd-chart .bar:nth-child(5){ animation-delay:.48s } .hd-chart .bar:nth-child(6){ animation-delay:.60s }
-  .hd-chart .bar:nth-child(7){ animation-delay:.72s } .hd-chart .bar:nth-child(8){ animation-delay:.84s }
-  .hd-chart .bar:nth-child(9){ animation-delay:.96s } .hd-chart .bar:nth-child(10){ animation-delay:1.08s }
-  /* count-up: numbers fade in from blur as they tick */
-  .js .hd-tile .v{ font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
-  .hd-tile.counted .v{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
-  @media (prefers-reduced-motion:reduce){ .hd-chart .bar{ animation:none; } .js .hd-tile .v{ opacity:1; filter:none; } }
-  @media (max-width:920px){ .hero-grid{ grid-template-columns:1fr; gap:34px; } .hero-right{ max-width:440px; } }
+  /* what I build */
+  .build-intro{ max-width:64ch; }
+  .build-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
+  .build-card{ padding:26px 26px 28px; }
+  .build-card h3{ font-size:21px; margin-bottom:10px; }
+  .build-card p{ font-size:15px; line-height:1.65; }
+  .build-card p + p{ margin-top:10px; }
+  .files{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; padding:0; }
+  .files li{ font-size:12.5px; padding:6px 11px; border-radius:999px; color:var(--ink2); background:rgba(255,255,255,0.6); border:1px solid var(--glass-bd); }
+  .files li:first-child{ background:var(--lime-soft); border-color:rgba(150,180,80,0.45); color:var(--ink); font-weight:600; }
+  .flow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; list-style:none; padding:0; }
+  .flow li{ flex:1 1 0; min-width:104px; padding:13px 12px; border-radius:12px; text-align:center; font-size:13.5px; font-weight:600; color:var(--ink2);
+    background:rgba(255,255,255,0.5); border:1px solid var(--glass-bd); }
+  .flow li.ai{ background:rgba(201,188,236,0.3); border-color:rgba(110,86,207,0.35); color:var(--acc); }
+  .flow-note{ margin-top:14px; font-size:14.5px; max-width:70ch; }
+  @media (max-width:880px){ .build-grid{ grid-template-columns:1fr; } .flow li{ flex:1 1 30%; } }
 
-  /* problem cards */
-  .prob-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
-  .prob{ padding:22px 22px 24px; }
-  .prob .pi{ width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;
-    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); color:#6E675C; font-size:19px; }
-  .prob h3{ font-size:16px; margin-bottom:8px; }
-  .prob p{ font-size:13.5px; line-height:1.55; }
+  /* quotes */
+  .quote{ margin:0; padding:28px 30px; border-radius:20px; }
+  .quote blockquote{ margin:0; font-family:'Playfair Display',Georgia,serif; font-size:clamp(20px,2.1vw,26px); line-height:1.35; color:var(--ink); }
+  .quote figcaption{ margin-top:14px; font-size:13px; color:var(--meta); }
+  .quote figcaption a{ color:var(--acc); font-weight:600; text-underline-offset:3px; }
+  .quote-lead{ font-size:14.5px; margin:34px 0 12px; max-width:70ch; }
+  .quote.system{ background:rgba(255,255,255,0.5); border:1px solid var(--glass-bd); }
+  .quote.system blockquote{ font-size:clamp(18px,1.8vw,22px); }
 
-  /* problem comparison matrix */
-  .cmp{ margin-top:8px; max-width:780px; }
-  .cmp-grid{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:13px 20px; align-items:center; }
-  .cmp-h{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
-  .cmp-name{ display:flex; flex-direction:column; gap:3px; }
-  .cmp-name b{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:15px; color:var(--cream); }
-  .cmp-name span{ font-size:11.5px; color:#9A9184; }
-  .cmp-bar{ display:block; height:10px; border-radius:6px; background:rgba(255,255,255,0.06); position:relative; overflow:hidden; }
-  .cmp-bar::after{ content:""; position:absolute; left:0; top:0; bottom:0; width:0; border-radius:6px; background:var(--bc, var(--orange)); }
-  .cmp.in .cmp-bar::after{ width:var(--w); transition:width 1s var(--ease-out-expo); transition-delay:var(--dl,0s); }
-  .cmp-divider{ grid-column:1 / -1; height:1px; background:rgba(255,255,255,0.07); }
-  @media (max-width:620px){ .cmp-grid{ grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; } .cmp-name{ grid-column:1 / -1; } }
-  @media (prefers-reduced-motion:reduce){ .cmp.in .cmp-bar::after{ transition:none; } }
+  /* topics */
+  .topic-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+  .topic{ padding:24px 24px 26px; }
+  .topic .tn{ display:inline-flex; width:32px; height:32px; border-radius:9px; align-items:center; justify-content:center; font-weight:700; font-size:13px;
+    color:var(--acc); background:rgba(201,188,236,0.22); border:1px solid rgba(110,86,207,0.3); margin-bottom:16px; }
+  .topic.lead-topic .tn{ background:var(--lime-soft); border-color:rgba(150,180,80,0.5); color:var(--ink); }
+  .topic h3{ font-size:20px; margin-bottom:8px; }
+  .topic p{ font-size:14.5px; line-height:1.6; }
+  @media (max-width:880px){ .topic-grid{ grid-template-columns:1fr; } }
 
-  /* engine flow */
-  .flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin-top:26px; }
-  .flow-step{ flex:1 1 0; min-width:118px; padding:16px 16px 18px; border-radius:14px;
-    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);
-    display:flex; flex-direction:column; gap:9px; }
-  .flow-step .fn{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.8px; color:#9A9184; }
-  .flow-step .ft{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:13.5px; color:var(--cream); line-height:1.25; }
-  .flow-step i{ font-size:17px; color:#6E56CF; }
-  .flow-step.end{ background:linear-gradient(165deg, rgba(199,224,112,0.14), rgba(199,224,112,0.04));
-    border-color:rgba(150,180,80,0.30); box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), 0 0 30px rgba(199,224,112,0.10); }
-  .flow-step.end .ft{ color:#2A2723; }
-  .flow-step.end .fn{ color:#d9b9a6; }
-
-  /* flywheel figure (the embedded animated infographic) */
-  .flywheel-figure{ margin:30px auto 0; max-width:720px; border-radius:20px; overflow:hidden;
-    border:1px solid rgba(255,255,255,0.10); box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 56px rgba(90,72,120,0.13); }
-  .flywheel-figure img{ width:100%; display:block; }
-  .flywheel-cap{ text-align:center; margin-top:14px; font-family:'DM Sans',monospace; font-size:9.5px;
-    letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
-
-  /* WHY: GTM flywheel venn + points */
-  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-top:28px; }
-  .venn-figure{ margin:0; }
-  .venn-figure img{ width:100%; display:block; filter:drop-shadow(0 16px 40px rgba(90,72,120,0.12)); }
-  .why-points{ display:grid; gap:17px; align-content:center; }
-  .wp{ display:flex; gap:13px; align-items:flex-start; }
-  .wp > i{ color:#6E56CF; font-size:19px; margin-top:1px; flex:none; }
-  .wp strong{ display:block; font-family:'DM Sans',sans-serif; font-weight:600; font-size:15.5px; color:var(--cream); margin-bottom:2px; }
-  .wp span{ font-size:13.5px; color:#6E675C; line-height:1.45; }
-  .wp-note{ margin-top:4px; padding-top:17px; border-top:1px solid rgba(255,255,255,0.10); font-size:14px; line-height:1.55; color:#6E675C; }
-  .wp-note b{ color:#6E56CF; font-weight:600; }
-  /* warm-vs-cold reply-rate bars */
-  .warmbar{ margin-top:8px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.10); }
-  .wb-title{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; margin-bottom:13px; }
-  .wb-row{ display:flex; align-items:center; gap:12px; margin-bottom:11px; }
-  .wb-l{ font-size:12.5px; color:#6E675C; width:128px; flex:none; }
-  .wb-track{ flex:1; height:11px; border-radius:6px; background:rgba(255,255,255,0.06); overflow:hidden; }
-  .wb-fill{ display:block; height:100%; border-radius:6px; }
-  .wb-fill.cold{ background:rgba(166,166,174,0.45); }
-  .wb-fill.warm{ background:linear-gradient(90deg, rgba(199,224,112,0.55), var(--orange)); box-shadow:0 0 14px rgba(199,224,112,0.4); }
-  .wb-v{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:14px; color:var(--cream); width:34px; text-align:right; flex:none; }
-  @media (max-width:880px){ .why-grid{ grid-template-columns:1fr; gap:22px; } }
-
-  /* the two paths */
-  .path-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
-  .path-card{ position:relative; padding:32px 32px 30px; border-radius:20px; display:flex; flex-direction:column;
-    background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.11);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 3px 24px rgba(90,72,120,0.10);
-    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease); }
-  .path-card:hover{ transform:translateY(-3px); border-color:rgba(255,255,255,0.20); }
-  .path-card.focal{ overflow:hidden;
-    background:linear-gradient(168deg, rgba(199,224,112,0.16), rgba(199,224,112,0.035));
-    border:1px solid rgba(150,180,80,0.32);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,0.20), 0 18px 54px rgba(90,72,120,0.11), 0 0 46px rgba(199,224,112,0.13); }
-  .path-card.focal::before{ content:""; position:absolute; inset:0 0 auto 0; height:46%; pointer-events:none;
-    background:linear-gradient(180deg, rgba(255,255,255,0.12), transparent 90%); }
-  .path-card.focal:hover{ transform:translateY(-3px); border-color:rgba(150,180,80,0.5);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,0.26), 0 22px 64px rgba(90,72,120,0.13), 0 0 58px rgba(199,224,112,0.2); }
-  .path-label{ display:flex; align-items:center; gap:9px; font-family:'DM Sans',monospace; font-size:9.5px;
-    letter-spacing:1.2px; text-transform:uppercase; color:#9A9184; margin-bottom:16px; }
-  .path-card.focal .path-label{ color:#4A443C; }
-  .path-card h3{ font-size:25px; letter-spacing:-0.02em; margin-bottom:10px; }
-  .path-card.focal h3{ color:#2A2723; }
-  .path-approach{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
-  .pill{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase;
-    padding:5px 10px; border-radius:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#6E675C; }
-  .path-card.focal .pill{ background:rgba(255,255,255,0.10); border-color:rgba(199,224,112,0.30); color:#2A2723; }
-  .path-for{ font-size:14.5px; line-height:1.55; color:#6E675C; margin-bottom:20px; }
-  .path-card.focal .path-for{ color:#2A2723; }
-  .path-feat{ list-style:none; display:grid; gap:11px; margin-bottom:26px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.10); }
-  .path-card.focal .path-feat{ border-top-color:rgba(199,224,112,0.22); }
-  .path-feat li{ display:flex; gap:11px; align-items:flex-start; font-size:14px; line-height:1.5; color:#6E675C; }
-  .path-feat li i{ flex:none; margin-top:2px; font-size:15px; color:#6E56CF; }
-  .path-card.focal .path-feat li{ color:#2A2723; }
-  .path-card.focal .path-feat li i{ color:#FFC9AE; }
-  .path-cta{ margin-top:auto; }
-  .path-card .btn{ width:100%; justify-content:center; }
-  .not-sure{ margin-top:18px; text-align:center; font-size:14px; color:#9A9184; max-width:70ch; margin-left:auto; margin-right:auto; }
-  .not-sure b{ color:#6E675C; font-weight:600; }
-
-  /* two-paths comparison table */
-  .paths-cmp{ margin-top:18px; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.02); }
-  .pcmp-row{ display:grid; grid-template-columns:1.05fr 1fr 1fr; }
-  .pcmp-row + .pcmp-row{ border-top:1px solid rgba(255,255,255,0.07); }
-  .pcmp-row > *{ padding:15px 20px; font-size:13.5px; color:#6E675C; line-height:1.4; }
-  .pcmp-row > span:nth-child(2){ background:rgba(199,224,112,0.055); color:#4A443C; border-left:1px solid rgba(150,180,80,0.18); border-right:1px solid rgba(150,180,80,0.18); }
-  .pcmp-dim{ font-family:'DM Sans',monospace; font-size:9.5px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; align-self:center; }
-  .pcmp-head > *{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:14.5px; padding-top:17px; padding-bottom:17px; }
-  .pcmp-head .pcmp-dwy{ color:#FFD2BC; background:rgba(199,224,112,0.13) !important; }
-  .pcmp-head .pcmp-dfy{ color:var(--cream); }
-  .pcmp-head .pcmp-tag{ display:block; font-family:'DM Sans',monospace; font-weight:500; font-size:8.5px; letter-spacing:.8px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
-  @media (max-width:680px){ .pcmp-row > *{ padding:12px 13px; font-size:12.5px; } }
-
-  /* proof (same shape as the DWY page) */
-  .team-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-  .team-stat{ padding:28px 22px; text-align:center; }
-  .js .team-stat .num{ font-family:'DM Sans',sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.03em; color:#6E56CF; line-height:1; font-variant-numeric:tabular-nums; opacity:0; filter:blur(13px); }
-  .team-stat.counted .num{ opacity:1; filter:blur(0); transition:opacity .6s ease, filter .6s cubic-bezier(.22,1,.36,1); }
-  .team-stat .lbl{ font-family:'DM Sans',monospace; font-size:9px; letter-spacing:.6px; text-transform:uppercase; color:#9A9184; margin-top:11px; line-height:1.45; }
-
-  /* quality-vs-speed quadrant (the system) */
-  .quad{ max-width:600px; margin:32px auto 0; display:grid; grid-template-columns:20px 1fr; grid-template-rows:1fr auto; gap:10px 12px; }
-  .quad-y{ grid-row:1; grid-column:1; writing-mode:vertical-rl; transform:rotate(180deg); align-self:center; justify-self:center;
-    font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#9A9184; }
-  .quad-plot{ grid-row:1; grid-column:2; position:relative; aspect-ratio:1.7/1; border-left:1px solid rgba(255,255,255,0.16); border-bottom:1px solid rgba(255,255,255,0.16);
-    background-image:linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size:25% 25%; }
-  .quad-x{ grid-row:2; grid-column:2; display:flex; justify-content:space-between; font-family:'DM Sans',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#9A9184; }
-  .quad-x span:nth-child(2){ color:#9A9184; }
-  .quad-pt{ position:absolute; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; gap:7px; }
-  .qp-dot{ width:11px; height:11px; border-radius:50%; background:rgba(166,166,174,0.55); border:1px solid rgba(255,255,255,0.25); }
-  .qp-l{ font-size:11.5px; color:#9A9184; white-space:nowrap; }
-  .quad-pt.engine .qp-dot{ width:17px; height:17px; background:var(--orange); border:none; animation:qPulse 2.6s ease-in-out infinite; }
-  .quad-pt.engine .qp-l{ color:var(--cream); font-weight:700; font-size:12.5px; white-space:normal; max-width:104px; text-align:center; line-height:1.2; }
-  @keyframes qPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(199,224,112,0.5), 0 0 18px rgba(199,224,112,0.6); } 50%{ box-shadow:0 0 0 11px rgba(199,224,112,0), 0 0 18px rgba(199,224,112,0.6); } }
-  @media (prefers-reduced-motion:reduce){ .js .team-stat .num{ opacity:1; filter:none; } .quad-pt.engine .qp-dot{ animation:none; } }
-  .proof-grid{ columns:3; column-gap:14px; margin-top:8px; }
+  /* proof */
+  .proof-quote{ margin-top:8px; }
+  .proof-note{ margin-top:18px; max-width:66ch; }
+  .proof-sub{ margin:48px 0 14px; font-size:clamp(22px,2.6vw,30px); }
+  .proof-grid{ columns:3; column-gap:14px; }
   .proof-card{ break-inside:avoid; margin-bottom:14px; padding:14px; }
-  .proof-shot{ border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px; }
+  .proof-shot{ border-radius:12px; overflow:hidden; border:1px solid rgba(42,39,35,0.08); margin-bottom:14px; }
   .proof-shot img{ width:100%; display:block; }
-  .proof-author{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px; color:var(--cream); }
-  .proof-role{ font-size:11.5px; color:#9A9184; margin-top:2px; }
-  .proof-metrics{ display:flex; gap:16px; margin:14px 0; padding:12px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); }
-  .proof-metric{ display:flex; flex-direction:column; }
-  .proof-metric .pm-n{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:16px; color:var(--cream); }
-  .proof-metric .pm-n.accent{ color:var(--orange); }
-  .proof-metric .pm-l{ font-family:'DM Sans',monospace; font-size:7.5px; letter-spacing:.5px; text-transform:uppercase; color:#9A9184; margin-top:3px; }
-  .proof-outcome{ font-size:12.5px; line-height:1.5; color:#6E675C; }
+  .proof-author{ font-weight:600; font-size:14px; color:var(--ink); }
+  .proof-role{ font-size:12px; color:var(--meta); margin-top:2px; }
+  .proof-outcome{ font-size:13px; line-height:1.5; color:var(--body); margin-top:10px; }
+  @media (max-width:880px){ .proof-grid{ columns:2; } }
+  @media (max-width:560px){ .proof-grid{ columns:1; } }
 
-  @media (max-width:880px){
-    .prob-grid{ grid-template-columns:1fr 1fr; }
-    .path-grid{ grid-template-columns:1fr; }
-    .flow-step{ flex:1 1 44%; }
-    .proof-grid{ columns:2; }
-    .team-stats{ grid-template-columns:1fr; }
-  }
-  @media (max-width:560px){
-    .prob-grid{ grid-template-columns:1fr; }
-    .flow-step{ flex:1 1 100%; }
-    .proof-grid{ columns:1; }
-  }
+  /* before content */
+  .before-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; }
+  .before-grid p{ font-size:17px; line-height:1.65; max-width:46ch; color:var(--ink2); }
+  .before-grid .btn{ margin-top:18px; }
+  @media (max-width:880px){ .before-grid{ grid-template-columns:1fr; } }
+
+  /* footer: name only */
+  .foot-grid .foot-tag a{ color:var(--ink2); text-underline-offset:3px; }
 </style>
 </head>
 <body class="frontal-dark">
@@ -242,17 +137,14 @@
 <!-- ===== NAV ===== -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></a>
+    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, home"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span></a>
     <nav class="nav-links">
-      <a href="#why">Why content</a>
-      <a href="#engine">How it works</a>
-      <a href="#paths">The two paths</a>
+      <a href="#build">What I build</a>
       <a href="#proof">Proof</a>
-      <a href="#faq">FAQ</a>
       <a href="/about-me">About</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" data-umami-event="Connect on LinkedIn" data-umami-event-place="nav">Connect on LinkedIn <i class="ph ph-arrow-right"></i></a>
     </div>
   </div>
 </header>
@@ -261,229 +153,90 @@
 <section id="top" class="hero">
   <div class="wrap hero-grid">
     <div class="hero-left">
-      <span class="eyebrow">LinkedIn content engineering</span>
-      <h1 class="">Turn LinkedIn into<br>a <span class="orange">pipeline</span> channel.</h1>
-      <p class="lead">Content that warms your buyers, makes your ads convert, and makes outbound land. Built with your team, or run by ours. The same engine warmed the pipeline behind 356 meetings and $153K in new MRR.</p>
+      <span class="eyebrow">Content engineer · Published author</span>
+      <h1>Mai-Lan <em>Khong</em></h1>
+      <p class="lead">I'm a content engineer and a published author. I build AI content systems for B2B teams who want content to feed their pipeline.</p>
+      <p class="role">At <a href="https://frontal.so" target="_blank" rel="noopener">Frontal</a>, I'm Content Lead and I run Content Engineering: I build the content machine behind a founder's LinkedIn, or I train a team to run its own.</p>
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
-        <a href="#paths" class="btn btn-ghost">See the two paths</a>
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" data-umami-event="Connect on LinkedIn" data-umami-event-place="hero">Connect on LinkedIn <i class="ph ph-arrow-right"></i></a>
+        <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-ghost" data-umami-event="Email" data-umami-event-place="hero">Email me</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-dash">
-        <div class="hd-bar">
-          <span class="hd-dot" style="background:#FF5F57"></span><span class="hd-dot" style="background:#FEBC2E"></span><span class="hd-dot" style="background:#28C840"></span>
-          <span class="hd-title">content-engine</span>
-          <span class="hd-live"><span style="width:7px;height:7px;border-radius:50%;background:#3FC878;box-shadow:0 0 8px #3FC878"></span>Live</span>
-        </div>
-        <div class="hd-body">
-          <div class="hd-eyebrow">87 days · 24 accounts · one system</div>
-          <div class="hd-tiles">
-            <div class="hd-tile accent"><div class="v">356</div><div class="l">Meetings booked</div></div>
-            <div class="hd-tile accent"><div class="v">+$153K</div><div class="l">New MRR</div></div>
-            <div class="hd-tile"><div class="v">581</div><div class="l">Posts shipped</div></div>
-            <div class="hd-tile"><div class="v">+34K</div><div class="l">New followers</div></div>
-          </div>
-          <div class="hd-chart-wrap">
-            <div class="hd-chart-label">Meetings booked, week over week</div>
-            <div class="hd-chart">
-              <span class="bar" style="height:20%"></span><span class="bar" style="height:30%"></span>
-              <span class="bar" style="height:26%"></span><span class="bar" style="height:44%"></span>
-              <span class="bar" style="height:52%"></span><span class="bar" style="height:46%"></span>
-              <span class="bar" style="height:66%"></span><span class="bar" style="height:74%"></span>
-              <span class="bar" style="height:88%"></span><span class="bar" style="height:100%"></span>
-            </div>
-          </div>
-        </div>
+    <figure class="hero-photo">
+      <div class="frame card">
+        <img src="brand_assets/mailan%20-%20about%20me.webp" width="800" height="1200" fetchpriority="high" decoding="async" alt="Mai-Lan Khong, smiling, in a sunny street in Spain" />
       </div>
-    </div>
+      <figcaption class="place">Based in<b>Spain</b></figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ===== MEET YOUR GUIDE ===== -->
-<section id="guide" class="sec">
+<!-- ===== WHAT I BUILD (topic 1) ===== -->
+<section id="build" class="sec">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Meet your guide</span>
-        <h2 style="max-width:15ch;margin-top:14px">The operator behind the system.</h2>
-      </div>
-      <div class="sec-num">MEET MAI-LAN</div>
-    </div>
-    <div class="guide-grid reveal">
-      <a class="guide-shot card" href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" aria-label="Mai-Lan Khong on LinkedIn">
-        <img style="height:auto" width="1336" height="744" loading="lazy" decoding="async" src="assets/proof/mailan-linkedin.webp" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, Favikon #2 creator worldwide, 12,385 followers" />
-      </a>
-      <div class="guide-copy">
-        <p class="lead">Hi, I'm <strong>Mai-Lan Khong</strong>, Content Strategist at Frontal, trusted by 275+ tech companies. I help B2B founders turn LinkedIn into a channel that builds pipeline, and I grew my own account to Favikon's #2 creator worldwide.</p>
-        <p>Whether we build the engine with your team or run it for you, you are working with an operator who has done it in the open, not a template.</p>
-        <div class="guide-actions">
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
-          <a href="/about-me" class="btn btn-ghost">About Mai-Lan</a>
-        </div>
+        <span class="eyebrow reveal">AI content systems</span>
+        <h2 class="reveal" style="max-width:18ch;margin-top:14px">An AI content system that still sounds like you</h2>
       </div>
     </div>
-    <div class="guide-favikon card reveal">
-      <div class="gf-shot">
-        <img style="height:auto" width="400" height="496" loading="lazy" decoding="async" src="assets/proof/favikon-mailan.webp" alt="Favikon ranking: Mai-Lan Khong ranked #2 creator on LinkedIn worldwide" />
-      </div>
-      <div class="gf-copy">
-        <span class="eyebrow">Industry recognition</span>
-        <h3>#2 Creator on LinkedIn, worldwide</h3>
-        <p>Ranked by Favikon, the leading creator-analytics platform. Real reach, earned in public, and the same instinct I bring to every client's content.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <p class="lead build-intro reveal">Most AI content sounds like nobody. In <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener">my post of 20 Aug 2026</a> I wrote it like this: "AI is not necessarily writing badly, but part of the blame lies in the prompts." So the machine I build starts before the first prompt.</p>
 
-
-<!-- ===== WHY (revenue) ===== -->
-<section id="why" class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow reveal">Why content</span>
-        <h2 class="reveal">Recognition is your cheapest pipeline.</h2></div>
-      <div class="sec-num reveal">01 / Why content</div>
-    </div>
-    <p class="lead reveal">Buyers don't reply to strangers anymore. They buy from people they recognize, and content builds that recognition: the trust layer that warms buyers so your ads convert and outbound gets a reply, not a delete.</p>
-    <div class="why-grid">
-      <figure class="venn-figure reveal">
-        <img style="height:auto" width="1200" height="1200" loading="lazy" decoding="async" src="assets/proof/gtm-venn.webp" alt="The GTM flywheel: content, ads, and outbound aimed at the same ICP. Content builds trust at scale, ads keep you visible, outbound books the meeting." />
-      </figure>
-      <div class="why-points reveal">
-        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Builds trust at scale</strong><span>before you ever make the first ask.</span></div></div>
-        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Lowers your ad costs</strong><span>by warming the audience before it is retargeted.</span></div></div>
-        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Makes outbound land</strong><span>when the name in the inbox is one they already know.</span></div></div>
-        <div class="wp"><i class="ph ph-check-circle"></i><div><strong>Educates buyers early</strong><span>months before they are ready to buy.</span></div></div>
-        <div class="warmbar">
-          <div class="wb-title">Reply rate, cold vs warm</div>
-          <div class="wb-row"><span class="wb-l">Cold outreach</span><div class="wb-track"><span class="wb-fill cold" style="width:13%"></span></div><span class="wb-v">~2%</span></div>
-          <div class="wb-row"><span class="wb-l">When they know you</span><div class="wb-track"><span class="wb-fill warm" style="width:100%"></span></div><span class="wb-v">~15%</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="accent-callout reveal" style="margin-top:18px">
-      <h3>Content warms the pipeline that closes.</h3>
-      <p>Across 24 experts in 87 days, content built the recognition that fed <b>356 meetings</b> and <b>$153K in new MRR</b>. Buyers saw the team, trusted them, then took the call. The same trust makes your ads convert and your outbound land.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== THE PROBLEM ===== -->
-<section id="problem" class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow reveal">The problem</span>
-        <h2 class="reveal">Good content got expensive.</h2></div>
-      <div class="sec-num reveal">02 / The problem</div>
-    </div>
-    <p class="lead reveal">AI made average posts free, so the feed is a wall of sameness. Every shortcut to standing out trades away quality, speed, or cost.</p>
-    <div class="cmp reveal">
-      <div class="cmp-grid">
-        <div class="cmp-h"></div><div class="cmp-h">Quality</div><div class="cmp-h">Speed</div><div class="cmp-h">Cost</div>
-        <div class="cmp-name"><b>Do it yourself</b><span>The same AI as everyone</span></div>
-        <div><span class="cmp-bar" style="--w:32%;--bc:rgba(224,88,106,.78);--dl:.05s"></span></div>
-        <div><span class="cmp-bar" style="--w:30%;--bc:rgba(224,88,106,.78);--dl:.12s"></span></div>
-        <div><span class="cmp-bar" style="--w:100%;--bc:var(--orange);--dl:.19s"></span></div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-name"><b>A freelancer</b><span>Average, or rare and pricey</span></div>
-        <div><span class="cmp-bar" style="--w:60%;--bc:rgba(230,162,78,.85);--dl:.1s"></span></div>
-        <div><span class="cmp-bar" style="--w:56%;--bc:rgba(230,162,78,.85);--dl:.17s"></span></div>
-        <div><span class="cmp-bar" style="--w:55%;--bc:rgba(230,162,78,.85);--dl:.24s"></span></div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-name"><b>An in-house hire</b><span>A full salary, one company's view</span></div>
-        <div><span class="cmp-bar" style="--w:100%;--bc:var(--orange);--dl:.15s"></span></div>
-        <div><span class="cmp-bar" style="--w:32%;--bc:rgba(224,88,106,.78);--dl:.22s"></span></div>
-        <div><span class="cmp-bar" style="--w:26%;--bc:rgba(224,88,106,.78);--dl:.29s"></span></div>
-      </div>
-    </div>
-    <div class="callout-box reveal">
-      <h3>So we built it as a system, tuned to one job.</h3>
-      <p>A specialist's quality, a machine's speed, and the pattern data of a team across many B2B accounts. Built with your team, or run by ours.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== THE ENGINE ===== -->
-<section id="engine" class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow reveal">The system</span>
-        <h2 class="reveal">The quality of a specialist,<br>at the speed of a machine.</h2></div>
-      <div class="sec-num reveal">03 / The system</div>
-    </div>
-    <p class="lead reveal">Everyone else makes you pick one. The engine gives you both: research so you never read like the feed, your voice profile so it sounds like you, a grader so nothing weak ships.</p>
-    <div class="quad reveal">
-      <div class="quad-y">Quality</div>
-      <div class="quad-plot">
-        <div class="quad-pt" style="left:31%;top:75%"><span class="qp-dot"></span><span class="qp-l">Do it yourself</span></div>
-        <div class="quad-pt" style="left:49%;top:53%"><span class="qp-dot"></span><span class="qp-l">Freelancer</span></div>
-        <div class="quad-pt" style="left:24%;top:25%"><span class="qp-dot"></span><span class="qp-l">In-house hire</span></div>
-        <div class="quad-pt engine" style="left:72%;top:18%"><span class="qp-dot"></span><span class="qp-l">The Frontal Content Engine</span></div>
-      </div>
-      <div class="quad-x"><span>Slow</span><span>Speed</span><span>Fast</span></div>
-    </div>
-    <div class="flow reveal">
-      <div class="flow-step"><i class="ph ph-binoculars"></i><div class="fn">Research</div><div class="ft">6 workers, every week</div></div>
-      <div class="flow-step"><i class="ph ph-magnet-straight"></i><div class="fn">Hooks</div><div class="ft">50 templates, ranked</div></div>
-      <div class="flow-step"><i class="ph ph-pen-nib"></i><div class="fn">Copy</div><div class="ft">In your voice profile</div></div>
-      <div class="flow-step"><i class="ph ph-gauge"></i><div class="fn">Grade</div><div class="ft">Scored before it ships</div></div>
-      <div class="flow-step"><i class="ph ph-chats-circle"></i><div class="fn">Publish</div><div class="ft">And engaged daily</div></div>
-      <div class="flow-step end"><i class="ph ph-trend-up"></i><div class="fn">Outcome</div><div class="ft">Meetings, not only likes</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== THE TWO PATHS ===== -->
-<section id="paths" class="sec">
-  <div class="wrap">
-    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-      <span class="eyebrow reveal">The two paths</span>
-      <h2 class="reveal">Two ways to run content engineering.</h2>
-      <p class="lead reveal" style="text-align:center;margin-top:12px">Build the engine with your team. Or have us run it for you.</p>
-    </div>
-    <div class="path-grid">
-      <!-- DWY -->
-      <div class="path-card focal reveal">
-        <div class="path-label"><span class="fr-dot-solid"></span>Path 01 · Done With You</div>
-        <h3>Build the content engine.</h3>
-        <div class="path-approach"><span class="pill">We build it with you</span><span class="pill">You own it</span></div>
-        <p class="path-for">For teams that want the system in-house. We build it with you over a structured program, and your team keeps running it after we leave.</p>
-        <ul class="path-feat">
-          <li><i class="ph ph-check"></i>A structured program, your whole team trained</li>
-          <li><i class="ph ph-check"></i>Voice, ideal customer, and content pillars defined</li>
-          <li><i class="ph ph-check"></i>The full playbook: write, grade, publish, engage</li>
-          <li><i class="ph ph-check"></i>You own the engine and keep it for good</li>
+    <div class="build-grid">
+      <div class="card build-card reveal">
+        <h3>Five files before the first post</h3>
+        <p>The voice profile comes first, and it starts with a real conversation. From <a href="https://www.linkedin.com/posts/mai-lan-khong_if-you-run-an-employee-linkedin-program-activity-7491074903878639616-6PI9" target="_blank" rel="noopener">my post of 6 Aug 2026</a>: "A Google Form asking "what is your tone?" has never once been answered truthfully."</p>
+        <p>Then the ICP, the content pillars and a grading profile. The brand guidelines come last, and they are for the visuals, not the writing.</p>
+        <ul class="files" aria-label="The five files">
+          <li>Voice profile</li><li>ICP</li><li>Content pillars</li><li>Grading profile</li><li>Brand guidelines</li>
         </ul>
-        <div class="path-cta"><a href="/done-with-you" class="btn btn-solid">Explore Done With You <i class="ph ph-arrow-right"></i></a></div>
       </div>
-      <!-- DFY (focal) -->
-      <div class="path-card reveal">
-        <div class="path-label"><span class="fr-dot-solid"></span>Path 02 · Done For You</div>
-        <h3>We run it for you.</h3>
-        <div class="path-approach"><span class="pill">We run it for you</span><span class="pill">Live in two weeks</span></div>
-        <p class="path-for">For founders who want the reach without the hours. We run your content, engagement, and audience growth under your name.</p>
-        <ul class="path-feat">
-          <li><i class="ph ph-check"></i>16 posts a month, written and designed</li>
-          <li><i class="ph ph-check"></i>A dedicated engagement specialist, in your voice</li>
-          <li><i class="ph ph-check"></i>Audience growth on autopilot</li>
-          <li><i class="ph ph-check"></i>A monthly Performance Lab that keeps it improving</li>
-        </ul>
-        <div class="path-cta"><a href="/done-for-you" class="btn btn-ghost">Explore Done For You <i class="ph ph-arrow-right"></i></a></div>
+      <div class="card build-card reveal">
+        <h3>Two machines</h3>
+        <p>One looks for ideas. The other writes, and it starts with an interview, where you add the story only you know.</p>
+        <p>Three checks read every draft before it reaches you.</p>
       </div>
     </div>
-    <div class="paths-cmp reveal">
-      <div class="pcmp-row pcmp-head">
-        <span class="pcmp-dim">Compare</span>
-        <span class="pcmp-dwy">Done With You<span class="pcmp-tag">Build it</span></span>
-        <span class="pcmp-dfy">Done For You<span class="pcmp-tag">Run it</span></span>
+
+    <ol class="flow reveal" aria-label="Where AI sits in the work">
+      <li>Experience</li><li>Idea</li><li>Thinking</li><li class="ai">AI</li><li>Editing</li><li>Judgment</li><li>Publish</li>
+    </ol>
+    <p class="flow-note reveal">From <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener">my post of 20 Aug 2026</a>: "AI belongs in the middle as a production step. It can never substitute for having something to say."</p>
+
+    <p class="quote-lead reveal">The program I run at Frontal was rebuilt from an earlier content system. That system's result, in my post of 6 Aug 2026:</p>
+    <figure class="quote system reveal">
+      <blockquote>"This was rebuilt from the content system that generated 27 new clients and +$153K in monthly recurring revenue in less than 3 months."</blockquote>
+      <figcaption>My post's words, 6 Aug 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_if-you-run-an-employee-linkedin-program-activity-7491074903878639616-6PI9" target="_blank" rel="noopener">Read the post</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== TOPICS ===== -->
+<section id="topics" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Three topics</span>
+        <h2 class="reveal" style="margin-top:14px">Three things I work on</h2>
       </div>
-      <div class="pcmp-row"><span class="pcmp-dim">Who runs it</span><span>Your team, with us</span><span>Frontal, under your name</span></div>
-      <div class="pcmp-row"><span class="pcmp-dim">Your time</span><span>A few hours a week</span><span>About 30 minutes a week</span></div>
-      <div class="pcmp-row"><span class="pcmp-dim">You walk away with</span><span>A content system you own</span><span>Reach, audience, and inbound</span></div>
-      <div class="pcmp-row"><span class="pcmp-dim">Best if you want</span><span>The capability in-house</span><span>It handled, fast</span></div>
     </div>
-    <p class="not-sure reveal"><b>Not sure which fits?</b> On a call we will tell you straight which one is right.</p>
+    <div class="topic-grid">
+      <div class="card topic lead-topic reveal">
+        <span class="tn">1</span>
+        <h3>AI content systems</h3>
+        <p>How a content engine built with AI keeps a human voice: the five files, the two machines, the interview, the checks.</p>
+      </div>
+      <div class="card topic reveal">
+        <span class="tn">2</span>
+        <h3>Content to drive B2B pipeline</h3>
+        <p>Content as a go-to-market channel, so outbound and ads land on a name the buyer already knows. LinkedIn first, then a newsletter, then YouTube.</p>
+      </div>
+      <div class="card topic reveal">
+        <span class="tn">3</span>
+        <h3>LinkedIn programs for teams</h3>
+        <p>The founder, executives and employees posting together. How to build that program, and how to keep it alive past month 3.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -491,56 +244,55 @@
 <section id="proof" class="sec light">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="eyebrow reveal">Proof</span>
-        <h2 class="reveal">356 meetings and $153K MRR from content.</h2></div>
-      <div class="sec-num reveal">04 / Proof</div>
+      <div>
+        <span class="eyebrow reveal">Proof</span>
+        <h2 class="reveal" style="margin-top:14px">The LinkedIn program I run at Frontal</h2>
+      </div>
     </div>
-    <p class="lead reveal">Content is not an overnight channel. It is the one that compounds: it builds authority, warms the accounts you are about to reach out to, and turns attention into steady inbound.</p>
-    <div class="team-stats" style="margin-top:26px">
-      <div class="card team-stat reveal"><div class="num">356</div><div class="lbl">meetings, warmed by content</div></div>
-      <div class="card team-stat reveal"><div class="num">+27</div><div class="lbl">new clients from content</div></div>
-      <div class="card team-stat reveal"><div class="num">+$153K</div><div class="lbl">new MRR in 87 days</div></div>
-    </div>
+    <figure class="quote card proof-quote reveal">
+      <blockquote>"While many LinkedIn programs are dead by month 3, the one I run inside Frontal AI just crossed +175K followers combined."</blockquote>
+      <figcaption>My post's words, 6 Aug 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_if-you-run-an-employee-linkedin-program-activity-7491074903878639616-6PI9" target="_blank" rel="noopener">Read the post</a></figcaption>
+    </figure>
+    <p class="lead proof-note reveal">Founders, operators and the wider network publish in parallel, each on their own profile. The followers and the messages belong to the person, not to the company page.</p>
 
-    <div class="sec-head" style="margin-top:60px">
-      <div><span class="eyebrow reveal">Real posts, real engagement</span>
-        <h2 class="reveal" style="font-size:clamp(24px,3vw,34px)">Content that earns its reach.</h2></div>
-    </div>
-    <p class="lead reveal" style="margin-bottom:8px">Public on LinkedIn. Every name and number is real.</p>
+    <h3 class="proof-sub reveal">A few posts from the team</h3>
     <div class="proof-grid reveal">
-      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="411" loading="lazy" decoding="async" src="assets/proof/post-alex.webp" alt="Alex Vacca post"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Co-Founder · $6M ARR</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,238</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">4,099</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">43</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Code for Ads." $200K/month in ad spend run from a terminal.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="447" loading="lazy" decoding="async" src="assets/proof/post-kenny.webp" alt="Kenny Damian post"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">1,266</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,139</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">61</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">37 AI Agents set up for the $6M ARR outbound agency. 6 deployed across $10M+ ARR clients.</div></div>      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="446" loading="lazy" decoding="async" src="assets/proof/post-ivan.webp" alt="Ivan Falco post"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth · $7M GTM Agency</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">469</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">2,785</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">6</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Biggest skills database for GTM: outbound, RevOps, ABM. Open-sourced for free.</div></div>      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="446" loading="lazy" decoding="async" src="assets/proof/post-mailan.webp" alt="Mai-Lan Khong post"></div><div class="proof-author">Mai-Lan Khong</div><div class="proof-role">Content Strategist & AI Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">281</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">1,030</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">11</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">$153,000 MRR in 87 days. 24 people posting on one system. The full content pipeline.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="562" height="1498" loading="lazy" decoding="async" src="assets/proof/post-soheil.webp" alt="Soheil Saeidmehr post"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">2,858</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">370</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">39</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">SEG auto-detection reveal. The deliverability post that compounded into thousands of saves.</div></div>      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="410" loading="lazy" decoding="async" src="assets/proof/post-dujam.webp" alt="Dujam Dunato post"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">250</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">520</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">13</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">Claude as an AI sales closer with n8n. 5 trained agents for post-call follow-up.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="522" loading="lazy" decoding="async" src="assets/proof/post-luca.webp" alt="Luca Carrese post"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner @ Frontal AI</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">321</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">55</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">22</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">"Claude Dispatch just shipped." Run your AI agent from your phone — safely, cheaply, natively.</div></div>
-      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="461" loading="lazy" decoding="async" src="assets/proof/post-shubham.webp" alt="Shubham Sandilya post"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-metrics"><div class="proof-metric"><span class="pm-n accent">235</span><span class="pm-l">Reactions</span></div><div class="proof-metric"><span class="pm-n">70</span><span class="pm-l">Comments</span></div><div class="proof-metric"><span class="pm-n">27</span><span class="pm-l">Reposts</span></div></div><div class="proof-outcome">The Modern Outbound Stack. 5 categories, one clear path from lead to close.</div></div>    </div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="411" loading="lazy" decoding="async" src="assets/proof/post-alex.webp" alt="LinkedIn post by Alex Vacca"></div><div class="proof-author">Alex Vacca</div><div class="proof-role">Founder and CEO of Frontal</div><div class="proof-outcome">Claude Code for ads, run from a terminal.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="447" loading="lazy" decoding="async" src="assets/proof/post-kenny.webp" alt="LinkedIn post by Kenny Damian"></div><div class="proof-author">Kenny Damian</div><div class="proof-role">Head of GTM</div><div class="proof-outcome">AI agents set up for an outbound agency.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="446" loading="lazy" decoding="async" src="assets/proof/post-ivan.webp" alt="LinkedIn post by Ivan Falco"></div><div class="proof-author">Ivan Falco</div><div class="proof-role">Head of Growth</div><div class="proof-outcome">A skills database for GTM: outbound, RevOps, ABM, open-sourced for free.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="562" height="1498" loading="lazy" decoding="async" src="assets/proof/post-soheil.webp" alt="LinkedIn post by Soheil Saeidmehr"></div><div class="proof-author">Soheil Saeidmehr</div><div class="proof-role">Head of Service Delivery</div><div class="proof-outcome">A deliverability post: detecting a buyer's email gateway.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="410" loading="lazy" decoding="async" src="assets/proof/post-dujam.webp" alt="LinkedIn post by Dujam Dunato"></div><div class="proof-author">Dujam Dunato</div><div class="proof-role">Sales Tech Expert</div><div class="proof-outcome">Claude as an AI sales closer with n8n.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="522" loading="lazy" decoding="async" src="assets/proof/post-luca.webp" alt="LinkedIn post by Luca Carrese"></div><div class="proof-author">Luca Carrese</div><div class="proof-role">Partner at Frontal AI</div><div class="proof-outcome">Claude Dispatch: running your AI agent from your phone.</div></div>
+      <div class="card proof-card"><div class="proof-shot"><img style="height:auto" width="784" height="461" loading="lazy" decoding="async" src="assets/proof/post-shubham.webp" alt="LinkedIn post by Shubham Sandilya"></div><div class="proof-author">Shubham Sandilya</div><div class="proof-role">AI Revenue Systems</div><div class="proof-outcome">The modern outbound stack, from lead to close.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section id="faq" class="sec light">
-  <div class="wrap">
-    <div class="sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-      <span class="eyebrow reveal">Questions</span>
-      <h2 class="reveal">The things teams ask first.</h2>
+<!-- ===== BEFORE CONTENT ===== -->
+<section id="before" class="sec">
+  <div class="wrap before-grid">
+    <div class="reveal">
+      <span class="eyebrow">Before content</span>
+      <p style="margin-top:16px">Before content, I wrote two travel books in Vietnamese, and I translated Brené Brown's <em>Dare to Lead</em> into Vietnamese.</p>
+      <a href="/about-me" class="btn btn-ghost">More about me <i class="ph ph-arrow-right"></i></a>
     </div>
-    <div class="faq">
-      <details class="q reveal"><summary>What is content engineering, exactly?<i class="ph ph-plus"></i></summary><div class="a">Treating content like a system instead of a chore. Ideas come from your real sales calls, get written in your voice, are held to a quality bar, then amplified by daily engagement and audience growth. Built with your team, or run by ours.</div></details>
-      <details class="q reveal"><summary>Which path is right for me, Done With You or Done For You?<i class="ph ph-plus"></i></summary><div class="a">If you want the capability in-house and your team will write, choose Done With You. If you want the reach without the hours, choose Done For You. On a call we will tell you straight which fits your team and your goals.</div></details>
-      <details class="q reveal"><summary>Is this only for founders, or the whole team?<i class="ph ph-plus"></i></summary><div class="a">Both. The engine works for a single founder profile or a team of voices. Many companies start with the founder and add team members once it is working.</div></details>
-      <details class="q reveal"><summary>Do you replace our writer or agency?<i class="ph ph-plus"></i></summary><div class="a">No. We can run alongside what you already have, or take the whole thing. Most teams move it all to us once they see the difference in reach.</div></details>
-      <details class="q reveal"><summary>How fast do we start seeing results?<i class="ph ph-plus"></i></summary><div class="a">Engagement and network growth show in the first weeks. The audience shift people actually notice builds over several months. We are upfront about that because we plan to still be here when it lands.</div></details>
-      <details class="q reveal"><summary>Who owns the content and the accounts?<i class="ph ph-plus"></i></summary><div class="a">You do, always. We work under your name, credentials stay in an encrypted vault, and everything we produce is yours to keep.</div></details>
-    </div>
+    <figure class="quote card reveal">
+      <blockquote>"Polish used to be the proof you were worth trusting. Now, polish is the tell."</blockquote>
+      <figcaption>My post of <a href="https://www.linkedin.com/posts/mai-lan-khong_my-6th-sense-i-can-feel-a-bad-ai-written-activity-7467150547368783872-jWUa" target="_blank" rel="noopener">1 Jun 2026</a></figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
-<section id="book" class="sec" style="border-top:none">
+<section id="contact" class="sec" style="border-top:none">
   <div class="wrap">
     <div class="cta-band reveal">
-      <h2 style="max-width:none">Make content your channel.</h2>
-      <p>Message Mai-Lan on LinkedIn. She'll walk you through both paths, tell you which one fits, and get your first session on the calendar.</p>
-      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" style="padding:14px 26px;font-size:15px">Talk to Mai-Lan <i class="ph ph-arrow-right"></i></a>
+      <h2 style="max-width:none">Say hello on LinkedIn</h2>
+      <p>Connect with me on LinkedIn and send your message there. Or write to <a href="mailto:mailankhong.biz@gmail.com" data-umami-event="Email" data-umami-event-place="contact-text">mailankhong.biz@gmail.com</a>.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" style="padding:14px 26px;font-size:15px" data-umami-event="Connect on LinkedIn" data-umami-event-place="contact">Connect on LinkedIn <i class="ph ph-arrow-right"></i></a>
+        <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-ghost" style="padding:14px 26px;font-size:15px" data-umami-event="Email" data-umami-event-place="contact">Email me</a>
+      </div>
     </div>
   </div>
 </section>
@@ -550,59 +302,32 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span><span class="brand-sep">&times;</span><img loading="lazy" decoding="async" class="foot-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal" /></div>
-        <p class="foot-tag">Content engineering. We turn your team into a channel: built with you, or run for you.</p>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span></div>
+        <p class="foot-tag">Mai-Lan Khong. Content engineer and published author.<br>Content Lead at <a href="https://frontal.so" target="_blank" rel="noopener">Frontal</a>.</p>
       </div>
       <div class="foot-links">
         <div class="foot-col">
-          <h4>Content engineering</h4>
-          <a href="#why">Why a system</a>
-          <a href="#engine">How it works</a>
+          <h4>Pages</h4>
+          <a href="/">Home</a>
+          <a href="/about-me">About</a>
           <a href="/done-with-you">Done With You</a>
           <a href="/done-for-you">Done For You</a>
         </div>
         <div class="foot-col">
-          <h4>Frontal</h4>
-          <a href="https://frontal.so" target="_blank" rel="noopener">frontal.so</a>
-          <a href="#faq">FAQ</a>
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener">Talk to Mai-Lan</a>
-          <a href="mailto:mailankhong.biz@gmail.com">Contact</a>
+          <h4>Contact</h4>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" data-umami-event="Connect on LinkedIn" data-umami-event-place="footer">LinkedIn</a>
+          <a href="mailto:mailankhong.biz@gmail.com" data-umami-event="Email" data-umami-event-place="footer">Email</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>Mai-Lan Khong · LinkedIn content systems</span>
+      <span>Mai-Lan Khong · mailankhong.com</span>
       <span>© 2026 Mai-Lan Khong. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // count-up: numbers tick 0 -> target, fading in from blur, staggered.
-  (function(){
-    const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-    function count(el, dur){
-      const m=el.textContent.match(/^([^\d]*)(\d[\d,]*)(.*)$/); if(!m) return;
-      const pre=m[1], suf=m[3], target=parseInt(m[2].replace(/,/g,''),10);
-      if(reduce){ el.textContent=pre+target.toLocaleString('en-US')+suf; return; }
-      const start=performance.now();
-      (function fr(now){ const t=Math.min(1,(now-start)/dur), e=1-Math.pow(1-t,3);
-        el.textContent=pre+Math.round(target*e).toLocaleString('en-US')+suf;
-        if(t<1) requestAnimationFrame(fr); else el.textContent=pre+target.toLocaleString('en-US')+suf;
-      })(start);
-    }
-    function setup(rootSel, tileSel, numSel, stagger, dur){
-      const root=document.querySelector(rootSel); if(!root) return;
-      const tiles=[...root.querySelectorAll(tileSel)];
-      const io=new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){
-        tiles.forEach((t,i)=>setTimeout(()=>{ t.classList.add('counted'); const n=t.querySelector(numSel); if(n) count(n,dur); }, reduce?0:i*stagger));
-        io.disconnect(); } });},{threshold:0.35});
-      io.observe(root);
-    }
-    setup('.hero-dash','.hd-tile','.v',300,2000);            // slower hero count-up
-    setup('#proof .team-stats','.team-stat','.num',260,1900); // same effect on the proof stats
-  })();
-
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
