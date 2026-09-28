@@ -734,24 +734,26 @@
     const el = document.getElementById('hero-tw');
     if(!el) return;
     const words = ["AI engine that turns posts into pipeline.","stack pulling inbound off every post.","playbook successful B2B teams quietly run.","AI engine that books your calendar."];
-    const cur = document.createElement('span'); cur.className='tw-cursor';
-    el.textContent = '';   // the full first phrase is in the HTML for readers without JavaScript
-    const txt = document.createElement('span'); el.appendChild(txt); el.appendChild(cur);
+    const cur = document.createElement('span'); cur.className='tw-cursor'; cur.setAttribute('aria-hidden','true');   // decorative, not part of the heading
+    const txt = document.createElement('span'); txt.textContent = words[0];   // the full first phrase stays until the visitor interacts
+    el.textContent = ''; el.appendChild(txt); el.appendChild(cur);   // (it is also in the HTML for readers without JavaScript)
+    function show(s){ if(txt.textContent!==s) txt.textContent=s; }   // never rewrite the same text: a rewritten node counts as a new paint
     let w=0,i=words[0].length,del=false;   // start from the full first phrase, then cycle
     // reserve the height of the first phrase (the one on screen at load), so typing it never moves the layout
     const h1 = el.closest('h1');
     function reserve(){ if(!h1) return; h1.style.minHeight=''; let max=0;
-      [words[0]].forEach(p=>{ txt.textContent=p; max=Math.max(max,h1.getBoundingClientRect().height); });
-      txt.textContent=words[w].slice(0,i); h1.style.minHeight=Math.ceil(max)+'px'; }
+      [words[0]].forEach(p=>{ show(p); max=Math.max(max,h1.getBoundingClientRect().height); });
+      show(words[w].slice(0,i)); h1.style.minHeight=Math.ceil(max)+'px'; }
     reserve(); addEventListener('resize', reserve);
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
     function tick(){
       const word=words[w];
-      txt.textContent = word.slice(0,i);
+      show(word.slice(0,i));
       if(!del){ i++; if(i>word.length){ del=true; return setTimeout(tick,2200);} }
       else { i--; if(i<0){ del=false; i=0; w=(w+1)%words.length; } }
       setTimeout(tick, del?26:50);
     }
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;   // reduced motion: no typing, no blinking
     // start on the visitor's first scroll, pointer or key: crawlers never interact, so they always read the full first phrase
     const EV=['scroll','pointermove','pointerdown','keydown','touchstart'];
     function start(){ EV.forEach(e=>removeEventListener(e,start)); tick(); }
