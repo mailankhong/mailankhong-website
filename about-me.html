@@ -7,19 +7,83 @@
   <script>document.documentElement.classList.add('js');document.addEventListener('DOMContentLoaded',function(){if(!window.__reveal)document.documentElement.classList.remove('js')})</script>
   <link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
   <link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
-  <title>About Mai-Lan Khong, Brand &amp; Growth Strategist</title>
-  <meta name="description" content="Startup founder turned Brand &amp; Growth Strategist. I help founders and B2B teams turn LinkedIn into a pipeline channel, built with you, or run for you, in partnership with Frontal. 1M+ views in 6 months.">
-  <meta name="keywords" content="Mai-Lan Khong, brand strategist, LinkedIn content strategy, personal branding, founder content, growth strategist, Frontal">
+  <title>About Mai-Lan Khong, content engineer and published author</title>
+  <meta name="description" content="About Mai-Lan Khong: content engineer, published author and Content Lead at Frontal. Two travel books in Vietnamese and the Vietnamese Dare to Lead.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://www.mailankhong.com/about-me">
+  <meta property="og:title" content="About Mai-Lan Khong, content engineer and published author">
+  <meta property="og:description" content="About Mai-Lan Khong: content engineer, published author and Content Lead at Frontal. Two travel books in Vietnamese and the Vietnamese Dare to Lead.">
+  <meta property="og:image" content="https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp">
+  <meta property="profile:first_name" content="Mai-Lan">
+  <meta property="profile:last_name" content="Khong">
+  <meta name="twitter:card" content="summary">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mai-Lan Khong",
-    "@id": "https://www.mailankhong.com/#person",
-    "url": "https://www.mailankhong.com/",
-    "jobTitle": ["Brand & Growth Strategist", "LinkedIn Content Strategist"],
-    "description": "Startup founder turned Brand & Growth Strategist. Specialises in LinkedIn content systems for founders and B2B teams, in partnership with Frontal.",
-    "sameAs": ["https://www.linkedin.com/in/mai-lan-khong/"]
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://www.mailankhong.com/about-me#profilepage",
+        "url": "https://www.mailankhong.com/about-me",
+        "name": "About Mai-Lan Khong, content engineer and published author",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://www.mailankhong.com/#website" },
+        "mainEntity": { "@id": "https://www.mailankhong.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.mailankhong.com/#person",
+        "name": "Mai-Lan Khong",
+        "url": "https://www.mailankhong.com/",
+        "image": "https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp",
+        "description": "Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline.",
+        "jobTitle": ["Content engineer", "Content Lead"],
+        "worksFor": { "@type": "Organization", "name": "Frontal", "url": "https://frontal.so" },
+        "knowsAbout": ["AI content systems", "Content to drive B2B pipeline", "LinkedIn programs for teams"],
+        "nationality": { "@type": "Country", "name": "Vietnam" },
+        "homeLocation": { "@type": "Country", "name": "Spain" },
+        "sameAs": [
+          "https://www.linkedin.com/in/mai-lan-khong/",
+          "https://www.linkedin.com/company/mai-lan-khong"
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://www.mailankhong.com/about-me#book-nice-to-meet-you",
+        "name": "Nice to meet you!",
+        "author": { "@id": "https://www.mailankhong.com/#person" },
+        "genre": "Travel",
+        "inLanguage": "vi",
+        "publisher": { "@type": "Organization", "name": "AZ Việt Nam" },
+        "datePublished": "2018"
+      },
+      {
+        "@type": "Book",
+        "@id": "https://www.mailankhong.com/about-me#book-himalaya",
+        "name": "Himalaya",
+        "author": { "@id": "https://www.mailankhong.com/#person" },
+        "genre": "Travel",
+        "inLanguage": "vi",
+        "publisher": { "@type": "Organization", "name": "Sống, Alpha Books" },
+        "datePublished": "2020"
+      },
+      {
+        "@type": "Book",
+        "@id": "https://www.mailankhong.com/about-me#translation-dare-to-lead",
+        "name": "Dare to Lead",
+        "bookEdition": "Vietnamese edition",
+        "translator": { "@id": "https://www.mailankhong.com/#person" },
+        "inLanguage": "vi",
+        "publisher": { "@type": "Organization", "name": "Alpha Books" },
+        "datePublished": "2019",
+        "translationOfWork": {
+          "@type": "Book",
+          "name": "Dare to Lead",
+          "author": { "@type": "Person", "name": "Brené Brown" },
+          "inLanguage": "en"
+        }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,13 +130,11 @@
     .nav-link{font-family:'DM Sans',sans-serif;font-size:0.875rem;font-weight:400;color:var(--c-text);text-decoration:none;padding:0.375rem 0.75rem;border-radius:8px;transition:color 0.14s ease,background 0.14s ease}
     .nav-link:hover{color:var(--c-primary);background:rgba(110,86,207,0.07)}
     .nav-link.active{color:var(--c-primary);font-weight:500}
-    /* MLK × Frontal brand lockup */
+    /* MLK brand mark */
     .brand-lock{display:inline-flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
     .mlk-mark{display:flex;flex-direction:column;line-height:1}
     .mlk-init{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;color:var(--c-charcoal);letter-spacing:1.5px}
     .mlk-word{font-family:'DM Sans',sans-serif;font-size:0.4rem;font-weight:600;letter-spacing:2.1px;text-transform:uppercase;color:var(--c-muted);margin-top:3px}
-    .brand-sep{color:var(--c-muted);opacity:0.5;font-size:0.95rem;font-weight:300}
-    .brand-lock .fr-logo{height:15px;width:auto}
     .brand-lock:hover .mlk-init{color:var(--c-primary);transition:color .18s ease}
     .social-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.75);color:var(--c-muted);text-decoration:none;transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1),background 0.15s ease,color 0.15s ease}
     .social-btn:hover{transform:translateY(-2px)scale(1.1);background:#fff;color:var(--c-primary)}
@@ -110,19 +172,21 @@
     .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
     @media(max-width:900px){.split-grid{grid-template-columns:1fr;gap:2.5rem}}
 
-    /* ── World / path cards ── */
-    .world-card{border-radius:24px;padding:2.5rem;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.28s ease}
-    .world-card:hover{transform:translateY(-6px)}
-    .world-green{background:linear-gradient(145deg,rgba(212,234,164,0.38)0%,rgba(196,174,222,0.20)100%);border:1px solid rgba(212,234,164,0.58);box-shadow:0 4px 6px rgba(35,31,32,0.04),0 12px 40px rgba(212,234,164,0.25),inset 0 1px 0 rgba(255,255,255,0.55)}
-    .world-pink{background:linear-gradient(145deg,rgba(232,160,196,0.32)0%,rgba(240,176,148,0.22)100%);border:1px solid rgba(232,160,196,0.50);box-shadow:0 4px 6px rgba(35,31,32,0.04),0 12px 40px rgba(232,160,196,0.22),inset 0 1px 0 rgba(255,255,255,0.55)}
-
     /* ── Value card ── */
     .value-card{border-radius:20px;padding:2rem;background:rgba(255,255,255,0.46);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.70);box-shadow:var(--shadow-soft);transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.28s ease}
     .value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-    .video-wrap{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9}
-    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .screenshot-frame{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.7);box-shadow:0 4px 20px rgba(35,31,32,0.10)}
-    .screenshot-frame img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* ── Text links, quotes and the facts list ── */
+    .text-link{color:var(--c-primary);text-decoration:underline;text-decoration-color:rgba(110,86,207,0.35);text-underline-offset:3px;transition:text-decoration-color 0.14s ease}
+    .text-link:hover{text-decoration-color:var(--c-primary)}
+    .text-link:focus-visible{outline:2px solid var(--c-primary);outline-offset:2px;border-radius:3px}
+    .one-line{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.25rem,2.2vw,1.625rem);font-weight:500;line-height:1.4;letter-spacing:-0.015em;color:var(--c-charcoal);padding-left:1.25rem;border-left:3px solid var(--c-lavender);margin-bottom:2.25rem}
+    .facts{display:grid}
+    .fact{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:0.875rem 0;border-top:1px solid rgba(110,86,207,0.12)}
+    .fact dt{font-size:0.6875rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-muted);padding-top:0.25rem}
+    .fact dd{font-size:0.9375rem;line-height:1.7;font-weight:400;color:var(--c-text)}
+    .quote-card{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.1875rem;line-height:1.55;color:var(--c-charcoal)}
+    .belief{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:500;line-height:1.4;letter-spacing:-0.02em;color:var(--c-charcoal);margin-bottom:1rem}
     /* ─── MOBILE ─────────────────────────────────── */
     @media(max-width:767px){
       .section{padding:3.5rem 0}
@@ -132,8 +196,7 @@
       .hero-section{min-height:0!important;padding:2.75rem 0 2.5rem!important}
       .split-grid{grid-template-columns:1fr!important;gap:2rem!important}
       .value-grid{grid-template-columns:1fr!important}
-      .favikon-grid{grid-template-columns:1fr!important;gap:1.25rem!important;text-align:center}
-      .favikon-grid .screenshot-frame{margin:0 auto}
+      .fact{grid-template-columns:1fr;gap:0.25rem}
     }
   </style>
   <link rel="stylesheet" href="assets/css/about-tailwind.css">
@@ -148,26 +211,18 @@
 <!-- ── NAV ── -->
 <nav id="nav" class="glass">
   <div class="nav-inner">
-    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, in partnership with Frontal">
+    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, home">
       <span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span>
-      <span class="brand-sep">&times;</span>
-      <img class="fr-logo" src="assets/logos/official/frontal-logo-on-light.svg" alt="Frontal">
     </a>
     <div class="nav-links flex items-center gap-1">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/done-with-you" class="nav-link">Done With You</a>
-      <a href="/done-for-you" class="nav-link">Done For You</a>
-      <a href="/about-me" class="nav-link active">About Me</a>
+      <a href="/#build" class="nav-link">What I build</a>
+      <a href="/#proof" class="nav-link">Proof</a>
+      <a href="/about-me" class="nav-link active" aria-current="page">About</a>
     </div>
     <div style="display:flex;align-items:center;gap:0.75rem;">
-      <div class="nav-social flex items-center gap-2">
-        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.3A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-      </div>
-      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:0.625rem 1.375rem;font-size:0.8125rem;">
-        Talk to Mai-Lan
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:0.625rem 1.375rem;font-size:0.8125rem;" data-umami-event="Connect on LinkedIn" data-umami-event-place="nav">
+        Connect on LinkedIn
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu" aria-expanded="false" id="burger">
         <span></span><span></span><span></span>
@@ -175,10 +230,9 @@
     </div>
   </div>
   <div id="mobile-nav">
-    <a href="/" class="nav-link" style="padding:0.625rem 0.75rem;">Home</a>
-    <a href="/done-with-you" class="nav-link" style="padding:0.625rem 0.75rem;">Done With You</a>
-    <a href="/done-for-you" class="nav-link" style="padding:0.625rem 0.75rem;">Done For You</a>
-    <a href="/about-me" class="nav-link active" style="padding:0.625rem 0.75rem;">About Me</a>
+    <a href="/#build" class="nav-link" style="padding:0.625rem 0.75rem;">What I build</a>
+    <a href="/#proof" class="nav-link" style="padding:0.625rem 0.75rem;">Proof</a>
+    <a href="/about-me" class="nav-link active" aria-current="page" style="padding:0.625rem 0.75rem;">About</a>
   </div>
 </nav>
 
@@ -194,38 +248,38 @@
           <div class="photo-border">
             <div class="photo-inner portrait">
               <img src="brand_assets/mailan%20-%20about%20me.webp" fetchpriority="high"
-                   alt="Mai-Lan Khong">
+                   alt="Mai-Lan Khong, smiling, in a sunny street in Spain">
             </div>
           </div>
           <!-- Floating badge -->
           <div class="pbadge pbadge-bl">
-            <div class="overline" style="color:var(--c-muted);font-size:0.625rem;margin-bottom:0.25rem;">based in</div>
-            <div style="font-family:'Playfair Display',serif;font-size:0.9375rem;font-weight:500;color:var(--c-charcoal);">Spain &amp; Beyond 🌍</div>
+            <div class="overline" style="color:var(--c-muted);font-size:0.625rem;margin-bottom:0.25rem;">Based in</div>
+            <div style="font-family:'Playfair Display',serif;font-size:0.9375rem;font-weight:500;color:var(--c-charcoal);">Spain</div>
           </div>
         </div>
       </div>
 
       <!-- Right: Intro text -->
       <div>
-        <div class="pill overline" style="margin-bottom:2rem;display:inline-flex;">About Me</div>
+        <div class="pill overline" style="margin-bottom:2rem;display:inline-flex;">About me</div>
         <h1 class="display">
           <span style="display:block;color:var(--c-charcoal);">Hi, I'm</span>
-          <em class="g-text" style="display:block;font-style:italic;">Mai-Lan.</em>
+          <em class="g-text" style="display:block;font-style:italic;">Mai-Lan Khong.</em>
         </h1>
         <p class="body-lg" style="margin:2rem 0;color:var(--c-muted);max-width:480px;">
-          I'm a startup founder turned <span class="hl">Brand &amp; Growth Strategist</span>. I help founders and B2B teams turn LinkedIn into a channel that builds real pipeline, built with your team, or run for you, in partnership with Frontal.
+          I'm a <span class="hl">content engineer</span> and a <span class="hl">published author</span>. I build AI content systems for B2B teams who want content to feed their pipeline.
         </p>
         <p class="body-lg" style="margin-bottom:2.5rem;color:var(--c-muted);max-width:480px;">
-          My work runs on a simple belief: <span class="hl">recognition is your cheapest pipeline</span>. Clear thinking, a distinct voice, and a system that ships it consistently, that is what turns attention into trust, and trust into revenue.
+          I'm Vietnamese and I live in Spain. I write in English as a non-native speaker, and I have stopped sanding that down.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:0.75rem;" class="">
-          <a href="/" class="btn btn-glass">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-            See how it works
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" data-umami-event="Connect on LinkedIn" data-umami-event-place="hero">
+            Connect on LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill">
-            Talk to Mai-Lan
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-glass" data-umami-event="Email" data-umami-event-place="hero">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email me
           </a>
         </div>
       </div>
@@ -235,68 +289,86 @@
 </section>
 
 
-<!-- ══════════════════════ RECOGNITION (LinkedIn + Favikon) ══════════════════════ -->
+<!-- ══════════════════════ THE SHORT VERSION ══════════════════════ -->
 <hr class="divider" style="margin:0 2.5rem;">
-<section class="section-sm">
+<section id="one-line" class="section-sm">
   <div class="wrap">
     <div class="text-center fade" style="margin-bottom:2.75rem;">
-      <div class="pill overline" style="display:inline-flex;margin-bottom:1rem;">Recognition</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">Proof, <em class="g-text">in the open</em></h2>
+      <div class="pill overline" style="display:inline-flex;margin-bottom:1rem;">The short version</div>
+      <h2 class="h2" style="color:var(--c-charcoal);">Mai-Lan Khong <em class="g-text">in one line</em></h2>
     </div>
 
-    <!-- LinkedIn profile screenshot -->
-    <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener"
-       class="screenshot-frame fade" style="display:block;max-width:820px;margin:0 auto 2rem;box-shadow:0 8px 32px rgba(196,174,222,0.18);">
-      <img style="height:auto" width="1336" height="744" loading="lazy" decoding="async" src="assets/proof/mailan-linkedin.webp" alt="Mai-Lan Khong on LinkedIn, Content Strategist at Frontal, 12,385 followers">
-    </a>
-
-    <!-- Favikon recognition -->
-    <div class="glass fade fade-d1" style="border-radius:24px;padding:2rem 2.5rem;max-width:820px;margin:0 auto;position:relative;overflow:hidden;">
+    <div class="glass fade fade-d1" style="border-radius:24px;padding:2.5rem;max-width:820px;margin:0 auto;position:relative;overflow:hidden;">
       <div aria-hidden="true" style="position:absolute;top:-50px;left:-50px;width:220px;height:220px;background:radial-gradient(circle,rgba(196,174,222,0.22),transparent 65%);border-radius:50%;pointer-events:none;"></div>
-      <div class="favikon-grid" style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;position:relative;z-index:1;">
-        <div class="screenshot-frame fade fade-d1" style="width:min(220px,100%);flex-shrink:0;">
-          <img style="height:auto" width="440" height="546" loading="lazy" decoding="async" src="brand_assets/Favikon%20Mai%20Lan.webp" alt="Favikon ranking, Mai-Lan Khong ranked #2 creator on LinkedIn worldwide">
-        </div>
-        <div class="fade fade-d2">
-          <div class="pill overline" style="margin-bottom:1rem;display:inline-flex;font-size:0.625rem;">✦ Industry Recognition</div>
-          <h3 class="h3" style="color:var(--c-charcoal);margin-bottom:0.75rem;">#2 Creator on LinkedIn<br>worldwide</h3>
-          <p class="body-sm" style="color:var(--c-muted);max-width:380px;">Ranked by <strong style="color:var(--c-charcoal);font-weight:500;">Favikon</strong>, the leading creator-analytics platform. Real reach, earned in public, the same instinct I bring to every client's content.</p>
-        </div>
+      <div style="position:relative;z-index:1;">
+        <p class="body-sm" style="color:var(--c-muted);margin-bottom:0.75rem;">If you introduce me, this is the line:</p>
+        <blockquote class="one-line">Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline.</blockquote>
+        <dl class="facts">
+          <div class="fact"><dt>Work</dt><dd>Content Lead at Frontal (<a href="https://frontal.so" target="_blank" rel="noopener" class="text-link">frontal.so</a>), where I run Content Engineering</dd></div>
+          <div class="fact"><dt>Topics</dt><dd>AI content systems · Content to drive B2B pipeline · LinkedIn programs for teams</dd></div>
+          <div class="fact"><dt>Books</dt><dd><em>Nice to meet you!</em> (AZ Việt Nam, 2018) and <em>Himalaya</em> (Sống, Alpha Books, 2020), travel books written in Vietnamese</dd></div>
+          <div class="fact"><dt>Translation</dt><dd>Brené Brown's <em>Dare to Lead</em>, Vietnamese edition (Alpha Books, 2019)</dd></div>
+          <div class="fact"><dt>Based in</dt><dd>Spain</dd></div>
+          <div class="fact"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="text-link" data-umami-event="Connect on LinkedIn" data-umami-event-place="facts">14,700+ followers</a> (read from my profile on <time datetime="2026-09-28">28 Sep 2026</time>)</dd></div>
+          <div class="fact"><dt>LinkedIn page</dt><dd><a href="https://www.linkedin.com/company/mai-lan-khong" target="_blank" rel="noopener" class="text-link">linkedin.com/company/mai-lan-khong</a></dd></div>
+          <div class="fact"><dt>My posts</dt><dd>Over 1.5 million impressions on my LinkedIn content in the year to <time datetime="2026-09-28">28 Sep 2026</time> (my LinkedIn analytics)</dd></div>
+          <div class="fact"><dt>Contact</dt><dd><a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="text-link" data-umami-event="Connect on LinkedIn" data-umami-event-place="facts-contact">Connect on LinkedIn</a> and send a message there, or write to <a href="mailto:mailankhong.biz@gmail.com" class="text-link" data-umami-event="Email" data-umami-event-place="facts-contact">mailankhong.biz@gmail.com</a></dd></div>
+        </dl>
       </div>
     </div>
-
   </div>
 </section>
 
 
-<!-- ══════════════════════ STORY ══════════════════════ -->
+<!-- ══════════════════════ WHAT I DO ══════════════════════ -->
 <hr class="divider" style="margin:0 2.5rem;">
-<section class="section">
+<section id="what-i-do" class="section-sm">
+  <div class="wrap">
+    <div class="text-center fade" style="margin-bottom:2.25rem;">
+      <div class="pill overline" style="display:inline-flex;margin-bottom:1rem;">What I do</div>
+      <h2 class="h2" style="color:var(--c-charcoal);">What I do <em class="g-text">at Frontal</em></h2>
+    </div>
+    <div style="max-width:680px;margin:0 auto;">
+      <p class="body-lg fade fade-d1" style="color:var(--c-muted);margin-bottom:1.25rem;">
+        At Frontal, I'm Content Lead and I run Content Engineering. Some teams want the machine run for them, so I build and run the content machine behind a founder's LinkedIn. Other teams want to own it, so I train them to run their own.
+      </p>
+      <p class="body-lg fade fade-d2" style="color:var(--c-muted);margin-bottom:1.25rem;">
+        How the machine works, and the team program I run at Frontal with my post about it, are on the <a href="/" class="text-link">homepage</a>.
+      </p>
+      <p class="body-lg fade fade-d3" style="color:var(--c-muted);">
+        Frontal's two LinkedIn content services have their own pages: <a href="/done-with-you" class="text-link">Done With You</a> and <a href="/done-for-you" class="text-link">Done For You</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ BEFORE CONTENT ══════════════════════ -->
+<hr class="divider" style="margin:0 2.5rem;">
+<section id="books" class="section">
   <div class="wrap">
     <div class="split-grid">
 
       <!-- Left: Text -->
       <div>
-        <div class="pill overline fade" style="margin-bottom:1.5rem;display:inline-flex;">My story</div>
-        <h2 class="h2 fade fade-d1" style="color:var(--c-charcoal);margin-bottom:1.5rem;">Startup founder turned <em class="g-text">growth strategist</em></h2>
-        <p class="body-lg fade fade-d2" style="color:var(--c-muted);margin-bottom:1.25rem;">
-          My path wasn't linear. I spent years in the fast-moving world of startups, building products, scaling teams, chasing metrics. I learned what actually moves a business, and what only looks like it does.
+        <div class="pill overline fade" style="margin-bottom:1.5rem;display:inline-flex;">Before content</div>
+        <h2 class="h2 fade fade-d1" style="color:var(--c-charcoal);margin-bottom:1.5rem;">Before content, <em class="g-text">I wrote books</em></h2>
+        <p class="body-lg fade fade-d2" style="color:var(--c-muted);margin-bottom:1.75rem;">
+          I wrote two travel books in Vietnamese. <em>Nice to meet you!</em> came out in 2018, and <em>Himalaya</em> in 2020. In 2019 I translated Brené Brown's <em>Dare to Lead</em> into Vietnamese.
         </p>
-        <p class="body-lg fade fade-d3" style="color:var(--c-muted);margin-bottom:1.25rem;">
-          The lesson that stuck: buyers don't reply to strangers anymore. They buy from people they recognise. So I went deep on content, the trust layer that warms an audience long before a sales call.
-        </p>
-        <p class="body-lg fade fade-d4" style="color:var(--c-muted);">
-          Today I bring both worlds together, the strategic mind of a founder and the craft of a content operator, to help founders and teams build a LinkedIn presence that compounds. It's the same engine behind the pipeline work I run with Frontal.
-        </p>
+        <figure class="value-card fade fade-d3" style="padding:1.5rem 1.75rem;">
+          <figcaption class="caption" style="color:var(--c-muted);margin-bottom:0.625rem;">About my English, from <a href="https://www.linkedin.com/posts/mai-lan-khong_my-6th-sense-i-can-feel-a-bad-ai-written-activity-7467150547368783872-jWUa" target="_blank" rel="noopener" class="text-link">my post of <time datetime="2026-06-01">1 Jun 2026</time></a>:</figcaption>
+          <blockquote class="quote-card">"For a long time, I thought my non-native English was my weakness here. Turns out the slightly weird way I pair words is one of the things the machine can't copy from me (yet 🤣), and so I have stopped sanding it down."</blockquote>
+        </figure>
       </div>
 
-      <!-- Right: Lifestyle photo -->
+      <!-- Right: Writing photo -->
       <div class="fade fade-d2">
         <div class="photo-frame">
           <div class="photo-border" style="background:linear-gradient(145deg,var(--c-lavender)0%,var(--c-lime)50%,var(--c-magenta)100%);">
             <div class="photo-inner landscape">
               <img style="height:auto" width="1400" height="1050" loading="lazy" decoding="async" src="brand_assets/mailan%20writing.webp"
-                   alt="Mai-Lan Khong at work">
+                   alt="Mai-Lan Khong writing in a notebook, in a room with three arched windows">
             </div>
           </div>
         </div>
@@ -307,161 +379,32 @@
 </section>
 
 
-<!-- ══════════════════════ TWO WAYS TO WORK ══════════════════════ -->
+<!-- ══════════════════════ WHAT I BELIEVE ══════════════════════ -->
 <hr class="divider" style="margin:0 2.5rem;">
-<section class="section-sm">
-  <div class="wrap">
-    <div class="text-center fade" style="margin-bottom:3.5rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem;display:inline-flex;">Two ways to work together</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">One engine, <em class="g-text">two paths</em></h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- Done With You -->
-      <div class="world-card world-green fade fade-d1">
-        <div style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:1.5rem;background:linear-gradient(135deg,rgba(212,234,164,0.80),rgba(196,174,222,0.55));border:1px solid rgba(255,255,255,0.7);box-shadow:0 2px 8px rgba(212,234,164,0.35);">🌿</div>
-        <div class="pill overline" style="margin-bottom:1rem;display:inline-flex;background:rgba(90,122,58,0.10);border-color:rgba(90,122,58,0.22);color:#5A7A3A;font-size:0.625rem;">Done With You</div>
-        <h3 class="h3" style="color:var(--c-charcoal);margin-bottom:0.875rem;">Build the content engine</h3>
-        <p class="body-sm" style="color:var(--c-muted);margin-bottom:1.25rem;">A 12-week program that installs a repeatable LinkedIn content system inside your team, strategy, voice, and workflow, so it keeps running long after we finish.</p>
-        <ul style="list-style:none;">
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#5A7A3A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">A structured 12-week program</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#5A7A3A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Your voice and content pillars, defined</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#5A7A3A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">A system your team owns and runs</span>
-          </li>
-        </ul>
-        <a href="/done-with-you" class="btn" style="margin-top:1.5rem;padding:0.75rem 1.5rem;font-size:0.875rem;border:1.5px solid rgba(90,122,58,0.38);color:#5A7A3A;background:transparent;transition:all 0.2s;">
-          Explore Done With You →
-        </a>
-      </div>
-
-      <!-- Done For You -->
-      <div class="world-card world-pink fade fade-d2">
-        <div style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:1.5rem;background:linear-gradient(135deg,rgba(232,160,196,0.80),rgba(240,176,148,0.55));border:1px solid rgba(255,255,255,0.7);box-shadow:0 2px 8px rgba(232,160,196,0.35);">✦</div>
-        <div class="pill overline" style="margin-bottom:1rem;display:inline-flex;background:rgba(196,114,154,0.10);border-color:rgba(196,114,154,0.22);color:#C4729A;font-size:0.625rem;">Done For You</div>
-        <h3 class="h3" style="color:var(--c-charcoal);margin-bottom:0.875rem;">We run it for you</h3>
-        <p class="body-sm" style="color:var(--c-muted);margin-bottom:1.25rem;">Posts in your voice, daily engagement, and audience growth, run end to end. You stay the face; we handle the research, writing, and the system behind it.</p>
-        <ul style="list-style:none;">
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#C4729A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">16 posts a month in your voice</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#C4729A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Daily engagement &amp; audience growth</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;">
-            <div style="width:7px;height:7px;border-radius:50%;background:#C4729A;flex-shrink:0;margin-top:0.5rem;opacity:0.75;"></div>
-            <span class="body-sm" style="color:var(--c-text);">Your voice, not a template, AI-amplified</span>
-          </li>
-        </ul>
-        <a href="/done-for-you" class="btn" style="margin-top:1.5rem;padding:0.75rem 1.5rem;font-size:0.875rem;border:1.5px solid rgba(196,114,154,0.38);color:#C4729A;background:transparent;transition:all 0.2s;">
-          Explore Done For You →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════ VALUES ══════════════════════ -->
-<hr class="divider" style="margin:0 2.5rem;">
-<section class="section">
+<section id="beliefs" class="section">
   <div class="wrap">
     <div class="text-center fade" style="margin-bottom:3.5rem;">
       <div class="pill overline" style="margin-bottom:1.25rem;display:inline-flex;">What I believe</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">The principles I <em class="g-text">work from</em></h2>
+      <h2 class="h2" style="color:var(--c-charcoal);">What I believe about <em class="g-text">content and AI</em></h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div class="value-card fade fade-d1">
-        <div style="font-size:1.375rem;margin-bottom:0.875rem;">🌿</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.75rem;letter-spacing:-0.02em;">Clarity before action</h3>
-        <p class="body-sm" style="color:var(--c-muted);">Most content problems aren't tactics problems, they're clarity problems. Get clear on the message, then move with precision.</p>
-      </div>
-      <div class="value-card fade fade-d2">
-        <div style="font-size:1.375rem;margin-bottom:0.875rem;">✦</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.75rem;letter-spacing:-0.02em;">Voice over volume</h3>
-        <p class="body-sm" style="color:var(--c-muted);">A distinct point of view beats a wall of sameness. Your content should sound like you, not like everyone else running the same AI.</p>
-      </div>
-      <div class="value-card fade fade-d3">
-        <div style="font-size:1.375rem;margin-bottom:0.875rem;">💧</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.75rem;letter-spacing:-0.02em;">Systems over sprints</h3>
-        <p class="body-sm" style="color:var(--c-muted);">One viral post is luck. A system that ships consistently is a channel. I build the engine, not the one-off.</p>
-      </div>
-      <div class="value-card fade fade-d4">
-        <div style="font-size:1.375rem;margin-bottom:0.875rem;">🌀</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.75rem;letter-spacing:-0.02em;">Growth compounds</h3>
-        <p class="body-sm" style="color:var(--c-muted);">Recognition builds slowly, then all at once. The breakthroughs come after patient, consistent reps, not overnight.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════ FEATURED VIDEO ══════════════════════ -->
-<hr class="divider" style="margin:0 2.5rem;">
-<section class="section-sm">
-  <div class="wrap">
-    <div class="text-center fade" style="margin-bottom:3rem;">
-      <div class="pill overline" style="margin-bottom:1.25rem;display:inline-flex;">In conversation</div>
-      <h2 class="h2" style="color:var(--c-charcoal);">Why content is your <em class="g-text">cheapest pipeline</em></h2>
-      <p class="body-lg" style="max-width:560px;margin:1rem auto 0;color:var(--c-muted);">The belief at the heart of everything I do, and why it changes how founders and teams grow, sell, and show up.</p>
-    </div>
-
-    <div class="split-grid fade">
-
-      <!-- Video -->
-      <div class="video-wrap fade fade-d1" style="border:1px solid rgba(255,255,255,0.68);box-shadow:0 8px 32px rgba(196,174,222,0.18);">
-        <iframe loading="lazy" src="https://www.youtube.com/embed/-uDVSkdDNvY"
-                title="Mai-Lan Khong, in conversation"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-
-      <!-- Key selling points -->
-      <div class="fade fade-d2">
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:1.25rem;">
-          <li style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(212,234,164,0.60),rgba(196,174,222,0.45));border:1px solid rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">🌿</div>
-            <div>
-              <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.25rem;">Recognition warms the buyer</div>
-              <p class="body-sm" style="color:var(--c-muted);">Content builds the trust layer that makes your ads convert and your outbound land. Nobody buys from a stranger.</p>
-            </div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(196,174,222,0.60),rgba(110,86,207,0.35));border:1px solid rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">💧</div>
-            <div>
-              <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.25rem;">Your voice, at the speed of a system</div>
-              <p class="body-sm" style="color:var(--c-muted);">The quality of a specialist, with the consistency of a machine, so posting never depends on a good week.</p>
-            </div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(232,160,196,0.60),rgba(240,176,148,0.45));border:1px solid rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">✦</div>
-            <div>
-              <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.25rem;">Founder-to-operator lived insight</div>
-              <p class="body-sm" style="color:var(--c-muted);">I've built and scaled before. I know what actually moves a business, and I build content around that, not vanity metrics.</p>
-            </div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(240,176,148,0.60),rgba(232,160,196,0.45));border:1px solid rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">🌀</div>
-            <div>
-              <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--c-charcoal);margin-bottom:0.25rem;">Proven across many accounts</div>
-              <p class="body-sm" style="color:var(--c-muted);">The same engine, run with Frontal across founders and B2B teams, is what turns attention into pipeline that compounds.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
+      <figure class="value-card fade fade-d1">
+        <blockquote class="belief">"Polish used to be the proof you were worth trusting. Now, polish is the tell."</blockquote>
+        <figcaption class="caption" style="color:var(--c-muted);">My post of <a href="https://www.linkedin.com/posts/mai-lan-khong_my-6th-sense-i-can-feel-a-bad-ai-written-activity-7467150547368783872-jWUa" target="_blank" rel="noopener" class="text-link"><time datetime="2026-06-01">1 Jun 2026</time></a></figcaption>
+      </figure>
+      <figure class="value-card fade fade-d2">
+        <blockquote class="belief">"AI is not necessarily writing badly, but part of the blame lies in the prompts."</blockquote>
+        <figcaption class="caption" style="color:var(--c-muted);">My post of <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener" class="text-link"><time datetime="2026-08-20">20 Aug 2026</time></a></figcaption>
+      </figure>
+      <figure class="value-card fade fade-d3">
+        <blockquote class="belief">"LinkedIn, a newsletter, and YouTube aren't 3 options you choose between. They're 3 stages, and they work in order."</blockquote>
+        <figcaption class="caption" style="color:var(--c-muted);">My post of <a href="https://www.linkedin.com/posts/mai-lan-khong_nothing-kills-a-founders-belief-in-content-activity-7469682151869972481-RbiL" target="_blank" rel="noopener" class="text-link"><time datetime="2026-06-08">8 Jun 2026</time></a></figcaption>
+      </figure>
+      <figure class="value-card fade fade-d4">
+        <blockquote class="belief">"The algorithm isn't a thing you optimize for. It's the residue of every human reaction the platform has ever recorded."</blockquote>
+        <figcaption class="caption" style="color:var(--c-muted);">My post of <a href="https://www.linkedin.com/posts/mai-lan-khong_i-hate-to-say-this-but-system-doesnt-make-activity-7460622471788969984-RrRd" target="_blank" rel="noopener" class="text-link"><time datetime="2026-05-14">14 May 2026</time></a></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -474,14 +417,15 @@
       <div aria-hidden="true" style="position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(196,174,222,0.28),transparent 65%);border-radius:50%;pointer-events:none;"></div>
       <div aria-hidden="true" style="position:absolute;bottom:-70px;left:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(212,234,164,0.28),transparent 65%);border-radius:50%;pointer-events:none;"></div>
       <div style="position:relative;z-index:1;">
-        <div class="pill overline fade" style="margin-bottom:1.5rem;display:inline-flex;">Let's connect</div>
-        <h2 class="h2 fade fade-d1" style="color:var(--c-charcoal);margin-bottom:1.125rem;">Want to build content<br>that <em class="g-text">works for you?</em></h2>
-        <p class="body-lg fade fade-d2" style="color:var(--c-muted);max-width:440px;margin:0 auto 2.5rem;">Message me on LinkedIn, I'll walk you through both paths and tell you which one fits. No commitment needed.</p>
+        <div class="pill overline fade" style="margin-bottom:1.5rem;display:inline-flex;">Contact</div>
+        <h2 class="h2 fade fade-d1" style="color:var(--c-charcoal);margin-bottom:1.125rem;">Let's talk <em class="g-text">on LinkedIn</em></h2>
+        <p class="body-lg fade fade-d2" style="color:var(--c-muted);max-width:440px;margin:0 auto 2.5rem;">Connect with me on LinkedIn and send your message there. Or write to <a href="mailto:mailankhong.biz@gmail.com" class="text-link" data-umami-event="Email" data-umami-event-place="contact-text">mailankhong.biz@gmail.com</a>.</p>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;" class="fade fade-d3">
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:1rem 2rem;font-size:0.9375rem;">
-            Talk to Mai-Lan
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:1rem 2rem;font-size:0.9375rem;" data-umami-event="Connect on LinkedIn" data-umami-event-place="contact">
+            Connect on LinkedIn
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-glass" style="padding:1rem 2rem;font-size:0.9375rem;" data-umami-event="Email" data-umami-event-place="contact">Email me</a>
         </div>
       </div>
     </div>
@@ -499,48 +443,30 @@
             <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.6rem;color:#fff;letter-spacing:1.5px;">MLK</span>
             <span style="font-family:'DM Sans',sans-serif;font-size:0.48rem;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:3px;">Mai-Lan Khong</span>
           </span>
-          <span style="color:rgba(255,255,255,0.35);font-weight:300;">&times;</span>
-          <img loading="lazy" decoding="async" src="assets/logos/official/frontal-logo-on-dark.svg" alt="Frontal" style="height:16px;width:auto;opacity:0.9;">
         </div>
-        <p class="caption" style="color:rgba(255,255,255,0.45);max-width:230px;line-height:1.65;">Brand &amp; Growth Strategist. LinkedIn content systems for founders and B2B teams, in partnership with Frontal.</p>
-        <div style="display:flex;gap:0.5rem;margin-top:1.25rem;">
-          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.55);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.3A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-        </div>
+        <p class="caption" style="color:rgba(255,255,255,0.45);max-width:300px;line-height:1.65;">Mai-Lan Khong. Content engineer and published author.<br>Content Lead at <a href="https://frontal.so" target="_blank" rel="noopener" class="foot-link" style="font-size:inherit;text-decoration:underline;text-underline-offset:3px;">Frontal</a>.</p>
       </div>
       <div>
-        <div class="foot-label">Navigate</div>
-        <nav style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div class="foot-label">Pages</div>
+        <nav style="display:flex;flex-direction:column;gap:0.5rem;" aria-label="Pages">
           <a href="/" class="foot-link">Home</a>
+          <a href="/about-me" class="foot-link">About</a>
           <a href="/done-with-you" class="foot-link">Done With You</a>
           <a href="/done-for-you" class="foot-link">Done For You</a>
-          <a href="/about-me" class="foot-link">About Me</a>
         </nav>
       </div>
       <div>
-        <div class="foot-label">Partner</div>
-        <nav style="display:flex;flex-direction:column;gap:0.5rem;">
-          <a href="https://frontal.so" target="_blank" rel="noopener" class="foot-link">frontal.so ↗</a>
-          <a href="mailto:mailankhong.biz@gmail.com" class="foot-link">Contact</a>
+        <div class="foot-label">Contact</div>
+        <nav style="display:flex;flex-direction:column;gap:0.5rem;" aria-label="Contact">
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="foot-link" data-umami-event="Connect on LinkedIn" data-umami-event-place="footer">LinkedIn</a>
+          <a href="mailto:mailankhong.biz@gmail.com" class="foot-link" data-umami-event="Email" data-umami-event-place="footer">Email</a>
         </nav>
-      </div>
-      <div>
-        <div class="foot-label">Work together</div>
-        <p class="caption" style="color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.65;">Ready to turn LinkedIn into a pipeline channel?</p>
-        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:0.75rem 1.5rem;font-size:0.8125rem;">
-          Talk to Mai-Lan
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
       </div>
     </div>
     <hr style="border:none;height:1px;background:rgba(255,255,255,0.08);margin-bottom:1.5rem;">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;">
-      <p class="caption" style="color:rgba(255,255,255,0.28);">© 2026 Mailankhong.com. All rights reserved</p>
-      <div style="display:flex;gap:1.5rem;">
-        <a href="#" class="caption foot-link" style="color:rgba(255,255,255,0.28);">Privacy Policy</a>
-        <a href="#" class="caption foot-link" style="color:rgba(255,255,255,0.28);">Terms of Use</a>
-      </div>
+      <p class="caption" style="color:rgba(255,255,255,0.28);">Mai-Lan Khong · mailankhong.com</p>
+      <p class="caption" style="color:rgba(255,255,255,0.28);">© 2026 Mai-Lan Khong. All rights reserved.</p>
     </div>
   </div>
 </footer>
