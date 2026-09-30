@@ -30,6 +30,11 @@
       "source": "/done-with-you/",
       "destination": "/done-with-you",
       "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy",
+      "permanent": true
     }
   ],
   "headers": [
