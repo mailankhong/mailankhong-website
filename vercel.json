@@ -35,6 +35,21 @@
       "source": "/privacy/",
       "destination": "/privacy",
       "permanent": true
+    },
+    {
+      "source": "/ai-content-systems/",
+      "destination": "/ai-content-systems",
+      "permanent": true
+    },
+    {
+      "source": "/b2b-content-pipeline/",
+      "destination": "/b2b-content-pipeline",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin-for-teams/",
+      "destination": "/linkedin-for-teams",
+      "permanent": true
     }
   ],
   "headers": [
