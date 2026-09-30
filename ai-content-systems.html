@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://www.mailankhong.com/ai-content-systems" />
+<title>Content engineering: AI content systems | Mai-Lan Khong</title>
+<meta name="description" content="What a content engineer does, and how I build AI content systems for B2B teams that keep a human voice: five files, two machines, one interview." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.mailankhong.com/ai-content-systems" />
+<meta property="og:title" content="Content engineering: AI content systems | Mai-Lan Khong" />
+<meta property="og:description" content="What a content engineer does, and how I build AI content systems for B2B teams that keep a human voice: five files, two machines, one interview." />
+<meta property="og:image" content="https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp" />
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="https://www.mailankhong.com/about-me" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.mailankhong.com/ai-content-systems#webpage",
+      "url": "https://www.mailankhong.com/ai-content-systems",
+      "name": "Content engineering: AI content systems | Mai-Lan Khong",
+      "description": "What a content engineer does, and how I build AI content systems for B2B teams that keep a human voice: five files, two machines, one interview.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.mailankhong.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.mailankhong.com/ai-content-systems#article",
+      "headline": "Content engineering: an AI content system that still sounds like you",
+      "description": "What a content engineer does, and how I build AI content systems for B2B teams that keep a human voice: five files, two machines, one interview.",
+      "url": "https://www.mailankhong.com/ai-content-systems",
+      "mainEntityOfPage": {
+        "@id": "https://www.mailankhong.com/ai-content-systems#webpage"
+      },
+      "image": "https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp",
+      "inLanguage": "en",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "author": {
+        "@id": "https://www.mailankhong.com/#person"
+      },
+      "publisher": {
+        "@id": "https://www.mailankhong.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.mailankhong.com/#person",
+      "name": "Mai-Lan Khong",
+      "url": "https://www.mailankhong.com/",
+      "image": "https://www.mailankhong.com/brand_assets/mailan%20-%20about%20me.webp",
+      "description": "Mai-Lan Khong is a content engineer and a published author. She builds AI content systems for B2B teams who want content to feed their pipeline.",
+      "jobTitle": [
+        "Content engineer",
+        "Content Lead"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Frontal",
+        "url": "https://frontal.so"
+      },
+      "knowsAbout": [
+        "AI content systems",
+        "Content to drive B2B pipeline",
+        "LinkedIn programs for teams"
+      ],
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Spain"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mai-lan-khong/",
+        "https://www.linkedin.com/company/mai-lan-khong"
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="apple-touch-icon" href="brand_assets/Mailankhong%20Logo%20(4).png">
+<link rel="preload" href="assets/fonts/playfair-display/playfair-display-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/dm-sans/dm-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/css/glass-tokens.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e324bff9-3bcf-4ca0-aa69-cb8bfadd3929" data-domains="www.mailankhong.com"></script>
+<style>
+  /* ---- topic pages: one reading column in the homepage's style ---- */
+  .topic-hero{ padding:74px 0 52px; }
+  .topic-hero h1{ font-size:clamp(38px,5.2vw,64px); line-height:1.03; letter-spacing:-0.02em; max-width:21ch; margin:14px 0 18px; }
+  .byline{ font-size:13.5px; color:var(--meta); margin-bottom:28px; }
+  .byline a{ color:var(--ink2); text-underline-offset:3px; }
+  .topic-hero .lead{ max-width:60ch; font-size:clamp(17px,1.6vw,20px); line-height:1.6; color:var(--ink); margin-bottom:16px; }
+  .topic-hero .lead-2{ max-width:66ch; font-size:16.5px; line-height:1.72; margin-bottom:30px; }
+  .article{ max-width:70ch; }
+  .article h2{ font-size:clamp(26px,3vw,36px); margin:72px 0 18px; scroll-margin-top:84px; }
+  .article h2:first-child{ margin-top:0; }
+  .article h3{ font-size:clamp(19px,1.9vw,23px); margin:40px 0 12px; scroll-margin-top:84px; }
+  .article p{ font-size:16.5px; line-height:1.74; margin-bottom:16px; }
+  .article ul, .article ol{ margin:0 0 20px; padding-left:1.35em; }
+  .article li{ font-size:16.5px; line-height:1.7; color:var(--body); margin-bottom:10px; padding-left:4px; }
+  .article li::marker{ color:var(--acc); font-weight:600; }
+  .article a, .cta-band p a{ color:var(--acc); text-underline-offset:3px; }
+  .article a:hover{ text-decoration-thickness:2px; }
+  .article a:focus-visible, .byline a:focus-visible, .cta-band p a:focus-visible{ outline:2px solid var(--acc); outline-offset:2px; border-radius:3px; }
+  .quote{ margin:28px 0; padding:26px 30px; border-radius:20px; }
+  .quote blockquote{ margin:0; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,2vw,24px); line-height:1.38; color:var(--ink); }
+  .quote figcaption{ margin-top:14px; font-size:13px; color:var(--meta); }
+  .quote figcaption a{ font-weight:600; }
+  .tbl{ margin:26px 0 30px; padding:4px 0; border-radius:18px; }
+  .tbl table{ width:100%; border-collapse:collapse; }
+  .tbl th{ text-align:left; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--meta); padding:14px 20px 12px; border-bottom:1px solid var(--hair); }
+  .tbl td{ padding:15px 20px; vertical-align:top; font-size:15px; line-height:1.62; color:var(--body); border-bottom:1px solid var(--hair); }
+  .tbl tr:last-child td{ border-bottom:none; }
+  .tbl td:first-child{ color:var(--ink); font-weight:600; width:32%; }
+  .flow{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 26px !important; list-style:none; padding:0 !important; }
+  .flow li{ flex:1 1 0; min-width:92px; margin:0; padding:13px 10px; border-radius:12px; text-align:center; font-size:13.5px; font-weight:600; color:var(--ink2);
+    background:rgba(255,255,255,0.5); border:1px solid var(--glass-bd); }
+  .flow li::marker{ content:none; }
+  .flow li.ai{ background:rgba(201,188,236,0.3); border-color:rgba(110,86,207,0.35); color:var(--acc); }
+  .next{ list-style:none; padding:0 !important; display:grid; gap:12px; margin-top:22px !important; }
+  .next li{ padding:18px 22px; margin:0; border-radius:16px; font-size:15.5px; }
+  .next li::marker{ content:none; }
+  .btn svg{ width:1em; height:1em; flex:none; }
+  .foot-grid .foot-tag a{ color:var(--ink2); text-underline-offset:3px; }
+  @media (max-width:880px){ .flow li{ flex:1 1 28%; } .article h2{ margin-top:56px; } }
+  @media (max-width:560px){
+    .quote{ padding:22px 22px; }
+    .tbl thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .tbl tr{ display:block; padding:14px 20px; border-bottom:1px solid var(--hair); }
+    .tbl tr:last-child{ border-bottom:none; }
+    .tbl td{ display:block; padding:0; border:none; width:auto !important; }
+    .tbl td + td{ margin-top:6px; }
+    .tbl td[data-label]::before{ content:attr(data-label); display:block; font-size:10.5px; font-weight:600; letter-spacing:1.1px; text-transform:uppercase; color:var(--meta); margin-bottom:2px; }
+  }
+</style>
+</head>
+<body class="frontal-dark">
+
+<div class="bg" aria-hidden="true">
+  <div class="mesh"></div><div class="grid"></div><div class="spot"></div><div class="grain"></div><div class="vig"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand-lock" aria-label="Mai-Lan Khong, home"><span class="mlk-mark"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span></a>
+    <nav class="nav-links">
+      <a href="/#build">What I build</a>
+      <a href="/#proof">Proof</a>
+      <a href="/about-me">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" data-umami-event="Connect on LinkedIn" data-umami-event-place="nav">Connect on LinkedIn <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<article>
+<!-- ===== HERO ===== -->
+<section class="hero topic-hero">
+  <div class="wrap">
+    <span class="eyebrow">AI content systems</span>
+    <h1>Content engineering: an AI content system that still sounds like you</h1>
+    <p class="byline"><a href="/about-me" rel="author">Mai-Lan Khong</a>, content engineer. Published <time datetime="2026-09-30">30 September 2026</time></p>
+    <p class="lead">A content engineer builds the system that makes the content, instead of writing each piece by hand. I build that system for B2B teams who want content to feed their pipeline, and I design it to keep the voice of the person whose name is on the posts.</p>
+    <p class="lead-2">If your team says "We need a system, not just random posts", the short answer is this: five files before the first post, one machine that looks for ideas, one that writes from an interview with the person, and checks on every draft, with AI in the middle of the process and never at the start. The rest of this page shows each part: what the job is, the five files, the voice profile, where AI sits, and how one system holds several voices.</p>
+    <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" data-umami-event="Connect on LinkedIn" data-umami-event-place="hero">Connect on LinkedIn <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-ghost" data-umami-event="Email" data-umami-event-place="hero">Email me</a>
+      </div>
+  </div>
+</section>
+
+<!-- ===== ARTICLE ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="article">
+      <h2 id="what-does-a-content-engineer-do">What does a content engineer do?</h2>
+
+      <p>A content engineer designs the system that produces content, then runs it and keeps improving it. The phrase has two meanings, and both are in use today.</p>
+
+      <p><strong>The older meaning is about structure.</strong> <a href="https://en.wikipedia.org/wiki/Content_engineering" target="_blank" rel="noopener">Wikipedia</a> describes content engineering as "the practice of organizing the shape and structure of content by deploying content and metadata models". In plain words: models, tags and schemas, so a piece of content is stored once and reused in many places, and machines can read it.</p>
+
+      <p><strong>The newer meaning is about AI.</strong> <a href="https://ahrefs.com/blog/what-is-content-engineering/" target="_blank" rel="noopener">Ahrefs</a> puts it like this: "A content engineer designs the systems that produce content, rather than producing content piece by piece." That is the person who builds the line where research, drafting, editing and publishing run with AI in the middle.</p>
+
+      <p>My work is the newer meaning, with one condition: the system has to keep a human voice. At Frontal, where I'm Content Lead, this is the practice I run, and we call it Content Engineering.</p>
+
+      <p>From <a href="https://www.linkedin.com/posts/mai-lan-khong_so-hard-to-find-someone-whos-good-at-content-activity-7467507938329481216-SSn3" target="_blank" rel="noopener">my post of 2 Jun 2026</a>:</p>
+
+      <figure class="quote card">
+        <blockquote>"Copywriter is becoming copy engineer. Content marketer is becoming growth operator. The job titles just haven't caught up to what people are already hiring for."</blockquote>
+      </figure>
+
+      <h3 id="is-content-engineering-a-good-career">Is content engineering a good career?</h3>
+
+      <p>I think yes, for someone who can write and think in systems at the same time. A founder sent me this line, which I shared in the same post: "So hard to find someone who's good at content AND can think in systems." My answer there, to the people who can do both: "There are very few of you. That's the whole opportunity." I have no salary or hiring numbers to show you, so this is my view from the work, not a market study.</p>
+
+      <h2 id="we-need-a-system-not-just-random-posts">"We need a system, not just random posts"</h2>
+
+      <p>A content system is the set of files, steps and checks that turns what a founder knows into posts in their own voice, week after week, without a blank page on Monday. Random posts are what happens without it: every week starts from zero, and the quality depends on how the week went.</p>
+
+      <p>In <a href="https://www.linkedin.com/posts/mai-lan-khong_i-heard-many-founders-says-the-same-thing-activity-7447940973122187264-AKuK" target="_blank" rel="noopener">my post of 9 Apr 2026</a> I describe three levels:</p>
+
+      <ul>
+        <li><strong>Content as a task.</strong> "No plan. Every week starts with a blank page and the question "what should I post?""</li>
+        <li><strong>Content as a system.</strong> Pillars, a posting calendar, maybe some templates. It runs on discipline, and when the founder gets busy it goes generic, because "a content calendar without a voice is organized mediocrity."</li>
+        <li><strong>Content as a machine.</strong> A voice profile, an AI layer that finds ideas in your real conversations and your real data, and a human review step where you edit instead of creating from scratch.</li>
+      </ul>
+
+      <figure class="quote card">
+        <blockquote>"The jump from 1 to 2 is discipline. The jump from 2 to 3 is infrastructure."</blockquote>
+        <figcaption>My post, 9 Apr 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_i-heard-many-founders-says-the-same-thing-activity-7447940973122187264-AKuK" target="_blank" rel="noopener">Read the post</a></figcaption>
+      </figure>
+
+      <p>What I build is the third level. Its anatomy is public, and I'm happy to show it. The rules and prompts inside it stay private.</p>
+
+      <ol>
+        <li><strong>Five files before the first post.</strong> The voice profile first, then the ICP, the content pillars, a grading profile and brand guidelines (<a href="#what-documents-does-a-content-team-need-before-writing-for-a-founder">section 4</a>).</li>
+        <li><strong>Two machines.</strong> One looks for ideas. The other writes, and it starts with an interview, where the person adds the story only they know (<a href="#how-do-i-repurpose-one-founder-interview-into-multiple-linkedin-posts">section 7</a>).</li>
+        <li><strong>Three checks</strong> read every draft before it reaches the person.</li>
+        <li><strong>A learning loop.</strong> From <a href="https://www.linkedin.com/posts/mai-lan-khong_i-no-longer-start-writing-from-a-blank-page-activity-7474755566662516739-oQV5" target="_blank" rel="noopener">my post of 22 Jun 2026</a>: "the system feeds on its own numbers. It remembers what worked, drops what faded, and gets a little sharper every day."</li>
+      </ol>
+
+      <h3 id="check-your-own-setup-first">Check your own setup first</h3>
+
+      <p>If you run content with AI today and something feels off, look at four things before you change anything else. From <a href="https://www.linkedin.com/posts/mai-lan-khong_my-content-doesnt-work-i-have-no-idea-activity-7460260069671124992-BDrR" target="_blank" rel="noopener">my post of 13 May 2026</a>: "Voice, ICP, feedback loop, ideation system." When one of them is missing, the output is fast and clean for a few weeks, then every post starts to open the same way, and the audience notices before you do.</p>
+
+      <h2 id="what-documents-does-a-content-team-need-before-writing-for-a-founder">What documents does a content team need before writing for a founder?</h2>
+
+      <p>Five files: a voice profile, an ICP, content pillars, a grading profile and brand guidelines. The writing starts after them.</p>
+
+      <div class="tbl card"><table>
+      <thead><tr><th scope="col">File</th><th scope="col">What it holds</th></tr></thead>
+      <tbody>
+      <tr><td>Voice profile</td><td data-label="What it holds">How the person talks and thinks: the words they use, the words they would never use, the opinions they would defend. Built from a conversation (<a href="#how-do-i-create-a-voice-profile-for-a-founders-content">section 5</a>).</td></tr>
+      <tr><td>ICP</td><td data-label="What it holds">Who the posts are for, in tiers, with each buyer's problem written the way that buyer would say it.</td></tr>
+      <tr><td>Content pillars</td><td data-label="What it holds">5 or 6 themes the person already holds a position on, in their own language. Every post traces back to one of them.</td></tr>
+      <tr><td>Grading profile</td><td data-label="What it holds">What a good post means for this one person, written down, so every draft is judged against the same standard.</td></tr>
+      <tr><td>Brand guidelines</td><td data-label="What it holds">For the visuals, not the writing.</td></tr>
+      </tbody></table></div>
+
+      <p>The ICP comes before any topic idea. From <a href="https://www.linkedin.com/posts/mai-lan-khong_so-hard-to-find-someone-whos-good-at-content-activity-7467507938329481216-SSn3" target="_blank" rel="noopener">my post of 2 Jun 2026</a>: "The topic is downstream of the ICP, not the other way around."</p>
+
+      <p>Most of the work on an account happens under the post, in these files. From <a href="https://www.linkedin.com/posts/mai-lan-khong_i-get-paid-to-write-linkedin-posts-last-activity-7458448178971906051-W3tG" target="_blank" rel="noopener">my post of 8 May 2026</a>, the part nobody sees is "building + maintaining the voice profile that keeps it from sounding like everyone else (and AI)".</p>
+
+      <h2 id="how-do-i-create-a-voice-profile-for-a-founders-content">How do I create a voice profile for a founder's content?</h2>
+
+      <p>In a real conversation, never with a form.</p>
+
+      <figure class="quote card">
+        <blockquote>"A Google Form asking "what is your tone?" has never once been answered truthfully."</blockquote>
+        <figcaption>My post, 6 Aug 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_if-you-run-an-employee-linkedin-program-activity-7491074903878639616-6PI9" target="_blank" rel="noopener">Read the post</a></figcaption>
+      </figure>
+
+      <p>A form fails because nobody watches their own voice. From <a href="https://www.linkedin.com/posts/mai-lan-khong_you-can-build-an-ai-that-writes-exactly-like-activity-7480916182431244290-75Y7" target="_blank" rel="noopener">my post of 9 Jul 2026</a>: "So when a form asks, you guess. And the guess is the person you wish you were, not the person you are."</p>
+
+      <p>How I build one:</p>
+
+      <ol>
+        <li><strong>A conversation, one question at a time.</strong> What the person cares about, what annoys them in their field, the opinion they would defend. After a while they forget they are being studied, and the real voice comes out.</li>
+        <li><strong>Speech before old posts.</strong> Old posts are not a clean sample. From the same post: "Because your old content is already polluted." Templates and a bit of AI are already in them, and feeding them in first teaches the machine "to copy the makeup, not the face."</li>
+        <li><strong>The words the person rejects go in too.</strong> A list of what they would never say is as useful as what they would.</li>
+        <li><strong>Two lengths.</strong> In <a href="https://www.linkedin.com/posts/mai-lan-khong_you-can-build-an-ai-that-writes-exactly-like-activity-7480916182431244290-75Y7" target="_blank" rel="noopener">my post of 9 Jul 2026</a> I gave away two versions. The short one takes about 20 minutes: "Enough for a twin that works." The deep one is about 100 questions, "For when your voice is your whole brand and you want it near perfect. An hour or two."</li>
+        <li><strong>It keeps growing.</strong> New call transcripts keep updating it, so the profile follows the person as their thinking moves.</li>
+      </ol>
+
+      <p>What a voice profile gives you, from <a href="https://www.linkedin.com/posts/mai-lan-khong_i-review-linkedin-content-for-b2b-founders-activity-7444397644610768897-bxpw" target="_blank" rel="noopener">my post of 30 Mar 2026</a>: "It captures how you think, what you believe, and what makes your perspective different from the 50 other people posting about the same topic."</p>
+
+      <h2 id="how-do-i-make-ai-written-linkedin-posts-not-sound-like-ai">How do I make AI written LinkedIn posts not sound like AI?</h2>
+
+      <p>Give the AI something only you could say before it writes, and keep the judgment for yourself after it writes. Part of the AI sound comes from what goes in: empty input, and prompts that ask for nothing in particular.</p>
+
+      <p>From <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener">my post of 20 Aug 2026</a>:</p>
+
+      <figure class="quote card">
+        <blockquote>"AI is not necessarily writing badly, but part of the blame lies in the prompts."</blockquote>
+      </figure>
+
+      <p>"Make it punchier." "Add a CTA." With prompts like these, as I wrote in the same post, "You have essentially asked it to produce the statistical middle of everything ever written."</p>
+
+      <p>The order I work in:</p>
+
+      <ol class="flow" aria-label="The order I work in"><li>Experience</li><li>Idea</li><li>Thinking</li><li class="ai">AI</li><li>Editing</li><li>Judgment</li><li>Publish</li></ol>
+
+      <figure class="quote card">
+        <blockquote>"AI belongs in the middle as a production step. It can never substitute for having something to say."</blockquote>
+        <figcaption>My post, 20 Aug 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener">Read the post</a></figcaption>
+      </figure>
+
+      <p>What to give it first, from <a href="https://www.linkedin.com/posts/mai-lan-khong_my-6th-sense-i-can-feel-a-bad-ai-written-activity-7467150547368783872-jWUa" target="_blank" rel="noopener">my post of 1 Jun 2026</a>: "Your real numbers. The opinion you'd defend out loud, the ideas that make you feel itchy. The story from your ordinary day that AI couldn't invent (yet)."</p>
+
+      <h3 id="ai-content-is-just-as-good-now">"AI content is just as good now"</h3>
+
+      <p>It is as clean, and that is the problem. When every post is clean, clean stops meaning anything.</p>
+
+      <figure class="quote card">
+        <blockquote>"Polish used to be the proof you were worth trusting. Now, polish is the tell."</blockquote>
+        <figcaption>My post, 1 Jun 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_my-6th-sense-i-can-feel-a-bad-ai-written-activity-7467150547368783872-jWUa" target="_blank" rel="noopener">Read the post</a></figcaption>
+      </figure>
+
+      <p>AI did change something real. From <a href="https://www.linkedin.com/posts/mai-lan-khong_we-have-the-most-sophisticated-tools-for-activity-7496136452980920320-QbyH" target="_blank" rel="noopener">my post of 20 Aug 2026</a>: "So I don't think AI has lowered the bar for good content. It has lowered the cost of reaching the bar." The time it saves is meant for the thinking and the editing, not for more volume.</p>
+
+      <h2 id="how-do-i-repurpose-one-founder-interview-into-multiple-linkedin-posts">How do I repurpose one founder interview into multiple LinkedIn posts?</h2>
+
+      <p>Keep everything the interview gives you as raw material, then let each idea become several angles, and each angle a different post. Treat one interview as material for many posts, not as one.</p>
+
+      <p>In the system, the interview is where the person adds the story only they know. After it, nothing is thrown away. From <a href="https://www.linkedin.com/posts/mai-lan-khong_how-i-built-an-infinite-content-idea-engine-activity-7497586028120145920-8Lrm" target="_blank" rel="noopener">my post of 24 Aug 2026</a>, the material I keep is "client questions, sales objections, things from calls, interesting examples, mistakes, half-formed arguments, screenshots and voice notes." And: "I don't decide whether something is "content" when I capture it. I just save it."</p>
+
+      <p>Then one idea opens into several posts. From the same post, each idea can become "the argument for it, the argument against it, the mistake it corrects, the example that proves it, or the experience that complicates it."</p>
+
+      <p>The interview gives the perspective, and the market gives the subject: "An external signal gives me a subject. My internal archive gives me a perspective."</p>
+
+      <p>When one of those posts works, don't post it again. Take the lesson and put it into a new idea for the same people. From <a href="https://www.linkedin.com/posts/mai-lan-khong_show-us-which-post-booked-the-call-and-activity-7483090489492160512-3Wek" target="_blank" rel="noopener">my post of 15 Jul 2026</a>: "In ads, you multiply the asset. In content, you multiply the lesson."</p>
+
+      <h2 id="how-do-i-scale-linkedin-content-for-several-founders-with-ai-without-losing-their-voice">How do I scale LinkedIn content for several founders with AI without losing their voice?</h2>
+
+      <p>One system, one voice profile per person, and AI only in the middle. That is an AI-assisted system, and it is a different thing from AI-generated posts, where a model writes and nobody's thinking is in the post.</p>
+
+      <p>The opposite choice exists too. In one public teardown of a B2B software company, its marketing leaders say their executives write their own posts, with none of it AI-generated.</p>
+
+      <p>The system I build is AI-assisted, and this is where the line sits:</p>
+
+      <div class="tbl card"><table>
+      <thead><tr><th scope="col">Step</th><th scope="col">Who does it</th></tr></thead>
+      <tbody>
+      <tr><td>The idea, the story, the opinion</td><td data-label="Who does it">The person: in the interview, and from their own week</td></tr>
+      <tr><td>The voice</td><td data-label="Who does it">A voice profile for each person, built from a conversation with them</td></tr>
+      <tr><td>The draft</td><td data-label="Who does it">AI, in the middle, working from that person's own files</td></tr>
+      <tr><td>The checks</td><td data-label="Who does it">Three checks read every draft before it reaches the person</td></tr>
+      </tbody></table></div>
+
+      <figure class="quote card">
+        <blockquote>"A tool doesn't make content soulless. Outsourcing your thinking does."</blockquote>
+        <figcaption>My post, 3 Apr 2026. <a href="https://www.linkedin.com/posts/mai-lan-khong_i-ghostwrite-linkedin-content-for-b2b-founders-activity-7445766224384339968-1Q_M" target="_blank" rel="noopener">Read the post</a></figcaption>
+      </figure>
+
+      <p>Several voices in one system is a skill before it is a tool. From <a href="https://www.linkedin.com/posts/mai-lan-khong_so-hard-to-find-someone-whos-good-at-content-activity-7467507938329481216-SSn3" target="_blank" rel="noopener">my post of 2 Jun 2026</a>, the job is "Holding a real opinion in their name, across 100 posts, without sliding back into the AI default or leaking your own voice in". The system helps, and the design matters more than the model. From <a href="https://www.linkedin.com/posts/mai-lan-khong_i-built-the-ai-content-machine-that-runs-activity-7450832782425096193-4L0X" target="_blank" rel="noopener">my post of 17 Apr 2026</a>: "The way you design the workflow matters more than the model you use."</p>
+
+      <h2 id="where-to-go-next">Where to go next</h2>
+
+      <ul class="next">
+        <li class="card"><strong><a href="/b2b-content-pipeline">Content to drive B2B pipeline</a>:</strong> how content becomes a go-to-market channel, and how to tell whether it brings in pipeline.</li>
+        <li class="card"><strong><a href="/linkedin-for-teams">LinkedIn programs for teams</a>:</strong> the founder, executives and employees posting together.</li>
+        <li class="card">To have your team trained to run its own system, or to have it run for you, Frontal's two services have their own pages: <a href="/done-with-you">Done With You</a> and <a href="/done-for-you">Done For You</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</article>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="sec" style="border-top:none">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 style="max-width:none">Say hello on LinkedIn</h2>
+      <p>Connect with me on LinkedIn and send your message there. Or write to <a href="mailto:mailankhong.biz@gmail.com" data-umami-event="Email" data-umami-event-place="contact-text">mailankhong.biz@gmail.com</a>.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" class="btn btn-solid" style="padding:14px 26px;font-size:15px" data-umami-event="Connect on LinkedIn" data-umami-event-place="contact">Connect on LinkedIn <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+        <a href="mailto:mailankhong.biz@gmail.com" class="btn btn-ghost" style="padding:14px 26px;font-size:15px" data-umami-event="Email" data-umami-event-place="contact">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-lock"><span class="mlk-mark mlk-mark--foot"><span class="mlk-init">MLK</span><span class="mlk-word">Mai-Lan Khong</span></span></div>
+        <p class="foot-tag">Mai-Lan Khong. Content engineer and published author.<br>Content Lead at <a href="https://frontal.so" target="_blank" rel="noopener">Frontal</a>.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Pages</h4>
+          <a href="/">Home</a>
+          <a href="/about-me">About</a>
+          <a href="/done-with-you">Done With You</a>
+          <a href="/done-for-you">Done For You</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+        <div class="foot-col">
+          <h4>Topics</h4>
+          <a href="/ai-content-systems">AI content systems</a>
+          <a href="/b2b-content-pipeline">Content to drive B2B pipeline</a>
+          <a href="/linkedin-for-teams">LinkedIn programs for teams</a>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <a href="https://www.linkedin.com/in/mai-lan-khong/" target="_blank" rel="noopener" data-umami-event="Connect on LinkedIn" data-umami-event-place="footer">LinkedIn</a>
+          <a href="mailto:mailankhong.biz@gmail.com" data-umami-event="Email" data-umami-event-place="footer">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Mai-Lan Khong · mailankhong.com</span>
+      <span>© 2026 Mai-Lan Khong. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cursor-grid.js" defer></script>
+</body>
+</html>
