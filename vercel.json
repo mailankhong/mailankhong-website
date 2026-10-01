@@ -50,6 +50,11 @@
       "source": "/linkedin-for-teams/",
       "destination": "/linkedin-for-teams",
       "permanent": true
+    },
+    {
+      "source": "/ai-search-test-log/",
+      "destination": "/ai-search-test-log",
+      "permanent": true
     }
   ],
   "headers": [
