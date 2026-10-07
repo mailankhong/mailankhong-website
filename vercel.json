@@ -50,6 +50,11 @@
       "source": "/linkedin-for-teams/",
       "destination": "/linkedin-for-teams",
       "permanent": true
+    },
+    {
+      "source": "/hiring-for-linkedin-content/",
+      "destination": "/hiring-for-linkedin-content",
+      "permanent": true
     }
   ],
   "headers": [
