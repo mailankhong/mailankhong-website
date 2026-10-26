@@ -55,6 +55,11 @@
       "source": "/hiring-for-linkedin-content/",
       "destination": "/hiring-for-linkedin-content",
       "permanent": true
+    },
+    {
+      "source": "/ai-search-test-log/",
+      "destination": "/ai-search-test-log",
+      "permanent": true
     }
   ],
   "headers": [
