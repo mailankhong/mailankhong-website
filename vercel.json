@@ -7,6 +7,17 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mailankhong-website\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://www.mailankhong.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/linkedin-accelerator",
       "destination": "/",
       "permanent": true
